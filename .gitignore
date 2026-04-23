@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local secrets
+.env
+.env.local
+
+# Generated reports and run artifacts
+sample_outputs/
+evaluation_suite/outputs/
+evaluation_suite/outputs_2/
+evaluation_suite/**/run_*/
+evaluation_suite/**/run_fix*/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
