@@ -1,0 +1,112 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "get_v1_forecast",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "hourly": [
+          "temperature_2m",
+          "relative_humidity_2m"
+        ],
+        "daily": [
+          "temperature_2m_max",
+          "temperature_2m_min"
+        ],
+        "current_weather": true,
+        "temperature_unit": "celsius",
+        "wind_speed_unit": "kmh",
+        "timeformat": "iso8601",
+        "timezone": "Europe/Berlin"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a valid weather forecast for Berlin with hourly and daily data, current weather, and units in celsius and km/h. Response includes latitude, longitude, elevation, hourly, daily, and current_weather fields.",
+      "notes": "Standard successful request with all major parameters set, using realistic coordinates and timezone."
+    },
+    {
+      "operation_id": "get_v1_forecast",
+      "test_type": "validation_negative_latitude_out_of_range",
+      "path_params": {},
+      "query_params": {
+        "latitude": 300,
+        "longitude": 13.405,
+        "hourly": [
+          "temperature_2m"
+        ],
+        "daily": [
+          "temperature_2m_max"
+        ]
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns error payload indicating latitude must be in range of -90 to 90.",
+      "notes": "Tests boundary validation for latitude parameter, expecting a business error response as documented."
+    },
+    {
+      "operation_id": "get_v1_forecast",
+      "test_type": "validation_negative_missing_required_params",
+      "path_params": {},
+      "query_params": {
+        "hourly": [
+          "temperature_2m"
+        ]
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns error payload indicating missing required latitude and longitude parameters.",
+      "notes": "Tests behavior when required parameters are omitted; expects a 400 error with descriptive reason."
+    },
+    {
+      "operation_id": "get_v1_forecast",
+      "test_type": "boundary_past_days_maximum",
+      "path_params": {},
+      "query_params": {
+        "latitude": 40.7128,
+        "longitude": -74.006,
+        "past_days": 2,
+        "hourly": [
+          "temperature_2m"
+        ],
+        "daily": [
+          "temperature_2m_max"
+        ]
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns forecast including up to 2 past days for New York coordinates.",
+      "notes": "Tests the upper boundary for the past_days parameter, ensuring correct inclusion of historical data."
+    },
+    {
+      "operation_id": "get_v1_forecast",
+      "test_type": "validation_negative_invalid_enum_value",
+      "path_params": {},
+      "query_params": {
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "temperature_unit": "kelvin"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns error payload indicating invalid temperature_unit value.",
+      "notes": "Tests enum validation for temperature_unit parameter; expects a 400 error for unsupported value."
+    }
+  ]
+}
