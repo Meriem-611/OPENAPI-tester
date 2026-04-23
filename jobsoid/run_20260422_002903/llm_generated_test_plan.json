@@ -1,0 +1,227 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "get_api_v1_departments",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an array of Department objects.",
+      "notes": "Basic retrieval of all departments, no filters."
+    },
+    {
+      "operation_id": "get_api_v1_departments",
+      "test_type": "boundary_empty_result",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an empty array if no departments exist.",
+      "notes": "Validates correct handling when there are no departments."
+    },
+    {
+      "operation_id": "get_api_v1_divisions",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an array of Division objects.",
+      "notes": "Basic retrieval of all divisions."
+    },
+    {
+      "operation_id": "get_api_v1_divisions",
+      "test_type": "boundary_empty_result",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an empty array if no divisions exist.",
+      "notes": "Validates correct handling when there are no divisions (e.g., feature not enabled)."
+    },
+    {
+      "operation_id": "get_api_v1_functions",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an array of Function objects.",
+      "notes": "Basic retrieval of all job functions."
+    },
+    {
+      "operation_id": "get_api_v1_functions",
+      "test_type": "boundary_empty_result",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an empty array if no functions exist.",
+      "notes": "Validates correct handling when there are no job functions."
+    },
+    {
+      "operation_id": "get_api_v1_locations",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an array of Location objects.",
+      "notes": "Basic retrieval of all locations."
+    },
+    {
+      "operation_id": "get_api_v1_locations",
+      "test_type": "boundary_empty_result",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an empty array if no locations exist.",
+      "notes": "Validates correct handling when there are no locations."
+    },
+    {
+      "operation_id": "get_api_v1_jobs",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns an array of published Job objects.",
+      "notes": "Basic retrieval of all published jobs without filters."
+    },
+    {
+      "operation_id": "get_api_v1_jobs",
+      "test_type": "search_by_title",
+      "path_params": {},
+      "query_params": {
+        "q": "Engineer"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns jobs with titles matching 'Engineer'.",
+      "notes": "Tests search functionality by job title."
+    },
+    {
+      "operation_id": "get_api_v1_jobs",
+      "test_type": "filter_by_location",
+      "path_params": {},
+      "query_params": {
+        "loc": 1
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns jobs filtered by location ID 1.",
+      "notes": "Tests filtering jobs by location."
+    },
+    {
+      "operation_id": "get_api_v1_jobs",
+      "test_type": "invalid_filter_value",
+      "path_params": {},
+      "query_params": {
+        "loc": -1
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400,
+        200
+      ],
+      "expected_response_summary": "Returns error or empty array for invalid location ID.",
+      "notes": "Tests handling of invalid filter values (negative integer)."
+    },
+    {
+      "operation_id": "get_api_v1_jobs",
+      "test_type": "boundary_no_results",
+      "path_params": {},
+      "query_params": {
+        "q": "zzzzzzzz"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns empty array when no jobs match the search.",
+      "notes": "Tests search with a string that should yield no results."
+    },
+    {
+      "operation_id": "get_api_v1_jobs_{jobId}",
+      "test_type": "happy_path",
+      "path_params": {
+        "jobId": 1
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns details for the published job with ID 1.",
+      "notes": "Retrieves details for a valid, existing published job."
+    },
+    {
+      "operation_id": "get_api_v1_jobs_{jobId}",
+      "test_type": "not_found",
+      "path_params": {
+        "jobId": 999999
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns 404 if job does not exist.",
+      "notes": "Tests response for a non-existent job ID."
+    },
+    {
+      "operation_id": "get_api_v1_jobs_{jobId}",
+      "test_type": "invalid_id_type",
+      "path_params": {
+        "jobId": "abc"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns 400 Bad Request for non-integer jobId.",
+      "notes": "Tests validation for jobId path parameter type."
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "get_network_trie-statistics",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns trie statistics metrics in JSON format.",
+      "notes": "Basic retrieval of trie statistics; no parameters required."
+    },
+    {
+      "operation_id": "get_status_prometheus-metrics",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns Prometheus-formatted metrics.",
+      "notes": "Checks that Prometheus metrics are returned as expected."
+    },
+    {
+      "operation_id": "get_validator_statistics",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns validator statistics data.",
+      "notes": "Validates that statistics are returned from any shard observer."
+    },
+    {
+      "operation_id": "get_address_{address}_username",
+      "test_type": "happy_path",
+      "path_params": {
+        "address": "erd12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqxkalsa"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the username associated with the provided address.",
+      "notes": "Valid bech32 address should return username if set."
+    },
+    {
+      "operation_id": "get_address_{address}_username",
+      "test_type": "validation_negative",
+      "path_params": {
+        "address": "invalid_address"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for malformed address.",
+      "notes": "Tests address format validation."
+    },
+    {
+      "operation_id": "get_hyperblock_by-nonce_{nonce}",
+      "test_type": "happy_path",
+      "path_params": {
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the hyperblock at the specified nonce.",
+      "notes": "Valid nonce should return hyperblock data."
+    },
+    {
+      "operation_id": "get_hyperblock_by-nonce_{nonce}",
+      "test_type": "boundary_negative",
+      "path_params": {
+        "nonce": -1
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for negative nonce.",
+      "notes": "Nonce must be non-negative integer."
+    },
+    {
+      "operation_id": "get_block-atlas_{shard}_{nonce}",
+      "test_type": "happy_path",
+      "path_params": {
+        "shard": 0,
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns block data for the given shard and nonce.",
+      "notes": "Valid shard and nonce should return block data."
+    },
+    {
+      "operation_id": "get_block-atlas_{shard}_{nonce}",
+      "test_type": "boundary_negative",
+      "path_params": {
+        "shard": -1,
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for negative shard.",
+      "notes": "Shard ID must be non-negative."
+    },
+    {
+      "operation_id": "get_block_{shard}_by-nonce_{nonce}?withTxs=true",
+      "test_type": "happy_path",
+      "path_params": {
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns block with transactions for the given nonce.",
+      "notes": "Checks that transactions are included in the block response."
+    },
+    {
+      "operation_id": "get_block_{shard}_by-nonce_{nonce}?withTxs=true",
+      "test_type": "boundary_negative",
+      "path_params": {
+        "nonce": 0
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for zero or invalid nonce.",
+      "notes": "Nonce of zero may be invalid depending on chain rules."
+    },
+    {
+      "operation_id": "get_internal_raw_startofepoch_metablock_by-epoch_:epoch",
+      "test_type": "happy_path",
+      "path_params": {
+        "epoch": 100
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the epoch start block for the given epoch.",
+      "notes": "Valid epoch should return start block data."
+    },
+    {
+      "operation_id": "get_internal_raw_startofepoch_metablock_by-epoch_:epoch",
+      "test_type": "boundary_negative",
+      "path_params": {
+        "epoch": -1
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for negative epoch.",
+      "notes": "Epoch must be non-negative."
+    },
+    {
+      "operation_id": "get_node_old-storage-token_{token}_nonce_{nonce}",
+      "test_type": "happy_path",
+      "path_params": {
+        "token": 1,
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns boolean indicating if token metadata is still in accounts' trie.",
+      "notes": "Valid token and nonce should return a boolean result."
+    },
+    {
+      "operation_id": "get_node_old-storage-token_{token}_nonce_{nonce}",
+      "test_type": "validation_negative",
+      "path_params": {
+        "token": "not-an-integer",
+        "nonce": 100000
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for non-integer token.",
+      "notes": "Token must be an integer."
+    },
+    {
+      "operation_id": "post_proof_verify",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "rootHash": "e5f837612ad09de7c26ff411f0b36ffc33a8b80d4db3f07a369b405eb499a353",
+        "address": "erd12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqxkalsa",
+        "proof": [
+          "e5f837612ad09de7c26ff411f0b36ffc33a8b80d4db3f07a369b405eb499a353"
+        ]
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns result of Merkle proof verification.",
+      "notes": "Valid proof should verify successfully."
+    },
+    {
+      "operation_id": "post_proof_verify",
+      "test_type": "validation_negative",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "rootHash": "",
+        "address": "",
+        "proof": []
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for missing required fields.",
+      "notes": "Empty rootHash and address should trigger validation error."
+    },
+    {
+      "operation_id": "post_transaction_simulate?checkSignature=false",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "nonce": 0,
+        "value": "999",
+        "receiver": "erd12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqxkalsa",
+        "sender": "erd14t6l0x27w4d4354sqfm40wuv9p0r49uzl9598eka290x9kws2nvqlkc36j",
+        "gasPrice": 1000000000,
+        "gasLimit": 50000,
+        "data": "dGVzdA==",
+        "chainID": "1",
+        "version": 1,
+        "signature": "5f9f8ede6c993944095ffa9c4356ccbbafc0a2d98df2fff93ad9e000366e42af332a8c907d93fe43f22f5b4763b408152bb3fb6a454c73473c86a509f011ba0f"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns simulation results for the provided transaction.",
+      "notes": "Valid transaction should simulate successfully."
+    },
+    {
+      "operation_id": "post_transaction_simulate?checkSignature=false",
+      "test_type": "validation_negative",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "nonce": -1,
+        "value": "",
+        "receiver": "",
+        "sender": "",
+        "gasPrice": 0,
+        "gasLimit": 0,
+        "data": "",
+        "chainID": "",
+        "version": 0,
+        "signature": ""
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns validation error for invalid transaction fields.",
+      "notes": "Negative values and missing required fields should trigger validation error."
+    },
+    {
+      "operation_id": "post_actions_reload-observers",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer <valid_token>"
+      },
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Observers configuration is reloaded successfully.",
+      "notes": "Requires authentication; valid token provided."
+    },
+    {
+      "operation_id": "post_actions_reload-observers",
+      "test_type": "auth_negative",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        401,
+        403
+      ],
+      "expected_response_summary": "Returns authentication or authorization error.",
+      "notes": "No authentication token provided; should fail."
+    }
+  ]
+}

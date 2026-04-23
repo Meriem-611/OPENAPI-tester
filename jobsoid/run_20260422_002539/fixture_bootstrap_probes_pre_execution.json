@@ -1,0 +1,7 @@
+[
+  {
+    "operation_id": "get_api_v1_jobs_{jobId}",
+    "path": "/api/v1/jobs/{jobId}",
+    "status": 404
+  }
+]

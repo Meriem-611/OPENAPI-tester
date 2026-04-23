@@ -1,0 +1,1 @@
+Test case for 'get_block_{shard}_by-nonce_{nonce}?withTxs=true' is missing the required 'shard' path parameter. Please add a valid 'shard' value (e.g., 0) to the 'path_params' for both happy_path and boundary_negative cases.

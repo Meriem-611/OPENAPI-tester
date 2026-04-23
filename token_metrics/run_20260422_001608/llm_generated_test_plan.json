@@ -1,0 +1,281 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "getMetrics",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns basic metrics for the directory, including counts and statistics.",
+      "notes": "Verifies successful retrieval of metrics with no parameters required."
+    },
+    {
+      "operation_id": "getMetrics",
+      "test_type": "negative_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Accept": "application/xml"
+      },
+      "json_body": null,
+      "expected_statuses": [
+        406
+      ],
+      "expected_response_summary": "Returns 406 Not Acceptable when requesting unsupported content type.",
+      "notes": "Checks API response to unsupported Accept header."
+    },
+    {
+      "operation_id": "getProviders",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of provider names in the directory.",
+      "notes": "Verifies successful retrieval of provider list."
+    },
+    {
+      "operation_id": "getProviders",
+      "test_type": "boundary_empty_accept_header",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Accept": ""
+      },
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns provider list even with empty Accept header.",
+      "notes": "Checks API tolerance for empty Accept header."
+    },
+    {
+      "operation_id": "listAPIs",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of APIs with links and basic info.",
+      "notes": "Verifies successful retrieval of API list."
+    },
+    {
+      "operation_id": "listAPIs",
+      "test_type": "negative_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Accept": "text/plain"
+      },
+      "json_body": null,
+      "expected_statuses": [
+        406
+      ],
+      "expected_response_summary": "Returns 406 Not Acceptable for unsupported Accept header.",
+      "notes": "Checks API response to unsupported content type."
+    },
+    {
+      "operation_id": "getProvider",
+      "test_type": "happy_path",
+      "path_params": {
+        "provider": "googleapis"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns all APIs for the specified provider.",
+      "notes": "Verifies retrieval for a valid provider."
+    },
+    {
+      "operation_id": "getProvider",
+      "test_type": "negative_invalid_provider",
+      "path_params": {
+        "provider": "nonexistentprovider"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns 404 Not Found for an invalid provider.",
+      "notes": "Checks error handling for unknown provider."
+    },
+    {
+      "operation_id": "getProvider",
+      "test_type": "boundary_empty_provider",
+      "path_params": {
+        "provider": ""
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400,
+        404
+      ],
+      "expected_response_summary": "Returns error for empty provider parameter.",
+      "notes": "Checks boundary case for empty provider."
+    },
+    {
+      "operation_id": "getServices",
+      "test_type": "happy_path",
+      "path_params": {
+        "provider": "googleapis"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of service names for the specified provider.",
+      "notes": "Verifies retrieval for a valid provider."
+    },
+    {
+      "operation_id": "getServices",
+      "test_type": "negative_invalid_provider",
+      "path_params": {
+        "provider": "unknownprovider"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns 404 Not Found for an invalid provider.",
+      "notes": "Checks error handling for unknown provider."
+    },
+    {
+      "operation_id": "getServices",
+      "test_type": "boundary_empty_provider",
+      "path_params": {
+        "provider": ""
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400,
+        404
+      ],
+      "expected_response_summary": "Returns error for empty provider parameter.",
+      "notes": "Checks boundary case for empty provider."
+    },
+    {
+      "operation_id": "getAPI",
+      "test_type": "happy_path",
+      "path_params": {
+        "provider": "googleapis",
+        "api": "drive"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the API entry for the specified provider and API.",
+      "notes": "Verifies retrieval for valid provider and API."
+    },
+    {
+      "operation_id": "getAPI",
+      "test_type": "negative_invalid_api",
+      "path_params": {
+        "provider": "googleapis",
+        "api": "unknownapi"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns 404 Not Found for invalid API name.",
+      "notes": "Checks error handling for unknown API."
+    },
+    {
+      "operation_id": "getAPI",
+      "test_type": "boundary_empty_api",
+      "path_params": {
+        "provider": "googleapis",
+        "api": ""
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400,
+        404
+      ],
+      "expected_response_summary": "Returns error for empty API parameter.",
+      "notes": "Checks boundary case for empty API."
+    },
+    {
+      "operation_id": "getServiceAPI",
+      "test_type": "happy_path",
+      "path_params": {
+        "provider": "googleapis",
+        "service": "drive",
+        "api": "v2"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the API entry for the specified provider, service, and API.",
+      "notes": "Verifies retrieval for valid provider, service, and API."
+    },
+    {
+      "operation_id": "getServiceAPI",
+      "test_type": "negative_invalid_service",
+      "path_params": {
+        "provider": "googleapis",
+        "service": "unknownservice",
+        "api": "v2"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns 404 Not Found for invalid service name.",
+      "notes": "Checks error handling for unknown service."
+    },
+    {
+      "operation_id": "getServiceAPI",
+      "test_type": "boundary_empty_service",
+      "path_params": {
+        "provider": "googleapis",
+        "service": "",
+        "api": "v2"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400,
+        404
+      ],
+      "expected_response_summary": "Returns error for empty service parameter.",
+      "notes": "Checks boundary case for empty service."
+    }
+  ]
+}

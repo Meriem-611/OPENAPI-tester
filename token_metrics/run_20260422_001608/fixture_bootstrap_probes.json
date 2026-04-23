@@ -1,0 +1,12 @@
+[
+  {
+    "operation_id": "getProvider",
+    "path": "/{provider}.json",
+    "status": 404
+  },
+  {
+    "operation_id": "getServices",
+    "path": "/{provider}/services.json",
+    "status": 404
+  }
+]

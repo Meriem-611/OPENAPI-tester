@@ -1,0 +1,11 @@
+{
+  "ranked_operation_ids": [
+    "getMetrics",
+    "getProviders",
+    "listAPIs",
+    "getProvider",
+    "getServices",
+    "getAPI",
+    "getServiceAPI"
+  ]
+}

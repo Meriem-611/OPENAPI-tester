@@ -1,0 +1,42 @@
+[
+  {
+    "operation_id": "get_internal_:shard_raw_block_by-nonce_:nonce",
+    "path": "/internal/:shard/raw/block/by-nonce/:nonce",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_raw_block_by-hash_:hash",
+    "path": "/internal/:shard/raw/block/by-hash/:hash",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_block_by-nonce_:nonce",
+    "path": "/internal/:shard/json/block/by-nonce/:nonce",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_block_by-hash_:hash",
+    "path": "/internal/:shard/json/block/by-hash/:hash",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_raw_miniblock_by-hash_:hash_epoch_:epoch",
+    "path": "/internal/:shard/raw/miniblock/by-hash/:hash/epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_miniblock_by-hash_:hash_epoch_:epoch",
+    "path": "/internal/:shard/json/miniblock/by-hash/:hash/epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_hyperblock_by-nonce_{nonce}",
+    "path": "/hyperblock/by-nonce/{nonce}",
+    "status": 400
+  },
+  {
+    "operation_id": "get_network_status_{shard}",
+    "path": "/network/status/{shard}",
+    "status": 400
+  }
+]

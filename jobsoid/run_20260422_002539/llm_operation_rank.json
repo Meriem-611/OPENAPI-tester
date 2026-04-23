@@ -1,0 +1,10 @@
+{
+  "ranked_operation_ids": [
+    "get_api_v1_departments",
+    "get_api_v1_divisions",
+    "get_api_v1_functions",
+    "get_api_v1_locations",
+    "get_api_v1_jobs",
+    "get_api_v1_jobs_{jobId}"
+  ]
+}

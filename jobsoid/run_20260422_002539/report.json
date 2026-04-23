@@ -1,0 +1,2281 @@
+{
+  "summary": {
+    "spec_name": "Jobsoid.json",
+    "total_operations_parsed": 6,
+    "total_operations_selected": 6,
+    "total_tests_generated": 15,
+    "tests_executed": 15,
+    "passed": 11,
+    "failed": 4,
+    "execution_errors": 0
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "api"
+    ],
+    "resource_groups_covered": [
+      "api"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:read_only",
+      "input:no_body",
+      "method:get"
+    ],
+    "selected_operations": [
+      "get_api_v1_locations",
+      "get_api_v1_jobs_{jobId}",
+      "get_api_v1_jobs",
+      "get_api_v1_functions",
+      "get_api_v1_divisions",
+      "get_api_v1_departments"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "get_api_v1_departments__llm_1",
+        "operation_id": "get_api_v1_departments",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/departments",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic retrieval of departments, no parameters required.",
+        "expected_response_summary": "Returns a list (possibly empty) of Department objects.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/departments",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 3, \"title\": \"Sales\"}, {\"id\": 4736, \"title\": \"Marketing\"}, {\"id\": 5013, \"title\": \"Development\"}, {\"id\": 5094, \"title\": \"Admin\"}, {\"id\": 5252, \"title\": \"Finance\"}, {\"id\": 5253, \"title\": \"HR\"}, {\"id\": 5604, \"title\": \"Accounting\"}, {\"id\": 5671, \"title\": \"Software Development\"}, {\"id\": 6292, \"title\": \"Business Intelligence & Analytics\"}, {\"id\": 6375, \"title\": \"Research & Development\"}, {\"id\": 6478, \"title\": \"Quality Analysis\"}, {\"id\": 7336, \"title\": \"Business Development & Sales\"}, {\"id\": 860...",
+      "latency_ms": 492.85,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 3,
+          "title": "Sales"
+        },
+        {
+          "id": 4736,
+          "title": "Marketing"
+        },
+        {
+          "id": 5013,
+          "title": "Development"
+        },
+        {
+          "id": 5094,
+          "title": "Admin"
+        },
+        {
+          "id": 5252,
+          "title": "Finance"
+        },
+        {
+          "id": 5253,
+          "title": "HR"
+        },
+        {
+          "id": 5604,
+          "title": "Accounting"
+        },
+        {
+          "id": 5671,
+          "title": "Software Development"
+        },
+        {
+          "id": 6292,
+          "title": "Business Intelligence & Analytics"
+        },
+        {
+          "id": 6375,
+          "title": "Research & Development"
+        },
+        {
+          "id": 6478,
+          "title": "Quality Analysis"
+        },
+        {
+          "id": 7336,
+          "title": "Business Development & Sales"
+        },
+        {
+          "id": 8606,
+          "title": "Medical"
+        },
+        {
+          "id": 8680,
+          "title": "Test department"
+        },
+        {
+          "id": 9320,
+          "title": "Software"
+        },
+        {
+          "id": 9321,
+          "title": "Softwares"
+        },
+        {
+          "id": 9541,
+          "title": "accounts"
+        },
+        {
+          "id": 9781,
+          "title": "fefe"
+        },
+        {
+          "id": 10243,
+          "title": "networking"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_departments__llm_2",
+        "operation_id": "get_api_v1_departments",
+        "test_type": "boundary_empty_result",
+        "method": "get",
+        "path": "/api/v1/departments",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct handling of empty data sets.",
+        "expected_response_summary": "Returns an empty array if there are no departments.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/departments",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 3, \"title\": \"Sales\"}, {\"id\": 4736, \"title\": \"Marketing\"}, {\"id\": 5013, \"title\": \"Development\"}, {\"id\": 5094, \"title\": \"Admin\"}, {\"id\": 5252, \"title\": \"Finance\"}, {\"id\": 5253, \"title\": \"HR\"}, {\"id\": 5604, \"title\": \"Accounting\"}, {\"id\": 5671, \"title\": \"Software Development\"}, {\"id\": 6292, \"title\": \"Business Intelligence & Analytics\"}, {\"id\": 6375, \"title\": \"Research & Development\"}, {\"id\": 6478, \"title\": \"Quality Analysis\"}, {\"id\": 7336, \"title\": \"Business Development & Sales\"}, {\"id\": 860...",
+      "latency_ms": 469.86,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 3,
+          "title": "Sales"
+        },
+        {
+          "id": 4736,
+          "title": "Marketing"
+        },
+        {
+          "id": 5013,
+          "title": "Development"
+        },
+        {
+          "id": 5094,
+          "title": "Admin"
+        },
+        {
+          "id": 5252,
+          "title": "Finance"
+        },
+        {
+          "id": 5253,
+          "title": "HR"
+        },
+        {
+          "id": 5604,
+          "title": "Accounting"
+        },
+        {
+          "id": 5671,
+          "title": "Software Development"
+        },
+        {
+          "id": 6292,
+          "title": "Business Intelligence & Analytics"
+        },
+        {
+          "id": 6375,
+          "title": "Research & Development"
+        },
+        {
+          "id": 6478,
+          "title": "Quality Analysis"
+        },
+        {
+          "id": 7336,
+          "title": "Business Development & Sales"
+        },
+        {
+          "id": 8606,
+          "title": "Medical"
+        },
+        {
+          "id": 8680,
+          "title": "Test department"
+        },
+        {
+          "id": 9320,
+          "title": "Software"
+        },
+        {
+          "id": 9321,
+          "title": "Softwares"
+        },
+        {
+          "id": 9541,
+          "title": "accounts"
+        },
+        {
+          "id": 9781,
+          "title": "fefe"
+        },
+        {
+          "id": 10243,
+          "title": "networking"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_divisions__llm_3",
+        "operation_id": "get_api_v1_divisions",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/divisions",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic retrieval of divisions, no parameters required.",
+        "expected_response_summary": "Returns a list (possibly empty) of Division objects.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/divisions",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 142, \"title\": \"Marketing\"}, {\"id\": 144, \"title\": \"Test\"}, {\"id\": 146, \"title\": \"New devision\"}, {\"id\": 147, \"title\": \"New division\"}, {\"id\": 148, \"title\": \"Medical 121\"}, {\"id\": 149, \"title\": \"Medical\"}, {\"id\": 151, \"title\": \"dsfsdfdsfsd\"}, {\"id\": 152, \"title\": \"Recruiting\"}, {\"id\": 153, \"title\": \"HR 1\"}, {\"id\": 154, \"title\": \"HR12\"}, {\"id\": 155, \"title\": \"New med\"}, {\"id\": 156, \"title\": \"New 222\"}, {\"id\": 157, \"title\": \"ewqweqwe\"}, {\"id\": 158, \"title\": \"gtrgtrr\"}, {\"id\": 159, \"title\": \"...",
+      "latency_ms": 470.99,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 142,
+          "title": "Marketing"
+        },
+        {
+          "id": 144,
+          "title": "Test"
+        },
+        {
+          "id": 146,
+          "title": "New devision"
+        },
+        {
+          "id": 147,
+          "title": "New division"
+        },
+        {
+          "id": 148,
+          "title": "Medical 121"
+        },
+        {
+          "id": 149,
+          "title": "Medical"
+        },
+        {
+          "id": 151,
+          "title": "dsfsdfdsfsd"
+        },
+        {
+          "id": 152,
+          "title": "Recruiting"
+        },
+        {
+          "id": 153,
+          "title": "HR 1"
+        },
+        {
+          "id": 154,
+          "title": "HR12"
+        },
+        {
+          "id": 155,
+          "title": "New med"
+        },
+        {
+          "id": 156,
+          "title": "New 222"
+        },
+        {
+          "id": 157,
+          "title": "ewqweqwe"
+        },
+        {
+          "id": 158,
+          "title": "gtrgtrr"
+        },
+        {
+          "id": 159,
+          "title": "New rtrtrtrtrtr"
+        },
+        {
+          "id": 160,
+          "title": "Medical devision"
+        },
+        {
+          "id": 161,
+          "title": "Med dev"
+        },
+        {
+          "id": 162,
+          "title": "Med dev2"
+        },
+        {
+          "id": 163,
+          "title": "HR division"
+        },
+        {
+          "id": 164,
+          "title": "Recruiter Division"
+        },
+        {
+          "id": 165,
+          "title": "Test 1"
+        },
+        {
+          "id": 166,
+          "title": "Test 2"
+        },
+        {
+          "id": 167,
+          "title": "Test 3"
+        },
+        {
+          "id": 215,
+          "title": "Branch"
+        },
+        {
+          "id": 354,
+          "title": "web"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_divisions__llm_4",
+        "operation_id": "get_api_v1_divisions",
+        "test_type": "boundary_empty_result",
+        "method": "get",
+        "path": "/api/v1/divisions",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct handling of empty data sets.",
+        "expected_response_summary": "Returns an empty array if there are no divisions.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/divisions",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 142, \"title\": \"Marketing\"}, {\"id\": 144, \"title\": \"Test\"}, {\"id\": 146, \"title\": \"New devision\"}, {\"id\": 147, \"title\": \"New division\"}, {\"id\": 148, \"title\": \"Medical 121\"}, {\"id\": 149, \"title\": \"Medical\"}, {\"id\": 151, \"title\": \"dsfsdfdsfsd\"}, {\"id\": 152, \"title\": \"Recruiting\"}, {\"id\": 153, \"title\": \"HR 1\"}, {\"id\": 154, \"title\": \"HR12\"}, {\"id\": 155, \"title\": \"New med\"}, {\"id\": 156, \"title\": \"New 222\"}, {\"id\": 157, \"title\": \"ewqweqwe\"}, {\"id\": 158, \"title\": \"gtrgtrr\"}, {\"id\": 159, \"title\": \"...",
+      "latency_ms": 277.74,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 142,
+          "title": "Marketing"
+        },
+        {
+          "id": 144,
+          "title": "Test"
+        },
+        {
+          "id": 146,
+          "title": "New devision"
+        },
+        {
+          "id": 147,
+          "title": "New division"
+        },
+        {
+          "id": 148,
+          "title": "Medical 121"
+        },
+        {
+          "id": 149,
+          "title": "Medical"
+        },
+        {
+          "id": 151,
+          "title": "dsfsdfdsfsd"
+        },
+        {
+          "id": 152,
+          "title": "Recruiting"
+        },
+        {
+          "id": 153,
+          "title": "HR 1"
+        },
+        {
+          "id": 154,
+          "title": "HR12"
+        },
+        {
+          "id": 155,
+          "title": "New med"
+        },
+        {
+          "id": 156,
+          "title": "New 222"
+        },
+        {
+          "id": 157,
+          "title": "ewqweqwe"
+        },
+        {
+          "id": 158,
+          "title": "gtrgtrr"
+        },
+        {
+          "id": 159,
+          "title": "New rtrtrtrtrtr"
+        },
+        {
+          "id": 160,
+          "title": "Medical devision"
+        },
+        {
+          "id": 161,
+          "title": "Med dev"
+        },
+        {
+          "id": 162,
+          "title": "Med dev2"
+        },
+        {
+          "id": 163,
+          "title": "HR division"
+        },
+        {
+          "id": 164,
+          "title": "Recruiter Division"
+        },
+        {
+          "id": 165,
+          "title": "Test 1"
+        },
+        {
+          "id": 166,
+          "title": "Test 2"
+        },
+        {
+          "id": 167,
+          "title": "Test 3"
+        },
+        {
+          "id": 215,
+          "title": "Branch"
+        },
+        {
+          "id": 354,
+          "title": "web"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_functions__llm_5",
+        "operation_id": "get_api_v1_functions",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/functions",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic retrieval of job functions, no parameters required.",
+        "expected_response_summary": "Returns a list (possibly empty) of Function objects.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/functions",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 2, \"title\": \"Accounting\"}, {\"id\": 743, \"title\": \"Administrative\"}, {\"id\": 2966, \"title\": \"Community & Social Services\"}, {\"id\": 3707, \"title\": \"Consulting\"}, {\"id\": 5189, \"title\": \"Engineering\"}, {\"id\": 5930, \"title\": \"Entrepreneurship\"}, {\"id\": 6671, \"title\": \"Finance\"}, {\"id\": 7412, \"title\": \"Healthcare Services\"}, {\"id\": 8153, \"title\": \"Human Resources\"}, {\"id\": 8894, \"title\": \"Information Technology\"}, {\"id\": 9635, \"title\": \"Legal\"}, {\"id\": 10376, \"title\": \"Marketing\"}, {\"id\": 11117,...",
+      "latency_ms": 248.98,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 2,
+          "title": "Accounting"
+        },
+        {
+          "id": 743,
+          "title": "Administrative"
+        },
+        {
+          "id": 2966,
+          "title": "Community & Social Services"
+        },
+        {
+          "id": 3707,
+          "title": "Consulting"
+        },
+        {
+          "id": 5189,
+          "title": "Engineering"
+        },
+        {
+          "id": 5930,
+          "title": "Entrepreneurship"
+        },
+        {
+          "id": 6671,
+          "title": "Finance"
+        },
+        {
+          "id": 7412,
+          "title": "Healthcare Services"
+        },
+        {
+          "id": 8153,
+          "title": "Human Resources"
+        },
+        {
+          "id": 8894,
+          "title": "Information Technology"
+        },
+        {
+          "id": 9635,
+          "title": "Legal"
+        },
+        {
+          "id": 10376,
+          "title": "Marketing"
+        },
+        {
+          "id": 11117,
+          "title": "Media & Communications"
+        },
+        {
+          "id": 11858,
+          "title": "Military & Protective Services"
+        },
+        {
+          "id": 12599,
+          "title": "Operations"
+        },
+        {
+          "id": 13340,
+          "title": "Product Management"
+        },
+        {
+          "id": 14081,
+          "title": "Program & Product Management"
+        },
+        {
+          "id": 14822,
+          "title": "Purchasing"
+        },
+        {
+          "id": 15563,
+          "title": "Quality Assurance"
+        },
+        {
+          "id": 17786,
+          "title": "Sales"
+        },
+        {
+          "id": 18527,
+          "title": "Support"
+        },
+        {
+          "id": 20372,
+          "title": "Housekeeping"
+        },
+        {
+          "id": 26418,
+          "title": "Teaching"
+        },
+        {
+          "id": 28825,
+          "title": "Education"
+        },
+        {
+          "id": 158397,
+          "title": "Accounts"
+        },
+        {
+          "id": 170132,
+          "title": "HR"
+        },
+        {
+          "id": 346651,
+          "title": "Get employee"
+        },
+        {
+          "id": 347564,
+          "title": "New Function"
+        },
+        {
+          "id": 706085,
+          "title": "Content writer & creator"
+        },
+        {
+          "id": 747826,
+          "title": "test22"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_functions__llm_6",
+        "operation_id": "get_api_v1_functions",
+        "test_type": "boundary_empty_result",
+        "method": "get",
+        "path": "/api/v1/functions",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct handling of empty data sets.",
+        "expected_response_summary": "Returns an empty array if there are no functions.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/functions",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 2, \"title\": \"Accounting\"}, {\"id\": 743, \"title\": \"Administrative\"}, {\"id\": 2966, \"title\": \"Community & Social Services\"}, {\"id\": 3707, \"title\": \"Consulting\"}, {\"id\": 5189, \"title\": \"Engineering\"}, {\"id\": 5930, \"title\": \"Entrepreneurship\"}, {\"id\": 6671, \"title\": \"Finance\"}, {\"id\": 7412, \"title\": \"Healthcare Services\"}, {\"id\": 8153, \"title\": \"Human Resources\"}, {\"id\": 8894, \"title\": \"Information Technology\"}, {\"id\": 9635, \"title\": \"Legal\"}, {\"id\": 10376, \"title\": \"Marketing\"}, {\"id\": 11117,...",
+      "latency_ms": 426.12,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 2,
+          "title": "Accounting"
+        },
+        {
+          "id": 743,
+          "title": "Administrative"
+        },
+        {
+          "id": 2966,
+          "title": "Community & Social Services"
+        },
+        {
+          "id": 3707,
+          "title": "Consulting"
+        },
+        {
+          "id": 5189,
+          "title": "Engineering"
+        },
+        {
+          "id": 5930,
+          "title": "Entrepreneurship"
+        },
+        {
+          "id": 6671,
+          "title": "Finance"
+        },
+        {
+          "id": 7412,
+          "title": "Healthcare Services"
+        },
+        {
+          "id": 8153,
+          "title": "Human Resources"
+        },
+        {
+          "id": 8894,
+          "title": "Information Technology"
+        },
+        {
+          "id": 9635,
+          "title": "Legal"
+        },
+        {
+          "id": 10376,
+          "title": "Marketing"
+        },
+        {
+          "id": 11117,
+          "title": "Media & Communications"
+        },
+        {
+          "id": 11858,
+          "title": "Military & Protective Services"
+        },
+        {
+          "id": 12599,
+          "title": "Operations"
+        },
+        {
+          "id": 13340,
+          "title": "Product Management"
+        },
+        {
+          "id": 14081,
+          "title": "Program & Product Management"
+        },
+        {
+          "id": 14822,
+          "title": "Purchasing"
+        },
+        {
+          "id": 15563,
+          "title": "Quality Assurance"
+        },
+        {
+          "id": 17786,
+          "title": "Sales"
+        },
+        {
+          "id": 18527,
+          "title": "Support"
+        },
+        {
+          "id": 20372,
+          "title": "Housekeeping"
+        },
+        {
+          "id": 26418,
+          "title": "Teaching"
+        },
+        {
+          "id": 28825,
+          "title": "Education"
+        },
+        {
+          "id": 158397,
+          "title": "Accounts"
+        },
+        {
+          "id": 170132,
+          "title": "HR"
+        },
+        {
+          "id": 346651,
+          "title": "Get employee"
+        },
+        {
+          "id": 347564,
+          "title": "New Function"
+        },
+        {
+          "id": 706085,
+          "title": "Content writer & creator"
+        },
+        {
+          "id": 747826,
+          "title": "test22"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs__llm_9",
+        "operation_id": "get_api_v1_jobs",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/jobs",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic retrieval of all published jobs, no filters.",
+        "expected_response_summary": "Returns a list (possibly empty) of published Job objects.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 130458, \"code\": \"\", \"title\": \"Software Developer\", \"description\": \"<div id=\\\"job-overview\\\"><h4>Job Overview</h4><p>We are looking for a competent Software Developer to design and implement functional software applications for our clients. You will be working with Product Managers and a team of developers throughout the entire software development lifecycle. The objective of this role is to build effective software programs that serve our client requirements to the fullest.</p><p>As a So...",
+      "latency_ms": 495.25,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 130458,
+          "code": "",
+          "title": "Software Developer",
+          "description": "<div id=\"job-overview\"><h4>Job Overview</h4><p>We are looking for a competent Software Developer to design and implement functional software applications for our clients. You will be working with Product Managers and a team of developers throughout the entire software development lifecycle. The objective of this role is to build effective software programs that serve our client requirements to the fullest.</p><p>As a Software Developer, you will be working on multiple software projects at a time. You are expected to be exceptionally good at writing clear code and developing secure software applications. You should have a strong passion for coding languages like JavaScript and working experience in Agile Frameworks. In addition to this, you should have a keen eye for detail and work as a team player.</p><p>If you are ready to work in a dynamic work environment and demonstrate your problem-solving skills, we will be glad to meet you. Send in your applications to us right away!</p></div>\n<div id=\"responsibilities\"><h4>Responsibilities</h4><ul id=\"ul-responsibilities-0\"><li>Understand the client requirements and plan out your approach towards software development.</li><li>Work closely with a team of developers to design flowcharts and algorithms.</li><li>Produce efficient and clean codes based on the given requirements.</li><li>Integrate third-party programs and software components to the existing code.</li><li>Verify and deploy systems and programs.</li><li>Troubleshoot, debug and upgrade the existing programs to ensure the effectiveness of the software components.</li><li>Gather and evaluate user feedback. Make the required changes accordingly.</li><li>Recommend and execute improvements in the existing software programs.</li><li>Create technical reports for references.</li></ul></div>\n<div id=\"requirements\"><h4>Requirements</h4><ul id=\"ul-requirements-0\"><li>Bachelor\u2019s degree in Computer Science, Information Technology or related field.</li><li>Proven work experience as a Software Engineer, Software Developer or similar role.</li><li>Excellent knowledge of Agile Development techniques.</li><li>Experience in software designing and development in a test-driven environment.</li><li>Outstanding knowledge of coding languages such as Java, C++, JavaScript and Systems/Frameworks like Git, AngularJS, etc.</li><li>Thorough understanding of writing and implementing APIs</li><li>Solid knowledge of databases.</li><li>Well versed with Object-Relational Mapping (ORM) and related frameworks.</li><li>Knowledge of code versioning tools will be an added advantage.</li><li>Ability to learn new technologies and languages.</li><li>Outstanding communication skills.</li><li>Troubleshooting and resourcefulness aptitude.</li></ul></div>",
+          "industry": "Oil & Energy\r\n",
+          "postedDate": "2026-03-27T12:21:16.2",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 16672,
+            "title": "Ambala - Ambala",
+            "city": "Ambala",
+            "state": "Haryana",
+            "country": "India",
+            "zip": ""
+          },
+          "department": null,
+          "division": [],
+          "function": null,
+          "type": "",
+          "positions": 1,
+          "experience": "",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/130458/software-developer",
+          "applyUrl": "https://demo.jobsoid.com/apply/130458",
+          "slug": "software-developer",
+          "company": "Volken Systems"
+        },
+        {
+          "id": 86347,
+          "code": "",
+          "title": "Commercial Real Estate Broker",
+          "description": "<div id=\"job-overview\"><h4>Job Overview</h4><p>We are looking for a reliable Commercial Real Estate Broker with experience in the real estate industry to join us. You will be the point of contact between the buyers and sellers in finding the best non-resident properties. Your vast knowledge in property management will help guide buyers on mortgages and other best purchase methods.</p><p>Besides helping look for a property, you should assist with preparing legal documents. You should have good networking skills and maintain contact with attorneys and stakeholders. To be proficient in this job role, you should be up-to-date with the latest developments in the real estate industry. </p><p>You should be able to address any client queries and hold transparent dealings. In addition, you should be able to hold auctions and property exchange programs. You will also be supervising Real Estate Agents and facilitating an easy acquisition process. </p><p>If you can handle all real estate industry requirements, then do get in touch with us.</p></div>\n<div id=\"responsibilities\"><h4>Responsibilities</h4><ul id=\"ul-responsibilities-0\"><li>Helping clients look for the best commercial properties</li></ul><ul id=\"ul-responsibilities-1\"><li>Promoting properties via print advertisements and digital media</li></ul><ul id=\"ul-responsibilities-2\"><li>Advising on property agreements, mortgage loans, and property pricing</li></ul><ul id=\"ul-responsibilities-3\"><li>Drafting legal documents</li></ul><ul id=\"ul-responsibilities-4\"><li>Organizing and coordinating property exchange programs and auctions</li></ul><ul id=\"ul-responsibilities-5\"><li>Assisting in exchange or ownership</li></ul><ul id=\"ul-responsibilities-6\"><li>Negotiating contract terms and conditions with clients</li></ul><ul id=\"ul-responsibilities-7\"><li>Maintaining a list of available properties</li></ul><ul id=\"ul-responsibilities-8\"><li>Attending networking events and property exhibitions</li></ul><ul id=\"ul-responsibilities-9\"><li>Using different marketing techniques to advertise properties</li></ul><ul id=\"ul-responsibilities-10\"><li>Advising clients on available options based on their needs and financial standing</li></ul><ul id=\"ul-responsibilities-11\"><li>Offering legal advice</li></ul><ul id=\"ul-responsibilities-12\"><li>Researching about properties</li></ul><ul id=\"ul-responsibilities-13\"><li>Coordinating with Real Estate Agents </li></ul><ul id=\"ul-responsibilities-14\"><li>Reviewing best practices of purchase and property management</li></ul><ul id=\"ul-responsibilities-15\"><li>Evaluating  and helping gather all paperwork</li></ul></div>\n<div id=\"requirements\"><h4>Requirements</h4><ul id=\"ul-requirements-0\"><li>Bachelor\u2019s degree in any subject</li></ul><ul id=\"ul-requirements-1\"><li>Previous work experience as a Real Estate Agent, Real Estate Broker or similar position in the Real Estate industry</li></ul><ul id=\"ul-requirements-2\"><li>Holding a valid license to practice </li></ul><ul id=\"ul-requirements-3\"><li>Impressive sales record</li></ul><ul id=\"ul-requirements-4\"><li>Complete understanding of laws and regulations governing real estate</li></ul><ul id=\"ul-requirements-5\"><li>Knowledge of industry best practices and latest developments </li></ul><ul id=\"ul-requirements-6\"><li>Honest and reliable individual </li></ul><ul id=\"ul-requirements-7\"><li>Strong networking and persuasive skills</li></ul><ul id=\"ul-requirements-8\"><li>Good communication skills</li></ul><ul id=\"ul-requirements-9\"><li>Ability to work at flexible hours</li></ul><ul id=\"ul-requirements-10\"><li>Basic computer skills</li></ul><ul id=\"ul-requirements-11\"><li>Good listening skills</li></ul><ul id=\"ul-requirements-12\"><li>Ability to multitask and manage time effectively</li></ul></div>",
+          "industry": "Oil & Energy\r\n",
+          "postedDate": "2026-03-27T12:22:22.087",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 16672,
+            "title": "Ambala - Ambala",
+            "city": "Ambala",
+            "state": "Haryana",
+            "country": "India",
+            "zip": ""
+          },
+          "department": null,
+          "division": [],
+          "function": null,
+          "type": "",
+          "positions": 1,
+          "experience": "",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/86347/commercial-real-estate-broker",
+          "applyUrl": "https://demo.jobsoid.com/apply/86347",
+          "slug": "commercial-real-estate-broker",
+          "company": "Volken Systems"
+        },
+        {
+          "id": 102052,
+          "code": "",
+          "title": "Business Analyst",
+          "description": "<div id=\"job-overview\"><h4>Job Overview</h4><p>We are seeking an experienced Business Analyst to join our Accounting Department.</p><p>As a Business Analyst, you will be helping our business cost-effectively acquire technology solutions for various business problems. You will be responsible for reviewing the business system and planning strategies to maximize efficiency. Your ultimate key role will be internal and external identifying problems and achieving business goals. </p><p>If your experience and skills match our criteria for the role of Business Analyst, apply for this job now. We will love to meet you</p></div>\n<div id=\"responsibilities\"><h4>Responsibilities</h4><ul id=\"ul-responsibilities-0\"><li>Review the business functions, determine operational objectives and evaluate the requirements.</li><li>Study the system capabilities and create workflow charts and other diagrams.</li><li>Coordinate with the staff and collect business-related information.</li><li>Maintain cordial relationships with business partners.</li><li>Review the current business practices and make improvements as required.</li><li>Prepare documents that are required for the smooth functioning of the system processes.</li><li>Identify the need for a project, establish project teams and set the budget for the project.</li><li>Monitor the progress of various projects and make recommendations when required.</li><li>Conduct research and develop integrated business analysis.</li><li>Identify the bottlenecks in business processes and take the necessary steps to resolve them.</li><li>Stay updated regarding the latest technologies used for business.</li></ul></div>\n<div id=\"requirements\"><h4>Requirements</h4><ul id=\"ul-requirements-0\"><li>Bachelor\u2019s degree in Information Technology, Computer Science or Business Administration. A Master degree from the International Institute of Business Analysis (IIBA) will also be considered.</li><li>2-4 years of experience working as a Business Analyst in the Accountant Department or a similar role.</li><li>A professional certificate in Business Analysis will be mandatory.</li><li>Familiar with MS Access and SQL databases.</li><li>Great interpersonal skills.</li><li>Exceptional oral and written communication skills.</li><li>Strong organizational skills.</li><li>Ability to work in a team or individually as and when required.</li><li>Ability to manage and handle multiple tasks.</li><li>Outstanding problem-solving skills.</li><li>Exceptional attention to detail.</li><li>Good time management abilities.</li><li>Strong decision-making skills.</li></ul></div>",
+          "industry": "Mechanical or Industrial Engineering\r\n",
+          "postedDate": "2026-03-27T12:26:43.787",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 30978,
+            "title": "Bengaluru - Bengaluru",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "country": "India",
+            "zip": ""
+          },
+          "department": {
+            "id": 9320,
+            "title": "Software"
+          },
+          "division": [
+            {
+              "id": 354,
+              "title": "web"
+            }
+          ],
+          "function": {
+            "id": 5189,
+            "title": "Engineering"
+          },
+          "type": "Remote",
+          "positions": 2,
+          "experience": "4 - 5 years",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/102052/business-analyst",
+          "applyUrl": "https://demo.jobsoid.com/apply/102052",
+          "slug": "business-analyst",
+          "company": "Volken Systems"
+        },
+        {
+          "id": 63337,
+          "code": "123",
+          "title": "CAD Designer",
+          "description": "<div id=\"job-overview\"><figure><img src=\"https://jobsoidstorage.blob.core.windows.net/public/1/238161-EA+Gdynia+2019+(18)-20250529040711987.jpg\" data-image=\"https://jobsoidstorage.blob.core.windows.net/public/1/238161-EA+Gdynia+2019+(18)-20250529040711987.jpg\"></figure><h4><u><em><strong></strong></em></u>Job Overview&nbsp;</h4><p>We are looking for a skilled CAD Designer to be a part of our Engineering department. You should be able to create 2D and 3D designs according to the specifications. Besides, you should also be able to provide a work completion timeline..</p><p>You should be able to review designs, make corrections, and suggest any recommendations. Moreover, you should be able to maintain a record of all designs in the database. As a CAD Designer, you should remain up-to-date with the latest technologies in the CAD software and modelling tools. </p><p>Your job responsibilities also include adhering to the project timelines and budget. Moreover, you should be detail and research-oriented individual. Your ability to collaborate and coordinate with your team members will be beneficial. </p><p>If you can help generate modeling designs for complex projects, then do get in touch with us. We would like to have a word with you.  </p></div>\n<div id=\"responsibilities\"><h4>Responsibilities&nbsp;</h4><ul id=\"ul-responsibilities-0\"><li>Creating detailed 2D and 3D designs using CAD software </li><li>Attending development meetings and establishing project timelines and budget </li><li>Making corrections or revisions to the 2D or 3D models as requested </li></ul><ul id=\"ul-responsibilities-1\"><li>Keeping up-to-date with the latest developments and technologies in the CAD process </li><li>Running tests on 3D models before prototyping </li><li>Selecting materials for modeling by analyzing database of material property information </li><li>Designing complex layouts as per the specifications provided </li><li>Coordinating with other team members to obtain relevant information for drawings </li></ul><ul id=\"ul-responsibilities-2\"><li>Adhering to the timelines and budget while creating designs </li><li>Reviewing design concepts and making recommendations </li><li>Maintaining a record of all designs in the database </li><li>Updating and maintaining design documentations </li><li>Providing an approximate project completion timeline </li></ul><ul id=\"ul-responsibilities-3\"><li>Coordinating with the Drafter to work on various project designs </li></ul></div>\n<div id=\"requirements\"><h4>Requirements&nbsp;</h4><ul id=\"ul-requirements-0\"><li>Bachelor's degree in Drafting, Architecture, or a related field </li><li>Atleast 3 years of work experience as a CAD Designer, CAD Operator, or a similar role in the Engineering department </li><li>Familiarity with CAD software and modelling tools </li></ul><ul id=\"ul-requirements-1\"><li>Up-to-date with the latest industry trends and developments </li><li>Good time management and organizational skills </li><li>Strong analytical and problem-solving skills </li><li>Good communication and interpersonal skills </li><li>Ability to work independently and collaboratively </li></ul><ul id=\"ul-requirements-2\"><li>Detail-oriented and highly motivated individuals </li><li>Ability to handle stressful situations and strict deadlines </li><li>Ability to provide excellent customer service</li></ul></div>",
+          "industry": "Staffing and Recruiting",
+          "postedDate": "2026-03-27T12:31:42.647",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 14964,
+            "title": "Cape Town - Cape Town",
+            "city": "Cape Town",
+            "state": "Western Cape",
+            "country": "South Africa",
+            "zip": ""
+          },
+          "department": null,
+          "division": [],
+          "function": null,
+          "type": "",
+          "positions": 1,
+          "experience": "",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/63337/cad-designer",
+          "applyUrl": "https://demo.jobsoid.com/apply/63337",
+          "slug": "cad-designer",
+          "company": "Volken Systems"
+        },
+        {
+          "id": 131147,
+          "code": "",
+          "title": "Architectural Designer",
+          "description": "<div id=\"job-overview\"><h4>Job Overview&nbsp;</h4><p>We are looking for a detail-oriented individual to join our Construction company as an Architectural Designer. You should be able to assist our clients with their architectural design requirements. You should be able to communicate with clients and understand their project requests. Besides, you should be able to create designs upon researching about various architectural trends and patterns.  </p><p>You should also be able to submit the designs for approval and make adjustments as per the feedback. You should adhere to the industry guidelines at all times. Moreover, you should ensure that all designs contain correct measurements and dimensions.  </p><p>As an Architectural Designer, you should have a portfolio of your previous works as well as familiarity with various CAD software. Furthermore, you should possess excellent technical and mathematical skills.  </p><p>If you have the skills to create unique architectural designs, then do write to us. We would like to hear from you.  </p></div>\n<div id=\"responsibilities\"><h4>Responsibilities&nbsp;</h4><ul id=\"ul-responsibilities-0\"><li>Receiving and reviewing project requests </li><li>Planning and developing architectural designs </li><li>Creating initial design drafts and submitting the same for approval </li></ul><ul id=\"ul-responsibilities-1\"><li>Using 2D and 3D sketching tools for creating project drawings and drafts </li><li>Making adjustments or corrections to the designs as per the client feedback </li><li>Adhering to the design specifications, safety guidelines, industry standards, and government regulations at all times </li><li>Coordinating with the Project Architect to understand all the project requirements and other details </li><li>Conducting in-depth research to identify new architectural trends before designing </li></ul><ul id=\"ul-responsibilities-2\"><li>Ensuring that the architectural designs have correct measurements and dimensions mentioned </li><li>Producing CAD drawings and color boards to aid in discussions with the clients </li><li>Providing clients with design recommendations </li></ul></div>\n<div id=\"requirements\"><h4>Requirements&nbsp;</h4><ul id=\"ul-requirements-0\"><li>Bachelor\u2019s or Master\u2019s degree in Architecture </li></ul><ul id=\"ul-requirements-1\"><li>Proven work experience as an Architectural Designer or a similar role in the Construction industry </li><li>Holding a strong portfolio of architectural designs </li><li>Architect Registration Examination certification is mandatory </li><li>Complete knowledge of the industry best practices, trends, guidelines, and safety protocols </li><li>Familiarity with CAD software such as ArchiCAD, Cedreo, and AutoCAD Civil 3D </li></ul><ul id=\"ul-requirements-2\"><li>Excellent technical and design skills </li><li>Strong mathematical skills </li><li>Good time management and organizational skills </li><li>Excellent analytical and problem-solving skills </li><li>Good communication and interpersonal skills </li></ul><ul id=\"ul-requirements-3\"><li>Having an eye for detail </li><li>Ability to conduct in-depth research </li><li>Highly motivated and creative individual </li><li>Ability to work independently and collaboratively </li></ul><ul><li>Ability to work under pressure and manage strict deadlines </li></ul><ul id=\"ul-requirements-4\"><li>Ability to offer excellent customer service </li></ul><p><strong>Key Components and Characteristics</strong><strong></strong></p><strong>\n<ul><li><strong><a href=\"https://www.google.com/search?q=Topic+Sentence&oq=paragraph&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIKCAIQABixAxiABDINCAMQABiDARixAxiABDIHCAQQABiABDIKCAUQABixAxiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIKCAkQABixAxiABNIBCDYzNDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEAo\" jsuid=\"K9J0Hb_q\" class=\"GI370e\" data-ved=\"2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEAo\" data-hveid=\"CAAIABAK\" target=\"_blank\">Topic Sentence</a></strong>:&nbsp;Introduces the main idea or argument of the paragraph, notes&nbsp;<a href=\"https://www.youtube.com/watch?v=44PPlTepKPg\" class=\"H23r4e\" target=\"_blank\" rel=\"noopener\" ping=\"/url?sa=t&source=web&rct=j&url=https://www.youtube.com/watch?v%3D44PPlTepKPg&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8Qy_kOegYIAAgAEAs&opi=89978449\">this YouTube video</a>.</li><li><strong><a href=\"https://www.google.com/search?q=Supporting+Sentences&oq=paragraph&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIKCAIQABixAxiABDINCAMQABiDARixAxiABDIHCAQQABiABDIKCAUQABixAxiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIKCAkQABixAxiABNIBCDYzNDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEA0\" jsuid=\"K9J0Hb_w\" class=\"GI370e\" data-ved=\"2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEA0\" data-hveid=\"CAAIABAN\" target=\"_blank\">Supporting Sentences</a></strong>:&nbsp;Provide evidence, examples, and analysis, as shown in&nbsp;<a href=\"https://www.youtube.com/watch?v=xrEuci6t3-4\" class=\"H23r4e\" target=\"_blank\" rel=\"noopener\" ping=\"/url?sa=t&source=web&rct=j&url=https://www.youtube.com/watch?v%3DxrEuci6t3-4&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8Qy_kOegYIAAgAEA4&opi=89978449\">this YouTube video</a>.</li><li><strong><a href=\"https://www.google.com/search?q=Concluding+Sentence&oq=paragraph&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIKCAIQABixAxiABDINCAMQABiDARixAxiABDIHCAQQABiABDIKCAUQABixAxiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIKCAkQABixAxiABNIBCDYzNDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEBA\" jsuid=\"K9J0Hb_12\" class=\"GI370e\" data-ved=\"2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgAEBA\" data-hveid=\"CAAIABAQ\" target=\"_blank\">Concluding Sentence</a></strong>:&nbsp;Summarizes the point and acts as a transition, says the&nbsp;<a href=\"https://libguides.usc.edu/writingguide/paragraph\" class=\"H23r4e\" target=\"_blank\" rel=\"noopener\" ping=\"/url?sa=t&source=web&rct=j&url=https://libguides.usc.edu/writingguide/paragraph&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8Qy_kOegYIAAgAEBE&opi=89978449\">USC Library guide</a>.</li><li><strong><a href=\"https://www.google.com/search?q=Unity+%26+Coherence&oq=paragraph&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIKCAIQABixAxiABDINCAMQABiDARixAxiABDIHCAQQABiABDIKCAUQABixAxiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIKCAkQABixAxiABNIBCDYzNDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgBEAE\" jsuid=\"K9J0Hb_5y\" class=\"GI370e\" data-ved=\"2ahUKEwj67s27s7qTAxWfs1YBHakdND8QgK4QegYIAAgBEAE\" data-hveid=\"CAAIARAB\" target=\"_blank\">Unity & Coherence</a></strong>:&nbsp;A well-organized paragraph sticks to one topic and flows logically, as shown in&nbsp;<a href=\"https://www.youtube.com/watch?v=820wqkCrigw\" class=\"H23r4e\" target=\"_blank\" rel=\"noopener\" ping=\"/url?sa=t&source=web&rct=j&url=https://www.youtube.com/watch?v%3D820wqkCrigw&ved=2ahUKEwj67s27s7qTAxWfs1YBHakdND8Qy_kOegYIAAgBEAI&opi=89978449\">this YouTube video</a>.</li></ul></strong></div>",
+          "industry": "Oil & Energy\r\n",
+          "postedDate": "2026-04-08T01:00:10.957",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 16672,
+            "title": "Ambala - Ambala",
+            "city": "Ambala",
+            "state": "Haryana",
+            "country": "India",
+            "zip": ""
+          },
+          "department": null,
+          "division": [],
+          "function": {
+            "id": 2,
+            "title": "Accounting"
+          },
+          "type": "",
+          "positions": 1,
+          "experience": "",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/131147/architectural-designer",
+          "applyUrl": "https://demo.jobsoid.com/apply/131147",
+          "slug": "architectural-designer",
+          "company": "Volken Systems"
+        },
+        {
+          "id": 133809,
+          "code": "",
+          "title": "test",
+          "description": "",
+          "industry": "Oil & Energy\r\n",
+          "postedDate": "2026-04-15T09:40:10.19",
+          "closingDate": null,
+          "attributes": [],
+          "location": {
+            "id": 14965,
+            "title": "Amex Square",
+            "city": "Cape Town",
+            "state": "",
+            "country": "South Africa",
+            "zip": ""
+          },
+          "department": null,
+          "division": [],
+          "function": null,
+          "type": "",
+          "positions": 1,
+          "experience": "",
+          "salary": "",
+          "hostedUrl": "https://demo.jobsoid.com/j/133809/test",
+          "applyUrl": "https://demo.jobsoid.com/apply/133809",
+          "slug": "test",
+          "company": "Volken Systems"
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_locations__llm_7",
+        "operation_id": "get_api_v1_locations",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/locations",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic retrieval of locations, no parameters required.",
+        "expected_response_summary": "Returns a list (possibly empty) of Location objects.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/locations",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 2706, \"title\": \"Goa Office\", \"city\": \"Verna\", \"state\": \"Goa\", \"country\": \"India\", \"zip\": \"403722\"}, {\"id\": 2743, \"title\": \"Singapore\", \"city\": \"Rowlett\", \"state\": \"Texas\", \"country\": \"Turks and Caicos Islands\", \"zip\": \"75088\"}, {\"id\": 3250, \"title\": \"Seattle\", \"city\": \"Seattle\", \"state\": \"Washington\", \"country\": \"United States\", \"zip\": \"\"}, {\"id\": 3349, \"title\": \"New Jersey Office\", \"city\": \"Cherry Hill\", \"state\": \"New Jersey\", \"country\": \"United States\", \"zip\": \"08002\"}, {\"id\": 3448, \"t...",
+      "latency_ms": 249.2,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 2706,
+          "title": "Goa Office",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 2743,
+          "title": "Singapore",
+          "city": "Rowlett",
+          "state": "Texas",
+          "country": "Turks and Caicos Islands",
+          "zip": "75088"
+        },
+        {
+          "id": 3250,
+          "title": "Seattle",
+          "city": "Seattle",
+          "state": "Washington",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3349,
+          "title": "New Jersey Office",
+          "city": "Cherry Hill",
+          "state": "New Jersey",
+          "country": "United States",
+          "zip": "08002"
+        },
+        {
+          "id": 3448,
+          "title": "Nashville Office",
+          "city": "Chicago",
+          "state": "Illinois",
+          "country": "United States",
+          "zip": "60601"
+        },
+        {
+          "id": 3478,
+          "title": "Dayton - Dayton",
+          "city": "Dayton",
+          "state": "Ohio",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3672,
+          "title": "Durham Office",
+          "city": "Durham",
+          "state": "North Carolina",
+          "country": "United States",
+          "zip": "27707"
+        },
+        {
+          "id": 3694,
+          "title": "New York Office",
+          "city": "New York",
+          "state": "New York",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3889,
+          "title": "Manchester Office",
+          "city": "Kirkwood",
+          "state": "Missouri",
+          "country": "United States",
+          "zip": "63122"
+        },
+        {
+          "id": 4336,
+          "title": "Malad West",
+          "city": "Malad",
+          "state": "Maharashtra",
+          "country": "Iceland",
+          "zip": "4362"
+        },
+        {
+          "id": 4752,
+          "title": "borda",
+          "city": "margao",
+          "state": "goa",
+          "country": "India",
+          "zip": "403602"
+        },
+        {
+          "id": 4946,
+          "title": "Courtyard Mariott Hotel",
+          "city": "Hinjiwadi",
+          "state": "Pune",
+          "country": "Dominican Republic",
+          "zip": "411012"
+        },
+        {
+          "id": 6716,
+          "title": "Raleigh, NC",
+          "city": "Raleigh",
+          "state": "North Carolina",
+          "country": "United States",
+          "zip": "27603"
+        },
+        {
+          "id": 6819,
+          "title": "Quebec City, Quebec",
+          "city": "Qu\u00e9bec",
+          "state": "Qu\u00e9bec",
+          "country": "Canada",
+          "zip": "G1R 5T8"
+        },
+        {
+          "id": 8710,
+          "title": "Low Wood Bay Resort & Spa",
+          "city": "Windermere",
+          "state": "England",
+          "country": "United Kingdom",
+          "zip": "LA23 1LP"
+        },
+        {
+          "id": 9928,
+          "title": "Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 10235,
+          "title": "panaji",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403001"
+        },
+        {
+          "id": 10921,
+          "title": "Mall",
+          "city": "Penha de Fran\u00e7a",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403521"
+        },
+        {
+          "id": 10954,
+          "title": "Test Location by Yashvit",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "411014"
+        },
+        {
+          "id": 11007,
+          "title": "teknorix",
+          "city": "Teksasa",
+          "state": "Texas",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 11190,
+          "title": "MALL DE GOA Shop no. 12 First Floor - Penha de Fran\u00e7a",
+          "city": "Penha de Fran\u00e7a",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403101"
+        },
+        {
+          "id": 11191,
+          "title": "NW3 2QG - London",
+          "city": "London",
+          "state": "England",
+          "country": "United Kingdom",
+          "zip": "NW3 2QG"
+        },
+        {
+          "id": 11193,
+          "title": "Cerebrum IT Park - Pune",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "411014"
+        },
+        {
+          "id": 11949,
+          "title": "United States",
+          "city": "United States",
+          "state": "",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 14342,
+          "title": "Teknorix Systems Pvt. Ltd. - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 14343,
+          "title": "Panaji - Panaji",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 14964,
+          "title": "Cape Town - Cape Town",
+          "city": "Cape Town",
+          "state": "Western Cape",
+          "country": "South Africa",
+          "zip": ""
+        },
+        {
+          "id": 14965,
+          "title": "Amex Square",
+          "city": "Cape Town",
+          "state": "",
+          "country": "South Africa",
+          "zip": ""
+        },
+        {
+          "id": 16430,
+          "title": "Ellora Caves - Ellora",
+          "city": "Ellora",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "431102"
+        },
+        {
+          "id": 16672,
+          "title": "Ambala - Ambala",
+          "city": "Ambala",
+          "state": "Haryana",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 17038,
+          "title": "Verna Industrial Estate - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 17507,
+          "title": "Cardiff Gate Business Park Ltd - Cardiff",
+          "city": "Cardiff",
+          "state": "Wales",
+          "country": "United Kingdom",
+          "zip": "CF23 8RD"
+        },
+        {
+          "id": 21807,
+          "title": "Teknorix Systems Pvt. Ltd. - Verna - 1",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 23748,
+          "title": "Delhi",
+          "city": "Thar",
+          "state": "",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 23749,
+          "title": "kolkata",
+          "city": "bengal",
+          "state": "",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 26988,
+          "title": "Verna - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 29244,
+          "title": "Pune office",
+          "city": "Pune",
+          "state": "Maharastra",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 30978,
+          "title": "Bengaluru - Bengaluru",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 31644,
+          "title": "Terminal 2 - Mumbai",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "400099"
+        },
+        {
+          "id": 31645,
+          "title": "t",
+          "city": "r",
+          "state": "r",
+          "country": "India",
+          "zip": "t"
+        },
+        {
+          "id": 33537,
+          "title": "shatrinagar",
+          "city": "pune",
+          "state": "pune",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 34082,
+          "title": "Argentina - ",
+          "city": "argentina",
+          "state": "",
+          "country": "Argentina",
+          "zip": ""
+        },
+        {
+          "id": 34904,
+          "title": "Maldives - ",
+          "city": "South Goa",
+          "state": "",
+          "country": "Maldives",
+          "zip": ""
+        },
+        {
+          "id": 36338,
+          "title": "Goa - ",
+          "city": "Zuarinagar",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403726"
+        },
+        {
+          "id": 38320,
+          "title": "Karnataka - ",
+          "city": "Kolar",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 45920,
+          "title": "Mapusa Municipal Market - Mapusa",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45921,
+          "title": "Mapusa Municipal Market",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45922,
+          "title": "Mapusa Bus Stand - Mapusa",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45924,
+          "title": "Panaji - Panaji1",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 45938,
+          "title": "Delhi - 1",
+          "city": "test",
+          "state": "Delhi",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 46157,
+          "title": "Bicholim Market - Dicholi",
+          "city": "Dicholi",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403504"
+        },
+        {
+          "id": 46158,
+          "title": "Morjim Beach Road - Morjim",
+          "city": "Morjim",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403519"
+        },
+        {
+          "id": 46678,
+          "title": "Vasco Da Gama - Vasco Da Gama",
+          "city": "Vasco Da Gama",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_locations__llm_8",
+        "operation_id": "get_api_v1_locations",
+        "test_type": "boundary_empty_result",
+        "method": "get",
+        "path": "/api/v1/locations",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct handling of empty data sets.",
+        "expected_response_summary": "Returns an empty array if there are no locations.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/locations",
+      "observed_status": 200,
+      "response_excerpt": "[{\"id\": 2706, \"title\": \"Goa Office\", \"city\": \"Verna\", \"state\": \"Goa\", \"country\": \"India\", \"zip\": \"403722\"}, {\"id\": 2743, \"title\": \"Singapore\", \"city\": \"Rowlett\", \"state\": \"Texas\", \"country\": \"Turks and Caicos Islands\", \"zip\": \"75088\"}, {\"id\": 3250, \"title\": \"Seattle\", \"city\": \"Seattle\", \"state\": \"Washington\", \"country\": \"United States\", \"zip\": \"\"}, {\"id\": 3349, \"title\": \"New Jersey Office\", \"city\": \"Cherry Hill\", \"state\": \"New Jersey\", \"country\": \"United States\", \"zip\": \"08002\"}, {\"id\": 3448, \"t...",
+      "latency_ms": 262.16,
+      "passed": true,
+      "error": null,
+      "observed_json": [
+        {
+          "id": 2706,
+          "title": "Goa Office",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 2743,
+          "title": "Singapore",
+          "city": "Rowlett",
+          "state": "Texas",
+          "country": "Turks and Caicos Islands",
+          "zip": "75088"
+        },
+        {
+          "id": 3250,
+          "title": "Seattle",
+          "city": "Seattle",
+          "state": "Washington",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3349,
+          "title": "New Jersey Office",
+          "city": "Cherry Hill",
+          "state": "New Jersey",
+          "country": "United States",
+          "zip": "08002"
+        },
+        {
+          "id": 3448,
+          "title": "Nashville Office",
+          "city": "Chicago",
+          "state": "Illinois",
+          "country": "United States",
+          "zip": "60601"
+        },
+        {
+          "id": 3478,
+          "title": "Dayton - Dayton",
+          "city": "Dayton",
+          "state": "Ohio",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3672,
+          "title": "Durham Office",
+          "city": "Durham",
+          "state": "North Carolina",
+          "country": "United States",
+          "zip": "27707"
+        },
+        {
+          "id": 3694,
+          "title": "New York Office",
+          "city": "New York",
+          "state": "New York",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 3889,
+          "title": "Manchester Office",
+          "city": "Kirkwood",
+          "state": "Missouri",
+          "country": "United States",
+          "zip": "63122"
+        },
+        {
+          "id": 4336,
+          "title": "Malad West",
+          "city": "Malad",
+          "state": "Maharashtra",
+          "country": "Iceland",
+          "zip": "4362"
+        },
+        {
+          "id": 4752,
+          "title": "borda",
+          "city": "margao",
+          "state": "goa",
+          "country": "India",
+          "zip": "403602"
+        },
+        {
+          "id": 4946,
+          "title": "Courtyard Mariott Hotel",
+          "city": "Hinjiwadi",
+          "state": "Pune",
+          "country": "Dominican Republic",
+          "zip": "411012"
+        },
+        {
+          "id": 6716,
+          "title": "Raleigh, NC",
+          "city": "Raleigh",
+          "state": "North Carolina",
+          "country": "United States",
+          "zip": "27603"
+        },
+        {
+          "id": 6819,
+          "title": "Quebec City, Quebec",
+          "city": "Qu\u00e9bec",
+          "state": "Qu\u00e9bec",
+          "country": "Canada",
+          "zip": "G1R 5T8"
+        },
+        {
+          "id": 8710,
+          "title": "Low Wood Bay Resort & Spa",
+          "city": "Windermere",
+          "state": "England",
+          "country": "United Kingdom",
+          "zip": "LA23 1LP"
+        },
+        {
+          "id": 9928,
+          "title": "Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 10235,
+          "title": "panaji",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403001"
+        },
+        {
+          "id": 10921,
+          "title": "Mall",
+          "city": "Penha de Fran\u00e7a",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403521"
+        },
+        {
+          "id": 10954,
+          "title": "Test Location by Yashvit",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "411014"
+        },
+        {
+          "id": 11007,
+          "title": "teknorix",
+          "city": "Teksasa",
+          "state": "Texas",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 11190,
+          "title": "MALL DE GOA Shop no. 12 First Floor - Penha de Fran\u00e7a",
+          "city": "Penha de Fran\u00e7a",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403101"
+        },
+        {
+          "id": 11191,
+          "title": "NW3 2QG - London",
+          "city": "London",
+          "state": "England",
+          "country": "United Kingdom",
+          "zip": "NW3 2QG"
+        },
+        {
+          "id": 11193,
+          "title": "Cerebrum IT Park - Pune",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "411014"
+        },
+        {
+          "id": 11949,
+          "title": "United States",
+          "city": "United States",
+          "state": "",
+          "country": "United States",
+          "zip": ""
+        },
+        {
+          "id": 14342,
+          "title": "Teknorix Systems Pvt. Ltd. - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 14343,
+          "title": "Panaji - Panaji",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 14964,
+          "title": "Cape Town - Cape Town",
+          "city": "Cape Town",
+          "state": "Western Cape",
+          "country": "South Africa",
+          "zip": ""
+        },
+        {
+          "id": 14965,
+          "title": "Amex Square",
+          "city": "Cape Town",
+          "state": "",
+          "country": "South Africa",
+          "zip": ""
+        },
+        {
+          "id": 16430,
+          "title": "Ellora Caves - Ellora",
+          "city": "Ellora",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "431102"
+        },
+        {
+          "id": 16672,
+          "title": "Ambala - Ambala",
+          "city": "Ambala",
+          "state": "Haryana",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 17038,
+          "title": "Verna Industrial Estate - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 17507,
+          "title": "Cardiff Gate Business Park Ltd - Cardiff",
+          "city": "Cardiff",
+          "state": "Wales",
+          "country": "United Kingdom",
+          "zip": "CF23 8RD"
+        },
+        {
+          "id": 21807,
+          "title": "Teknorix Systems Pvt. Ltd. - Verna - 1",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403722"
+        },
+        {
+          "id": 23748,
+          "title": "Delhi",
+          "city": "Thar",
+          "state": "",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 23749,
+          "title": "kolkata",
+          "city": "bengal",
+          "state": "",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 26988,
+          "title": "Verna - Verna",
+          "city": "Verna",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 29244,
+          "title": "Pune office",
+          "city": "Pune",
+          "state": "Maharastra",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 30978,
+          "title": "Bengaluru - Bengaluru",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 31644,
+          "title": "Terminal 2 - Mumbai",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "country": "India",
+          "zip": "400099"
+        },
+        {
+          "id": 31645,
+          "title": "t",
+          "city": "r",
+          "state": "r",
+          "country": "India",
+          "zip": "t"
+        },
+        {
+          "id": 33537,
+          "title": "shatrinagar",
+          "city": "pune",
+          "state": "pune",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 34082,
+          "title": "Argentina - ",
+          "city": "argentina",
+          "state": "",
+          "country": "Argentina",
+          "zip": ""
+        },
+        {
+          "id": 34904,
+          "title": "Maldives - ",
+          "city": "South Goa",
+          "state": "",
+          "country": "Maldives",
+          "zip": ""
+        },
+        {
+          "id": 36338,
+          "title": "Goa - ",
+          "city": "Zuarinagar",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403726"
+        },
+        {
+          "id": 38320,
+          "title": "Karnataka - ",
+          "city": "Kolar",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 45920,
+          "title": "Mapusa Municipal Market - Mapusa",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45921,
+          "title": "Mapusa Municipal Market",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45922,
+          "title": "Mapusa Bus Stand - Mapusa",
+          "city": "Mapusa",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403507"
+        },
+        {
+          "id": 45924,
+          "title": "Panaji - Panaji1",
+          "city": "Panaji",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 45938,
+          "title": "Delhi - 1",
+          "city": "test",
+          "state": "Delhi",
+          "country": "India",
+          "zip": ""
+        },
+        {
+          "id": 46157,
+          "title": "Bicholim Market - Dicholi",
+          "city": "Dicholi",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403504"
+        },
+        {
+          "id": 46158,
+          "title": "Morjim Beach Road - Morjim",
+          "city": "Morjim",
+          "state": "Goa",
+          "country": "India",
+          "zip": "403519"
+        },
+        {
+          "id": 46678,
+          "title": "Vasco Da Gama - Vasco Da Gama",
+          "city": "Vasco Da Gama",
+          "state": "Goa",
+          "country": "India",
+          "zip": ""
+        }
+      ]
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs__llm_10",
+        "operation_id": "get_api_v1_jobs",
+        "test_type": "search_by_title",
+        "method": "get",
+        "path": "/api/v1/jobs",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "q": "Engineer"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests search filter by job title.",
+        "expected_response_summary": "Returns jobs with titles matching 'Engineer'.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs",
+      "observed_status": 200,
+      "response_excerpt": "[]",
+      "latency_ms": 359.64,
+      "passed": true,
+      "error": null,
+      "observed_json": []
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs__llm_12",
+        "operation_id": "get_api_v1_jobs",
+        "test_type": "invalid_query_param_type",
+        "method": "get",
+        "path": "/api/v1/jobs",
+        "expected_statuses": [
+          400,
+          422
+        ],
+        "path_params": {},
+        "query_params": {
+          "loc": "notAnInt"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation on integer query parameter.",
+        "expected_response_summary": "Returns error for invalid location parameter type.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs",
+      "observed_status": 400,
+      "response_excerpt": "{\"errors\": {\"loc\": [\"The value 'notAnInt' is not valid.\"]}, \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.1\", \"title\": \"One or more validation errors occurred.\", \"status\": 400, \"traceId\": \"00-c7d3b4a3c8ffcf47585019d04faf6fd3-06995c79fcd6fa0f-00\"}",
+      "latency_ms": 259.57,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "errors": {
+          "loc": [
+            "The value 'notAnInt' is not valid."
+          ]
+        },
+        "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+        "title": "One or more validation errors occurred.",
+        "status": 400,
+        "traceId": "00-c7d3b4a3c8ffcf47585019d04faf6fd3-06995c79fcd6fa0f-00"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs_{jobId}__llm_13",
+        "operation_id": "get_api_v1_jobs_{jobId}",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/api/v1/jobs/{jobId}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "jobId": 123
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid jobId, job exists and is published.",
+        "expected_response_summary": "Returns details for the published job with ID 123.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs/123",
+      "observed_status": 204,
+      "response_excerpt": "",
+      "latency_ms": 454.71,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs_{jobId}__llm_14",
+        "operation_id": "get_api_v1_jobs_{jobId}",
+        "test_type": "not_found",
+        "method": "get",
+        "path": "/api/v1/jobs/{jobId}",
+        "expected_statuses": [
+          404
+        ],
+        "path_params": {
+          "jobId": 999999
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests handling of non-existent jobId.",
+        "expected_response_summary": "Returns 404 if the jobId does not exist or is not published.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs/999999",
+      "observed_status": 204,
+      "response_excerpt": "",
+      "latency_ms": 243.8,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs_{jobId}__llm_15",
+        "operation_id": "get_api_v1_jobs_{jobId}",
+        "test_type": "invalid_jobId_type",
+        "method": "get",
+        "path": "/api/v1/jobs/{jobId}",
+        "expected_statuses": [
+          400,
+          422
+        ],
+        "path_params": {
+          "jobId": "abc"
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation on integer path parameter.",
+        "expected_response_summary": "Returns error for invalid jobId path parameter type.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs/abc",
+      "observed_status": 404,
+      "response_excerpt": "",
+      "latency_ms": 451.02,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_api_v1_jobs__llm_11",
+        "operation_id": "get_api_v1_jobs",
+        "test_type": "search_by_location_and_department",
+        "method": "get",
+        "path": "/api/v1/jobs",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "loc": 1,
+          "dept": 2
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests multiple filters together.",
+        "expected_response_summary": "Returns jobs filtered by location ID 1 and department ID 2.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/api/v1/jobs",
+      "observed_status": 200,
+      "response_excerpt": "[]",
+      "latency_ms": 380.93,
+      "passed": true,
+      "error": null,
+      "observed_json": []
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {
+      "business_error_payload": 1,
+      "response_contract_violation": 2,
+      "resource_not_found": 1
+    },
+    "failures": [
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_api_v1_jobs__llm_12",
+            "operation_id": "get_api_v1_jobs",
+            "test_type": "invalid_query_param_type",
+            "method": "get",
+            "path": "/api/v1/jobs",
+            "expected_statuses": [
+              400,
+              422
+            ],
+            "path_params": {},
+            "query_params": {
+              "loc": "notAnInt"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation on integer query parameter.",
+            "expected_response_summary": "Returns error for invalid location parameter type.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/api/v1/jobs",
+          "observed_status": 400,
+          "response_excerpt": "{\"errors\": {\"loc\": [\"The value 'notAnInt' is not valid.\"]}, \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.1\", \"title\": \"One or more validation errors occurred.\", \"status\": 400, \"traceId\": \"00-c7d3b4a3c8ffcf47585019d04faf6fd3-06995c79fcd6fa0f-00\"}",
+          "latency_ms": 259.57,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "errors": {
+              "loc": [
+                "The value 'notAnInt' is not valid."
+              ]
+            },
+            "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+            "title": "One or more validation errors occurred.",
+            "status": 400,
+            "traceId": "00-c7d3b4a3c8ffcf47585019d04faf6fd3-06995c79fcd6fa0f-00"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API received a query parameter with an invalid type (string instead of integer), triggering a validation error as expected.",
+          "qa_bug_summary": "No bug detected. The API correctly returned a 400 status and a validation error message when an invalid query parameter type was supplied.",
+          "suggested_follow_up_tests": [
+            "Test with a valid integer query parameter to confirm successful response and correct data retrieval.",
+            "Test with other invalid types (e.g., float, boolean) for the integer parameter to verify consistent validation behavior."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_api_v1_jobs_{jobId}__llm_13",
+            "operation_id": "get_api_v1_jobs_{jobId}",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/api/v1/jobs/{jobId}",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {
+              "jobId": 123
+            },
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid jobId, job exists and is published.",
+            "expected_response_summary": "Returns details for the published job with ID 123.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/api/v1/jobs/123",
+          "observed_status": 204,
+          "response_excerpt": "",
+          "latency_ms": 454.71,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "response_contract_violation",
+          "confidence": 0.8,
+          "reason": "Expected JSON response schema but response was not valid JSON."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 204 No Content status instead of the expected 200 OK with a JSON body, despite the job existing and being published.",
+          "qa_bug_summary": "GET /api/v1/jobs/{jobId} returned 204 No Content with no response body when a valid jobId was provided and a JSON response was expected. This violates the response contract for the happy path.",
+          "suggested_follow_up_tests": [
+            "Test GET /api/v1/jobs/{jobId} with other valid jobIds to check if the issue is consistent across different resources.",
+            "Test GET /api/v1/jobs/{jobId} for a non-existent jobId to verify if the API correctly returns a 404 or appropriate error response."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_api_v1_jobs_{jobId}__llm_14",
+            "operation_id": "get_api_v1_jobs_{jobId}",
+            "test_type": "not_found",
+            "method": "get",
+            "path": "/api/v1/jobs/{jobId}",
+            "expected_statuses": [
+              404
+            ],
+            "path_params": {
+              "jobId": 999999
+            },
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests handling of non-existent jobId.",
+            "expected_response_summary": "Returns 404 if the jobId does not exist or is not published.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/api/v1/jobs/999999",
+          "observed_status": 204,
+          "response_excerpt": "",
+          "latency_ms": 243.8,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "response_contract_violation",
+          "confidence": 0.8,
+          "reason": "Expected JSON response schema but response was not valid JSON."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 204 No Content status instead of the expected 404 Not Found for a non-existent jobId, and did not provide a valid JSON response.",
+          "qa_bug_summary": "When requesting a non-existent jobId, the endpoint returned 204 No Content rather than the expected 404 Not Found, and the response was not valid JSON as required by the contract.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with other clearly invalid jobId values (e.g., negative numbers, strings) to verify consistent error handling.",
+            "Test the endpoint with a valid jobId to confirm that it returns the correct status and a valid JSON response."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_api_v1_jobs_{jobId}__llm_15",
+            "operation_id": "get_api_v1_jobs_{jobId}",
+            "test_type": "invalid_jobId_type",
+            "method": "get",
+            "path": "/api/v1/jobs/{jobId}",
+            "expected_statuses": [
+              400,
+              422
+            ],
+            "path_params": {
+              "jobId": "abc"
+            },
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation on integer path parameter.",
+            "expected_response_summary": "Returns error for invalid jobId path parameter type.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/api/v1/jobs/abc",
+          "observed_status": 404,
+          "response_excerpt": "",
+          "latency_ms": 451.02,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status when an invalid (non-integer) jobId was provided, instead of the expected 400 or 422 validation error. This suggests the endpoint does not properly validate the jobId type before attempting resource lookup.",
+          "qa_bug_summary": "API does not validate jobId path parameter type and returns 404 Not Found for non-integer values instead of expected 400 or 422 validation error.",
+          "suggested_follow_up_tests": [
+            "Test with other invalid jobId types (e.g., special characters, negative numbers) to confirm validation behavior.",
+            "Test with a valid integer jobId that does not exist to ensure 404 is only returned for missing resources, not for type errors."
+          ]
+        }
+      }
+    ]
+  }
+}

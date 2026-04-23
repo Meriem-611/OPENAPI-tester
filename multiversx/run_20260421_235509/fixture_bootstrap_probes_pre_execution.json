@@ -1,0 +1,123 @@
+[
+  {
+    "operation_id": "get_proof_address_:address",
+    "path": "/proof/address/:address",
+    "status": 404
+  },
+  {
+    "operation_id": "get_proof_address_:address_key_:key",
+    "path": "/proof/address/:address/key/:key",
+    "status": 404
+  },
+  {
+    "operation_id": "get_internal_:shard_raw_block_by-nonce_:nonce",
+    "path": "/internal/:shard/raw/block/by-nonce/:nonce",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_raw_block_by-hash_:hash",
+    "path": "/internal/:shard/raw/block/by-hash/:hash",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_block_by-nonce_:nonce",
+    "path": "/internal/:shard/json/block/by-nonce/:nonce",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_block_by-hash_:hash",
+    "path": "/internal/:shard/json/block/by-hash/:hash",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_raw_miniblock_by-hash_:hash_epoch_:epoch",
+    "path": "/internal/:shard/raw/miniblock/by-hash/:hash/epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_:shard_json_miniblock_by-hash_:hash_epoch_:epoch",
+    "path": "/internal/:shard/json/miniblock/by-hash/:hash/epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_raw_startofepoch_metablock_by-epoch_:epoch",
+    "path": "/internal/raw/startofepoch/metablock/by-epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_internal_json_startofepoch_metablock_by-epoch_:epoch",
+    "path": "/internal/json/startofepoch/metablock/by-epoch/:epoch",
+    "status": 400
+  },
+  {
+    "operation_id": "get_address_{address}",
+    "path": "/address/{address}",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_balance",
+    "path": "/address/{address}/balance",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_nonce",
+    "path": "/address/{address}/nonce",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_username",
+    "path": "/address/{address}/username",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_code-hash",
+    "path": "/address/{address}/code-hash",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_keys",
+    "path": "/address/{address}/keys",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_shard",
+    "path": "/address/{address}/shard",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_transactions",
+    "path": "/address/{address}/transactions",
+    "status": 404
+  },
+  {
+    "operation_id": "get_address_{address}_esdt",
+    "path": "/address/{address}/esdt",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_esdt_roles",
+    "path": "/address/{address}/esdt/roles",
+    "status": 500
+  },
+  {
+    "operation_id": "get_address_{address}_registered-nfts",
+    "path": "/address/{address}/registered-nfts",
+    "status": 500
+  },
+  {
+    "operation_id": "get_hyperblock_by-nonce_{nonce}",
+    "path": "/hyperblock/by-nonce/{nonce}",
+    "status": 400
+  },
+  {
+    "operation_id": "get_network_status_{shard}",
+    "path": "/network/status/{shard}",
+    "status": 400
+  },
+  {
+    "operation_id": "get_network_esdt_supply_{token}",
+    "path": "/network/esdt/supply/{token}",
+    "status": 200,
+    "ids_found": 0
+  }
+]
