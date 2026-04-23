@@ -11,25 +11,6 @@ Failure-Aware OpenAPI Tester is a Python framework for evaluating REST APIs from
 - Uses fixture bootstrap + targeted retries to reduce invalid-ID noise.
 - Produces machine-readable and markdown reports with categorized failures.
 
-## Project Layout
-
-```text
-failure_aware_openapi_tester/
-├── main.py
-├── config.py
-├── spec_parser.py
-├── operation_selector.py
-├── test_generator.py
-├── executor.py
-├── fixture_bootstrap.py
-├── heuristic_analyzer.py
-├── llm_*.py
-├── report_generator.py
-├── requirements.txt
-├── .env.example
-├── evaluation_suite/
-└── tests/
-```
 
 ## Setup
 
@@ -75,16 +56,3 @@ Each run writes artifacts such as:
 - optional LLM artifacts (`llm_generated_test_plan.json`, reviewer notes, operation rank)
 - optional fixture artifacts (`fixture_store*.json`, probe logs)
 
-## Security and Git Hygiene
-
-- `.env` is ignored by `.gitignore`.
-- Generated run outputs are ignored by `.gitignore`.
-- Keep only source code, docs, and input specs in version control.
-
-If secrets were ever committed before cleanup, rotate them immediately (API keys/tokens).
-
-## Tests
-
-```bash
-python -m unittest discover -s tests -v
-```
