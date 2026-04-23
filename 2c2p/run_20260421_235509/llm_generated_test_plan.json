@@ -1,0 +1,424 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "Initialization_requestCreation",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment initialization is successfully created.",
+      "notes": "No request body required. Should return a valid PaymentInitializationResponse."
+    },
+    {
+      "operation_id": "Initialization_requestCreation",
+      "test_type": "boundary_empty_request",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Initialization should succeed even with no body, as per API contract.",
+      "notes": "Verifies API behavior with empty request."
+    },
+    {
+      "operation_id": "PaymentOption_createPaymentOption",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00",
+        "currencyCode": "THB"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment option created successfully with valid input.",
+      "notes": "Basic required fields for payment option creation."
+    },
+    {
+      "operation_id": "PaymentOption_createPaymentOption",
+      "test_type": "negative_missing_required_field",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "amount": "100.00",
+        "currencyCode": "THB"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to missing invoiceNo field.",
+      "notes": "Tests validation for required fields."
+    },
+    {
+      "operation_id": "PaymentOptionDetails_postOptionDetails",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "paymentOption": "CC",
+        "invoiceNo": "INV0001"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment option details returned for valid request.",
+      "notes": "Valid payment option details request."
+    },
+    {
+      "operation_id": "PaymentOptionDetails_postOptionDetails",
+      "test_type": "negative_invalid_payment_option",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "paymentOption": "INVALID_OPTION",
+        "invoiceNo": "INV0001"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to invalid payment option value.",
+      "notes": "Tests validation for paymentOption field."
+    },
+    {
+      "operation_id": "PaymentToken_generateToken",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00",
+        "currencyCode": "THB"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment token generated successfully.",
+      "notes": "Valid token generation request."
+    },
+    {
+      "operation_id": "PaymentToken_generateToken",
+      "test_type": "negative_missing_amount",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "currencyCode": "THB"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to missing amount field.",
+      "notes": "Tests required field validation."
+    },
+    {
+      "operation_id": "PaymentInstruction_submitInstruction",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "paymentInstruction": "PAYMENT_INSTRUCTION_DATA",
+        "invoiceNo": "INV0001"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment instruction submitted successfully.",
+      "notes": "Valid payment instruction submission."
+    },
+    {
+      "operation_id": "PaymentInstruction_submitInstruction",
+      "test_type": "negative_invalid_instruction",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "paymentInstruction": "",
+        "invoiceNo": "INV0001"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to empty paymentInstruction field.",
+      "notes": "Tests validation for instruction data."
+    },
+    {
+      "operation_id": "Payment_createPayment",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00",
+        "currencyCode": "THB",
+        "paymentOption": "CC",
+        "cardInfo": {
+          "cardNumber": "4111111111111111",
+          "expiryMonth": "12",
+          "expiryYear": "2026",
+          "cvv": "123"
+        }
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment created successfully with valid card details.",
+      "notes": "Tests successful payment creation."
+    },
+    {
+      "operation_id": "Payment_createPayment",
+      "test_type": "negative_invalid_card",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00",
+        "currencyCode": "THB",
+        "paymentOption": "CC",
+        "cardInfo": {
+          "cardNumber": "1234567890123456",
+          "expiryMonth": "12",
+          "expiryYear": "2026",
+          "cvv": "123"
+        }
+      },
+      "expected_statuses": [
+        200,
+        400
+      ],
+      "expected_response_summary": "Payment creation fails due to invalid card number; error returned in response.",
+      "notes": "Tests card validation logic."
+    },
+    {
+      "operation_id": "PaymentSimulate_executePaymentSimulation",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00",
+        "currencyCode": "THB"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment simulation executed successfully.",
+      "notes": "Valid simulation request."
+    },
+    {
+      "operation_id": "PaymentSimulate_executePaymentSimulation",
+      "test_type": "negative_missing_currency",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "amount": "100.00"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to missing currencyCode.",
+      "notes": "Tests required field validation."
+    },
+    {
+      "operation_id": "RedirectFrontEnd_postPaymentRedirect",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "payResponse": "SUCCESS_RESPONSE_DATA",
+        "isLeaveApp": "true"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Frontend redirect processed successfully.",
+      "notes": "Valid multipart form data for frontend redirect."
+    },
+    {
+      "operation_id": "RedirectFrontEnd_postPaymentRedirect",
+      "test_type": "negative_missing_payResponse",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "isLeaveApp": "true"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to missing payResponse field.",
+      "notes": "Tests required field validation for multipart form."
+    },
+    {
+      "operation_id": "RedirectBackEnd_postPaymentRedirect",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "paymentResponse": "SUCCESS_RESPONSE_DATA",
+        "isLeaveApp": "false"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Backend redirect processed successfully.",
+      "notes": "Valid multipart form data for backend redirect."
+    },
+    {
+      "operation_id": "RedirectBackEnd_postPaymentRedirect",
+      "test_type": "negative_invalid_isLeaveApp",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "paymentResponse": "SUCCESS_RESPONSE_DATA",
+        "isLeaveApp": "invalid"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to invalid isLeaveApp value.",
+      "notes": "Tests validation for boolean field."
+    },
+    {
+      "operation_id": "PaymentNotification_processNotification",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "notificationType": "PAYMENT_SUCCESS"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Payment notification processed successfully.",
+      "notes": "Valid notification request."
+    },
+    {
+      "operation_id": "PaymentNotification_processNotification",
+      "test_type": "negative_invalid_notification_type",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "notificationType": "INVALID_TYPE"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to invalid notificationType value.",
+      "notes": "Tests validation for notificationType."
+    },
+    {
+      "operation_id": "TransactionStatus_updateTransactionStatus",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "transactionStatus": "SUCCESS"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Transaction status updated successfully.",
+      "notes": "Valid transaction status update."
+    },
+    {
+      "operation_id": "TransactionStatus_updateTransactionStatus",
+      "test_type": "negative_invalid_status",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "invoiceNo": "INV0001",
+        "transactionStatus": "INVALID_STATUS"
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to invalid transactionStatus value.",
+      "notes": "Tests validation for transactionStatus."
+    },
+    {
+      "operation_id": "UserPreference_saveUserPreference",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "userId": "user001",
+        "preference": {
+          "paymentOption": "CC",
+          "currencyCode": "THB"
+        }
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "User preference saved successfully.",
+      "notes": "Valid user preference save request."
+    },
+    {
+      "operation_id": "UserPreference_saveUserPreference",
+      "test_type": "negative_missing_userId",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": {
+        "merchantId": "123456789",
+        "preference": {
+          "paymentOption": "CC",
+          "currencyCode": "THB"
+        }
+      },
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Error due to missing userId field.",
+      "notes": "Tests required field validation."
+    }
+  ]
+}

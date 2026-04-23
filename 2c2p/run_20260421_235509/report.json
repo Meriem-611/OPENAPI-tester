@@ -1,0 +1,1639 @@
+{
+  "summary": {
+    "spec_name": "2c2p.yaml",
+    "total_operations_parsed": 22,
+    "total_operations_selected": 12,
+    "total_tests_generated": 24,
+    "tests_executed": 24,
+    "passed": 12,
+    "failed": 12,
+    "execution_errors": 0
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "payment"
+    ],
+    "resource_groups_covered": [
+      "payment"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:state_changing",
+      "input:has_body",
+      "input:no_body",
+      "method:post"
+    ],
+    "selected_operations": [
+      "UserPreference_saveUserPreference",
+      "Initialization_requestCreation",
+      "TransactionStatus_updateTransactionStatus",
+      "RedirectFrontEnd_postPaymentRedirect",
+      "RedirectBackEnd_postPaymentRedirect",
+      "Payment_createPayment",
+      "PaymentToken_generateToken",
+      "PaymentSimulate_executePaymentSimulation",
+      "PaymentOption_createPaymentOption",
+      "PaymentOptionDetails_postOptionDetails",
+      "PaymentNotification_processNotification",
+      "PaymentInstruction_submitInstruction"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "Initialization_requestCreation__llm_1",
+        "operation_id": "Initialization_requestCreation",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/initialization",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "No request body required. Should return a valid PaymentInitializationResponse.",
+        "expected_response_summary": "Payment initialization is successfully created.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/initialization",
+      "observed_status": 200,
+      "response_excerpt": "{\"initialization\": {\"locale\": [{\"code\": \"en\", \"name\": \"English\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/en.png\"}, {\"code\": \"th\", \"name\": \"\\u0e44\\u0e17\\u0e22\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/th.png\"}, {\"code\": \"my\", \"name\": \"\\u1019\\u103c\\u1014\\u103a\\u1019\\u102c\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/my.png\"}, {\"code\": \"id\", \"name\": \"Indonesia\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront...",
+      "latency_ms": 907.48,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "initialization": {
+          "locale": [
+            {
+              "code": "en",
+              "name": "English",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/en.png"
+            },
+            {
+              "code": "th",
+              "name": "\u0e44\u0e17\u0e22",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/th.png"
+            },
+            {
+              "code": "my",
+              "name": "\u1019\u103c\u1014\u103a\u1019\u102c",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/my.png"
+            },
+            {
+              "code": "id",
+              "name": "Indonesia",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/id.png"
+            },
+            {
+              "code": "ja",
+              "name": "\u65e5\u672c\u8a9e",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ja.png"
+            },
+            {
+              "code": "zh-cn",
+              "name": "\u4e2d\u6587(\u7b80\u4f53)",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/zh-cn.png"
+            },
+            {
+              "code": "zh-tw",
+              "name": "\u4e2d\u6587(\u7e41\u9ad4)",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/zh-tw.png"
+            },
+            {
+              "code": "vi",
+              "name": "Ti\u1ebfng Vi\u1ec7t",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/vi.png"
+            },
+            {
+              "code": "ko",
+              "name": "\ud55c\uad6d\uc5b4",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ko.png"
+            },
+            {
+              "code": "ms",
+              "name": "Malay",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ms.png"
+            },
+            {
+              "code": "ar",
+              "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ar.png"
+            },
+            {
+              "code": "he",
+              "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/he.png"
+            },
+            {
+              "code": "fr",
+              "name": "fran\u00e7ais",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/fr.png"
+            },
+            {
+              "code": "de",
+              "name": "Deutsch",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/de.png"
+            },
+            {
+              "code": "it",
+              "name": "Italiano",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/it.png"
+            },
+            {
+              "code": "es",
+              "name": "Espa\u00f1ol",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/es.png"
+            },
+            {
+              "code": "pt",
+              "name": "Portugu\u00eas",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/pt.png"
+            },
+            {
+              "code": "ru",
+              "name": "\u0440\u0443\u0441\u0441\u043a\u0438\u0439",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ru.png"
+            }
+          ]
+        },
+        "respCode": "0000",
+        "respDesc": "Success"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "Initialization_requestCreation__llm_2",
+        "operation_id": "Initialization_requestCreation",
+        "test_type": "boundary_empty_request",
+        "method": "post",
+        "path": "/payment/4.3/initialization",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Verifies API behavior with empty request.",
+        "expected_response_summary": "Initialization should succeed even with no body, as per API contract.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/initialization",
+      "observed_status": 200,
+      "response_excerpt": "{\"initialization\": {\"locale\": [{\"code\": \"en\", \"name\": \"English\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/en.png\"}, {\"code\": \"th\", \"name\": \"\\u0e44\\u0e17\\u0e22\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/th.png\"}, {\"code\": \"my\", \"name\": \"\\u1019\\u103c\\u1014\\u103a\\u1019\\u102c\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/my.png\"}, {\"code\": \"id\", \"name\": \"Indonesia\", \"iconUrl\": \"https://d27uu9vmlo4gwh.cloudfront...",
+      "latency_ms": 851.14,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "initialization": {
+          "locale": [
+            {
+              "code": "en",
+              "name": "English",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/en.png"
+            },
+            {
+              "code": "th",
+              "name": "\u0e44\u0e17\u0e22",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/th.png"
+            },
+            {
+              "code": "my",
+              "name": "\u1019\u103c\u1014\u103a\u1019\u102c",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/my.png"
+            },
+            {
+              "code": "id",
+              "name": "Indonesia",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/id.png"
+            },
+            {
+              "code": "ja",
+              "name": "\u65e5\u672c\u8a9e",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ja.png"
+            },
+            {
+              "code": "zh-cn",
+              "name": "\u4e2d\u6587(\u7b80\u4f53)",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/zh-cn.png"
+            },
+            {
+              "code": "zh-tw",
+              "name": "\u4e2d\u6587(\u7e41\u9ad4)",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/zh-tw.png"
+            },
+            {
+              "code": "vi",
+              "name": "Ti\u1ebfng Vi\u1ec7t",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/vi.png"
+            },
+            {
+              "code": "ko",
+              "name": "\ud55c\uad6d\uc5b4",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ko.png"
+            },
+            {
+              "code": "ms",
+              "name": "Malay",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ms.png"
+            },
+            {
+              "code": "ar",
+              "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ar.png"
+            },
+            {
+              "code": "he",
+              "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/he.png"
+            },
+            {
+              "code": "fr",
+              "name": "fran\u00e7ais",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/fr.png"
+            },
+            {
+              "code": "de",
+              "name": "Deutsch",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/de.png"
+            },
+            {
+              "code": "it",
+              "name": "Italiano",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/it.png"
+            },
+            {
+              "code": "es",
+              "name": "Espa\u00f1ol",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/es.png"
+            },
+            {
+              "code": "pt",
+              "name": "Portugu\u00eas",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/pt.png"
+            },
+            {
+              "code": "ru",
+              "name": "\u0440\u0443\u0441\u0441\u043a\u0438\u0439",
+              "iconUrl": "https://d27uu9vmlo4gwh.cloudfront.net/images/v4/images/icon/ru.png"
+            }
+          ]
+        },
+        "respCode": "0000",
+        "respDesc": "Success"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentInstruction_submitInstruction__llm_10",
+        "operation_id": "PaymentInstruction_submitInstruction",
+        "test_type": "negative_invalid_instruction",
+        "method": "post",
+        "path": "/payment/4.3/paymentinstruction",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "paymentInstruction": "",
+          "invoiceNo": "INV0001"
+        },
+        "notes": "Tests validation for instruction data.",
+        "expected_response_summary": "Error due to empty paymentInstruction field.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentinstruction",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+      "latency_ms": 859.13,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9040",
+        "respDesc": "Invalid Request (9040)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentInstruction_submitInstruction__llm_9",
+        "operation_id": "PaymentInstruction_submitInstruction",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymentinstruction",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "paymentInstruction": "PAYMENT_INSTRUCTION_DATA",
+          "invoiceNo": "INV0001"
+        },
+        "notes": "Valid payment instruction submission.",
+        "expected_response_summary": "Payment instruction submitted successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentinstruction",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+      "latency_ms": 947.84,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9040",
+        "respDesc": "Invalid Request (9040)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentNotification_processNotification__llm_19",
+        "operation_id": "PaymentNotification_processNotification",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymentnotification",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "notificationType": "PAYMENT_SUCCESS"
+        },
+        "notes": "Valid notification request.",
+        "expected_response_summary": "Payment notification processed successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentnotification",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 878.52,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentNotification_processNotification__llm_20",
+        "operation_id": "PaymentNotification_processNotification",
+        "test_type": "negative_invalid_notification_type",
+        "method": "post",
+        "path": "/payment/4.3/paymentnotification",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "notificationType": "INVALID_TYPE"
+        },
+        "notes": "Tests validation for notificationType.",
+        "expected_response_summary": "Error due to invalid notificationType value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentnotification",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 867.58,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentOptionDetails_postOptionDetails__llm_5",
+        "operation_id": "PaymentOptionDetails_postOptionDetails",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymentoptiondetails",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "paymentOption": "CC",
+          "invoiceNo": "INV0001"
+        },
+        "notes": "Valid payment option details request.",
+        "expected_response_summary": "Payment option details returned for valid request.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentoptiondetails",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)groupCode, categoryCode, PaymentToken\"}",
+      "latency_ms": 853.24,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)groupCode, categoryCode, PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentOptionDetails_postOptionDetails__llm_6",
+        "operation_id": "PaymentOptionDetails_postOptionDetails",
+        "test_type": "negative_invalid_payment_option",
+        "method": "post",
+        "path": "/payment/4.3/paymentoptiondetails",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "paymentOption": "INVALID_OPTION",
+          "invoiceNo": "INV0001"
+        },
+        "notes": "Tests validation for paymentOption field.",
+        "expected_response_summary": "Error due to invalid payment option value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentoptiondetails",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)groupCode, categoryCode, PaymentToken\"}",
+      "latency_ms": 858.93,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)groupCode, categoryCode, PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentOption_createPaymentOption__llm_3",
+        "operation_id": "PaymentOption_createPaymentOption",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymentoption",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00",
+          "currencyCode": "THB"
+        },
+        "notes": "Basic required fields for payment option creation.",
+        "expected_response_summary": "Payment option created successfully with valid input.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentoption",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 849.25,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentOption_createPaymentOption__llm_4",
+        "operation_id": "PaymentOption_createPaymentOption",
+        "test_type": "negative_missing_required_field",
+        "method": "post",
+        "path": "/payment/4.3/paymentoption",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "amount": "100.00",
+          "currencyCode": "THB"
+        },
+        "notes": "Tests validation for required fields.",
+        "expected_response_summary": "Error due to missing invoiceNo field.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentoption",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 852.43,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentSimulate_executePaymentSimulation__llm_13",
+        "operation_id": "PaymentSimulate_executePaymentSimulation",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymentsimulate",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00",
+          "currencyCode": "THB"
+        },
+        "notes": "Valid simulation request.",
+        "expected_response_summary": "Payment simulation executed successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentsimulate",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"InvalidRequestError\", \"respDesc\": \"Invalid Request (InvalidRequestError)\"}",
+      "latency_ms": 863.35,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "InvalidRequestError",
+        "respDesc": "Invalid Request (InvalidRequestError)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentSimulate_executePaymentSimulation__llm_14",
+        "operation_id": "PaymentSimulate_executePaymentSimulation",
+        "test_type": "negative_missing_currency",
+        "method": "post",
+        "path": "/payment/4.3/paymentsimulate",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00"
+        },
+        "notes": "Tests required field validation.",
+        "expected_response_summary": "Error due to missing currencyCode.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymentsimulate",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"InvalidRequestError\", \"respDesc\": \"Invalid Request (InvalidRequestError)\"}",
+      "latency_ms": 944.55,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "InvalidRequestError",
+        "respDesc": "Invalid Request (InvalidRequestError)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentToken_generateToken__llm_7",
+        "operation_id": "PaymentToken_generateToken",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/paymenttoken",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00",
+          "currencyCode": "THB"
+        },
+        "notes": "Valid token generation request.",
+        "expected_response_summary": "Payment token generated successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymenttoken",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+      "latency_ms": 850.47,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9040",
+        "respDesc": "Invalid Request (9040)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "PaymentToken_generateToken__llm_8",
+        "operation_id": "PaymentToken_generateToken",
+        "test_type": "negative_missing_amount",
+        "method": "post",
+        "path": "/payment/4.3/paymenttoken",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "currencyCode": "THB"
+        },
+        "notes": "Tests required field validation.",
+        "expected_response_summary": "Error due to missing amount field.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/paymenttoken",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+      "latency_ms": 843.5,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9040",
+        "respDesc": "Invalid Request (9040)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "Payment_createPayment__llm_11",
+        "operation_id": "Payment_createPayment",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/payment",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00",
+          "currencyCode": "THB",
+          "paymentOption": "CC",
+          "cardInfo": {
+            "cardNumber": "4111111111111111",
+            "expiryMonth": "12",
+            "expiryYear": "2026",
+            "cvv": "123"
+          }
+        },
+        "notes": "Tests successful payment creation.",
+        "expected_response_summary": "Payment created successfully with valid card details.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/payment",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 851.85,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "Payment_createPayment__llm_12",
+        "operation_id": "Payment_createPayment",
+        "test_type": "negative_invalid_card",
+        "method": "post",
+        "path": "/payment/4.3/payment",
+        "expected_statuses": [
+          200,
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "amount": "100.00",
+          "currencyCode": "THB",
+          "paymentOption": "CC",
+          "cardInfo": {
+            "cardNumber": "1234567890123456",
+            "expiryMonth": "12",
+            "expiryYear": "2026",
+            "cvv": "123"
+          }
+        },
+        "notes": "Tests card validation logic.",
+        "expected_response_summary": "Payment creation fails due to invalid card number; error returned in response.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/payment",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 912.8,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "RedirectBackEnd_postPaymentRedirect__llm_17",
+        "operation_id": "RedirectBackEnd_postPaymentRedirect",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/redirectbackend",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "paymentResponse": "SUCCESS_RESPONSE_DATA",
+          "isLeaveApp": "false"
+        },
+        "notes": "Valid multipart form data for backend redirect.",
+        "expected_response_summary": "Backend redirect processed successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/redirectbackend",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+      "latency_ms": 850.58,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9993",
+        "respDesc": "Invalid Request (9993)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "RedirectBackEnd_postPaymentRedirect__llm_18",
+        "operation_id": "RedirectBackEnd_postPaymentRedirect",
+        "test_type": "negative_invalid_isLeaveApp",
+        "method": "post",
+        "path": "/payment/4.3/redirectbackend",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "paymentResponse": "SUCCESS_RESPONSE_DATA",
+          "isLeaveApp": "invalid"
+        },
+        "notes": "Tests validation for boolean field.",
+        "expected_response_summary": "Error due to invalid isLeaveApp value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/redirectbackend",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+      "latency_ms": 920.26,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9993",
+        "respDesc": "Invalid Request (9993)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "RedirectFrontEnd_postPaymentRedirect__llm_15",
+        "operation_id": "RedirectFrontEnd_postPaymentRedirect",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/redirectfrontend",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "payResponse": "SUCCESS_RESPONSE_DATA",
+          "isLeaveApp": "true"
+        },
+        "notes": "Valid multipart form data for frontend redirect.",
+        "expected_response_summary": "Frontend redirect processed successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/redirectfrontend",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+      "latency_ms": 848.31,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9993",
+        "respDesc": "Invalid Request (9993)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "RedirectFrontEnd_postPaymentRedirect__llm_16",
+        "operation_id": "RedirectFrontEnd_postPaymentRedirect",
+        "test_type": "negative_missing_payResponse",
+        "method": "post",
+        "path": "/payment/4.3/redirectfrontend",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "isLeaveApp": "true"
+        },
+        "notes": "Tests required field validation for multipart form.",
+        "expected_response_summary": "Error due to missing payResponse field.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/redirectfrontend",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+      "latency_ms": 916.58,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9993",
+        "respDesc": "Invalid Request (9993)"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "TransactionStatus_updateTransactionStatus__llm_21",
+        "operation_id": "TransactionStatus_updateTransactionStatus",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/transactionstatus",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "transactionStatus": "SUCCESS"
+        },
+        "notes": "Valid transaction status update.",
+        "expected_response_summary": "Transaction status updated successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/transactionstatus",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 856.03,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "TransactionStatus_updateTransactionStatus__llm_22",
+        "operation_id": "TransactionStatus_updateTransactionStatus",
+        "test_type": "negative_invalid_status",
+        "method": "post",
+        "path": "/payment/4.3/transactionstatus",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "invoiceNo": "INV0001",
+          "transactionStatus": "INVALID_STATUS"
+        },
+        "notes": "Tests validation for transactionStatus.",
+        "expected_response_summary": "Error due to invalid transactionStatus value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/transactionstatus",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 849.64,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "UserPreference_saveUserPreference__llm_23",
+        "operation_id": "UserPreference_saveUserPreference",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/payment/4.3/userpreference",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "userId": "user001",
+          "preference": {
+            "paymentOption": "CC",
+            "currencyCode": "THB"
+          }
+        },
+        "notes": "Valid user preference save request.",
+        "expected_response_summary": "User preference saved successfully.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/userpreference",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 868.89,
+      "passed": false,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "UserPreference_saveUserPreference__llm_24",
+        "operation_id": "UserPreference_saveUserPreference",
+        "test_type": "negative_missing_userId",
+        "method": "post",
+        "path": "/payment/4.3/userpreference",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": {
+          "merchantId": "123456789",
+          "preference": {
+            "paymentOption": "CC",
+            "currencyCode": "THB"
+          }
+        },
+        "notes": "Tests required field validation.",
+        "expected_response_summary": "Error due to missing userId field.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payment/4.3/userpreference",
+      "observed_status": 200,
+      "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+      "latency_ms": 914.75,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "respCode": "9005",
+        "respDesc": "Invalid Request (9005)PaymentToken"
+      }
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {
+      "business_error_payload": 12
+    },
+    "failures": [
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentInstruction_submitInstruction__llm_9",
+            "operation_id": "PaymentInstruction_submitInstruction",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymentinstruction",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "paymentInstruction": "PAYMENT_INSTRUCTION_DATA",
+              "invoiceNo": "INV0001"
+            },
+            "notes": "Valid payment instruction submission.",
+            "expected_response_summary": "Payment instruction submitted successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymentinstruction",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+          "latency_ms": 947.84,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9040",
+            "respDesc": "Invalid Request (9040)"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9040: 'Invalid Request') despite the HTTP status code being 200. This suggests the request payload, while syntactically valid, failed a business rule validation on the server.",
+          "qa_bug_summary": "API returns HTTP 200 with business error 'Invalid Request (9040)' for a valid payment instruction submission. Indicates possible mismatch between API validation logic and documented happy path requirements.",
+          "suggested_follow_up_tests": [
+            "Review and retest with variations of the payment instruction payload to identify which field(s) may be triggering the business error.",
+            "Check API documentation and backend validation rules to confirm expected behavior for valid submissions and ensure error codes align with HTTP status codes."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentNotification_processNotification__llm_19",
+            "operation_id": "PaymentNotification_processNotification",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymentnotification",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "notificationType": "PAYMENT_SUCCESS"
+            },
+            "notes": "Valid notification request.",
+            "expected_response_summary": "Payment notification processed successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymentnotification",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 878.52,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request (9005)PaymentToken') despite receiving a valid notification request. This suggests the request payload may have been missing or contained an invalid PaymentToken field, or the backend validation logic is incorrectly flagging valid tokens as invalid.",
+          "qa_bug_summary": "API returned a 200 status with a business error payload ('Invalid Request (9005)PaymentToken') on a happy path test. This indicates a mismatch between transport-level and business-level success, possibly due to PaymentToken validation issues.",
+          "suggested_follow_up_tests": [
+            "Test with various valid and invalid PaymentToken values to confirm validation logic and error messaging.",
+            "Check API logs or backend validation rules to verify why the PaymentToken in this request was rejected."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentOptionDetails_postOptionDetails__llm_5",
+            "operation_id": "PaymentOptionDetails_postOptionDetails",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymentoptiondetails",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "paymentOption": "CC",
+              "invoiceNo": "INV0001"
+            },
+            "notes": "Valid payment option details request.",
+            "expected_response_summary": "Payment option details returned for valid request.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymentoptiondetails",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)groupCode, categoryCode, PaymentToken\"}",
+          "latency_ms": 853.24,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)groupCode, categoryCode, PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request') despite receiving a valid request, indicating possible backend validation issues or incorrect request construction.",
+          "qa_bug_summary": "API responded with a business error payload (respCode 9005) on a happy path test, even though the HTTP status was 200. This suggests the endpoint is not processing valid requests as expected.",
+          "suggested_follow_up_tests": [
+            "Verify the exact request payload sent to the endpoint and test with minimal valid data for groupCode, categoryCode, and PaymentToken.",
+            "Test the endpoint with intentionally invalid or missing groupCode, categoryCode, and PaymentToken fields to confirm error handling and differentiate between backend and client-side issues."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentOption_createPaymentOption__llm_3",
+            "operation_id": "PaymentOption_createPaymentOption",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymentoption",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "amount": "100.00",
+              "currencyCode": "THB"
+            },
+            "notes": "Basic required fields for payment option creation.",
+            "expected_response_summary": "Payment option created successfully with valid input.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymentoption",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 849.25,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request (9005)PaymentToken') despite an HTTP 200 status, indicating that the PaymentToken field in the request was missing, invalid, or improperly formatted.",
+          "qa_bug_summary": "API returns HTTP 200 with business error payload (respCode 9005) for invalid or missing PaymentToken during payment option creation. This suggests insufficient validation or error handling at the transport layer.",
+          "suggested_follow_up_tests": [
+            "Submit a request with a valid PaymentToken to verify successful creation and confirm the error is specific to the PaymentToken field.",
+            "Submit requests with intentionally malformed or missing PaymentToken values to confirm consistent error handling and verify that the API returns appropriate HTTP status codes (e.g., 400) for invalid input."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentSimulate_executePaymentSimulation__llm_13",
+            "operation_id": "PaymentSimulate_executePaymentSimulation",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymentsimulate",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "amount": "100.00",
+              "currencyCode": "THB"
+            },
+            "notes": "Valid simulation request.",
+            "expected_response_summary": "Payment simulation executed successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymentsimulate",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"InvalidRequestError\", \"respDesc\": \"Invalid Request (InvalidRequestError)\"}",
+          "latency_ms": 863.35,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "InvalidRequestError",
+            "respDesc": "Invalid Request (InvalidRequestError)"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode: InvalidRequestError) despite the HTTP status being 200, indicating that the request was rejected due to invalid input or a failed validation at the business logic layer.",
+          "qa_bug_summary": "The payment simulation endpoint responded with a business error payload (InvalidRequestError) on a valid happy path test, suggesting a possible issue with request validation, test data, or backend logic.",
+          "suggested_follow_up_tests": [
+            "Review and retest with varied valid input data to determine if specific fields or values are triggering the InvalidRequestError.",
+            "Test with intentionally invalid input to confirm that the API distinguishes between valid and invalid requests at both HTTP and business logic levels."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "PaymentToken_generateToken__llm_7",
+            "operation_id": "PaymentToken_generateToken",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/paymenttoken",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "amount": "100.00",
+              "currencyCode": "THB"
+            },
+            "notes": "Valid token generation request.",
+            "expected_response_summary": "Payment token generated successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/paymenttoken",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9040\", \"respDesc\": \"Invalid Request (9040)\"}",
+          "latency_ms": 850.47,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9040",
+            "respDesc": "Invalid Request (9040)"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9040: 'Invalid Request') despite receiving a valid token generation request and returning HTTP 200. This suggests the request payload may not meet some undocumented business validation, or the backend is incorrectly flagging valid requests as invalid.",
+          "qa_bug_summary": "API returns HTTP 200 with business error 'Invalid Request (9040)' for a valid token generation request on /payment/4.3/paymenttoken. Expected a successful token response, but received a business error instead.",
+          "suggested_follow_up_tests": [
+            "Test the same request with minimal variations in payload fields to identify which field or value triggers the 'Invalid Request' error.",
+            "Review API documentation and send a request with all required and optional fields explicitly set to valid values to confirm if the error persists."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Payment_createPayment__llm_11",
+            "operation_id": "Payment_createPayment",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/payment",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "amount": "100.00",
+              "currencyCode": "THB",
+              "paymentOption": "CC",
+              "cardInfo": {
+                "cardNumber": "4111111111111111",
+                "expiryMonth": "12",
+                "expiryYear": "2026",
+                "cvv": "123"
+              }
+            },
+            "notes": "Tests successful payment creation.",
+            "expected_response_summary": "Payment created successfully with valid card details.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/payment",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 851.85,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request (9005)PaymentToken') despite the HTTP status being 200, indicating the request payload likely contained an invalid or missing PaymentToken.",
+          "qa_bug_summary": "Payment creation endpoint returned a business error for invalid PaymentToken in a happy path test, even though HTTP status was 200. This suggests either the test data is incorrect or the API is not validating PaymentToken as expected.",
+          "suggested_follow_up_tests": [
+            "Retest with a known valid PaymentToken to confirm if the error persists.",
+            "Test with an explicitly invalid or missing PaymentToken to verify that the API consistently returns the same business error."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Payment_createPayment__llm_12",
+            "operation_id": "Payment_createPayment",
+            "test_type": "negative_invalid_card",
+            "method": "post",
+            "path": "/payment/4.3/payment",
+            "expected_statuses": [
+              200,
+              400
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "amount": "100.00",
+              "currencyCode": "THB",
+              "paymentOption": "CC",
+              "cardInfo": {
+                "cardNumber": "1234567890123456",
+                "expiryMonth": "12",
+                "expiryYear": "2026",
+                "cvv": "123"
+              }
+            },
+            "notes": "Tests card validation logic.",
+            "expected_response_summary": "Payment creation fails due to invalid card number; error returned in response.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/payment",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 912.8,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned HTTP 200 with a business-level error code (respCode 9005) indicating an invalid payment token, instead of using an HTTP 400 status for invalid card input.",
+          "qa_bug_summary": "API returns HTTP 200 for invalid card input but signals error only in payload. Expected HTTP 400 for invalid card scenarios.",
+          "suggested_follow_up_tests": [
+            "Test API response for other invalid card scenarios to confirm consistent status code and error handling.",
+            "Verify that valid card inputs return HTTP 200 with successful payload, ensuring only invalid inputs trigger error handling."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "RedirectBackEnd_postPaymentRedirect__llm_17",
+            "operation_id": "RedirectBackEnd_postPaymentRedirect",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/redirectbackend",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "paymentResponse": "SUCCESS_RESPONSE_DATA",
+              "isLeaveApp": "false"
+            },
+            "notes": "Valid multipart form data for backend redirect.",
+            "expected_response_summary": "Backend redirect processed successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/redirectbackend",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+          "latency_ms": 850.58,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9993",
+            "respDesc": "Invalid Request (9993)"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9993: 'Invalid Request') despite receiving valid multipart form data, indicating possible backend validation logic issues or stricter-than-expected input validation.",
+          "qa_bug_summary": "API returned HTTP 200 but business error payload ('Invalid Request (9993)') on happy path with valid input. Indicates backend is not processing valid requests as expected.",
+          "suggested_follow_up_tests": [
+            "Test with minimal valid multipart form data to isolate which field or value triggers the business error.",
+            "Review and test with variations of input data to identify if specific fields or formats are causing the backend to reject the request."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "RedirectFrontEnd_postPaymentRedirect__llm_15",
+            "operation_id": "RedirectFrontEnd_postPaymentRedirect",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/redirectfrontend",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "payResponse": "SUCCESS_RESPONSE_DATA",
+              "isLeaveApp": "true"
+            },
+            "notes": "Valid multipart form data for frontend redirect.",
+            "expected_response_summary": "Frontend redirect processed successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/redirectfrontend",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9993\", \"respDesc\": \"Invalid Request (9993)\"}",
+          "latency_ms": 848.31,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9993",
+            "respDesc": "Invalid Request (9993)"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error code (respCode: 9993, respDesc: 'Invalid Request (9993)') despite receiving valid multipart form data, indicating the backend validation logic may be stricter than expected or there is a mismatch between the test data and what the API expects.",
+          "qa_bug_summary": "API returned HTTP 200 with a business error payload ('Invalid Request (9993)') during a happy path test with valid multipart form data. This suggests the endpoint is not processing the request as expected, possibly due to backend validation issues or incorrect assumptions about required fields.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with minimal required fields and log the full request/response to identify which field triggers the business error.",
+            "Review and test with alternative valid data permutations to determine if specific values or formats are being rejected by backend validation."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "TransactionStatus_updateTransactionStatus__llm_21",
+            "operation_id": "TransactionStatus_updateTransactionStatus",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/transactionstatus",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "invoiceNo": "INV0001",
+              "transactionStatus": "SUCCESS"
+            },
+            "notes": "Valid transaction status update.",
+            "expected_response_summary": "Transaction status updated successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/transactionstatus",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 856.03,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request (9005)PaymentToken') despite the HTTP status code being 200, indicating that the request payload was likely missing or had an invalid PaymentToken.",
+          "qa_bug_summary": "API returned HTTP 200 with a business error payload (respCode 9005: Invalid Request PaymentToken) during a valid transaction status update test. This suggests improper validation or error handling for PaymentToken in the request.",
+          "suggested_follow_up_tests": [
+            "Submit the same request with a known valid PaymentToken to verify if the error persists.",
+            "Intentionally omit or corrupt the PaymentToken in the request to confirm that the API consistently returns the same business error and to check if the HTTP status code aligns with the error."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "UserPreference_saveUserPreference__llm_23",
+            "operation_id": "UserPreference_saveUserPreference",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/payment/4.3/userpreference",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": {
+              "merchantId": "123456789",
+              "userId": "user001",
+              "preference": {
+                "paymentOption": "CC",
+                "currencyCode": "THB"
+              }
+            },
+            "notes": "Valid user preference save request.",
+            "expected_response_summary": "User preference saved successfully.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payment/4.3/userpreference",
+          "observed_status": 200,
+          "response_excerpt": "{\"respCode\": \"9005\", \"respDesc\": \"Invalid Request (9005)PaymentToken\"}",
+          "latency_ms": 868.89,
+          "passed": false,
+          "error": null,
+          "observed_json": {
+            "respCode": "9005",
+            "respDesc": "Invalid Request (9005)PaymentToken"
+          }
+        },
+        "heuristic": {
+          "category": "business_error_payload",
+          "confidence": 0.88,
+          "reason": "Transport status matched expected values, but response payload carries a business-level error/notice indicator."
+        },
+        "llm": {
+          "likely_cause": "The API returned a business-level error (respCode 9005: 'Invalid Request (9005)PaymentToken') despite a 200 HTTP status, indicating the request payload was missing or had an invalid PaymentToken.",
+          "qa_bug_summary": "API returned HTTP 200 but response payload indicates a business error (Invalid PaymentToken) during a valid user preference save request. This suggests either the test data is missing a required PaymentToken or the API is not validating input as expected.",
+          "suggested_follow_up_tests": [
+            "Submit the same request with a known valid PaymentToken to verify if the error persists.",
+            "Submit a request with an intentionally invalid or missing PaymentToken to confirm the API's error handling and response consistency."
+          ]
+        }
+      }
+    ]
+  }
+}

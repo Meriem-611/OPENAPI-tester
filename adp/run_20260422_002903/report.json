@@ -1,0 +1,979 @@
+{
+  "summary": {
+    "spec_name": "adp.yaml",
+    "total_operations_parsed": 7,
+    "total_operations_selected": 6,
+    "total_tests_generated": 12,
+    "tests_executed": 12,
+    "passed": 0,
+    "failed": 12,
+    "execution_errors": 12
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "auth",
+      "core",
+      "hr",
+      "payroll"
+    ],
+    "resource_groups_covered": [
+      "auth",
+      "core",
+      "hr",
+      "payroll"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:read_only",
+      "behavior:state_changing",
+      "input:has_body",
+      "method:get",
+      "method:post"
+    ],
+    "selected_operations": [
+      "TokenRequest_createWithAuthorizationHeader",
+      "Hr_checkAsyncRequestStatus",
+      "Hr_listTop5PreventCache",
+      "Payroll_listPayrollOutputs",
+      "Hr_getWorkerDemographicsByAoid",
+      "Hr_getWorkerByAoid"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "Hr_checkAsyncRequestStatus__llm_5",
+        "operation_id": "Hr_checkAsyncRequestStatus",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/core/v1/operations/workerInformationManagement/hr.v2.workers/{key}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "key": "valid-async-key-123"
+        },
+        "query_params": {
+          "$select": "processingStatus"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct status retrieval for a valid async key.",
+        "expected_response_summary": "Returns processing status for the async request identified by key.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/core/v1/operations/workerInformationManagement/hr.v2.workers/valid-async-key-123",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 1058.66,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/valid-async-key-123?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_checkAsyncRequestStatus__llm_6",
+        "operation_id": "Hr_checkAsyncRequestStatus",
+        "test_type": "negative_invalid_key",
+        "method": "get",
+        "path": "/core/v1/operations/workerInformationManagement/hr.v2.workers/{key}",
+        "expected_statuses": [
+          404,
+          400
+        ],
+        "path_params": {
+          "key": "invalid-key-xyz"
+        },
+        "query_params": {
+          "$select": "processingStatus"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests handling of invalid or non-existent async keys.",
+        "expected_response_summary": "Returns error or not found for invalid async request key.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/core/v1/operations/workerInformationManagement/hr.v2.workers/invalid-key-xyz",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 64.34,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/invalid-key-xyz?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_getWorkerByAoid__llm_7",
+        "operation_id": "Hr_getWorkerByAoid",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/hr/v2/workers/{anthony-albright-aoid}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "anthony-albright-aoid": "A123456789"
+        },
+        "query_params": {
+          "preventCache": "20240610T120000Z"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates retrieval of worker by AOID.",
+        "expected_response_summary": "Returns worker details for the specified AOID.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/workers/A123456789",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 3.07,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_getWorkerByAoid__llm_8",
+        "operation_id": "Hr_getWorkerByAoid",
+        "test_type": "negative_invalid_aoid",
+        "method": "get",
+        "path": "/hr/v2/workers/{anthony-albright-aoid}",
+        "expected_statuses": [
+          404,
+          400
+        ],
+        "path_params": {
+          "anthony-albright-aoid": "INVALID_AOID"
+        },
+        "query_params": {
+          "preventCache": "20240610T120000Z"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests error handling for invalid AOID.",
+        "expected_response_summary": "Returns error or not found for invalid AOID.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/workers/INVALID_AOID",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 2.14,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_getWorkerDemographicsByAoid__llm_10",
+        "operation_id": "Hr_getWorkerDemographicsByAoid",
+        "test_type": "negative_invalid_aoid",
+        "method": "get",
+        "path": "/hr/v2/worker-demographics/{anthony-albright-aoid}",
+        "expected_statuses": [
+          404,
+          400
+        ],
+        "path_params": {
+          "anthony-albright-aoid": "INVALID_AOID"
+        },
+        "query_params": {
+          "preventCache": "20240610T120000Z"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests error handling for invalid AOID in demographics endpoint.",
+        "expected_response_summary": "Returns error or not found for invalid AOID.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/worker-demographics/INVALID_AOID",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.95,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_getWorkerDemographicsByAoid__llm_9",
+        "operation_id": "Hr_getWorkerDemographicsByAoid",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/hr/v2/worker-demographics/{anthony-albright-aoid}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "anthony-albright-aoid": "A123456789"
+        },
+        "query_params": {
+          "preventCache": "20240610T120000Z"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates retrieval of worker demographic data by AOID.",
+        "expected_response_summary": "Returns demographic data for the specified worker AOID.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/worker-demographics/A123456789",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.95,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_listTop5PreventCache__llm_3",
+        "operation_id": "Hr_listTop5PreventCache",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/hr/v2/workers",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "$top": "5",
+          "preventCache": "20240610T120000Z",
+          "$filter": "workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct retrieval and cache prevention.",
+        "expected_response_summary": "Returns top 5 workers matching the filter, cache prevented by timestamp.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/workers",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.97,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=5&preventCache=20240610T120000Z&%24filter=workers%2FworkAssignments%2FhomeOrganizationalUnits%2FtypeCode%2FcodeValue+eq+%27Department%27+and+workers%2FworkAssignments%2FhomeOrganizationalUnits%2FnameCode%2FcodeValue+eq+%27001000%27 (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Hr_listTop5PreventCache__llm_4",
+        "operation_id": "Hr_listTop5PreventCache",
+        "test_type": "negative_invalid_top",
+        "method": "get",
+        "path": "/hr/v2/workers",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "$top": "-1",
+          "preventCache": "20240610T120000Z",
+          "$filter": ""
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation for negative $top parameter.",
+        "expected_response_summary": "Returns error for invalid $top value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/hr/v2/workers",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.75,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=-1&preventCache=20240610T120000Z&%24filter= (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "TokenRequest_createWithAuthorizationHeader__llm_11",
+        "operation_id": "TokenRequest_createWithAuthorizationHeader",
+        "test_type": "happy_path",
+        "method": "post",
+        "path": "/auth/oauth/v2/token",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "grant_type": "client_credentials",
+          "client_id": "valid-client-id",
+          "client_secret": "valid-client-secret"
+        },
+        "headers": {
+          "Authorization": "Basic dmFsaWQtY2xpZW50LWlkOnZhbGlkLWNsaWVudC1zZWNyZXQ="
+        },
+        "json_body": null,
+        "notes": "Validates token issuance with correct Authorization header and credentials.",
+        "expected_response_summary": "Returns OAuth bearer token for valid credentials.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/auth/oauth/v2/token",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.81,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=valid-client-id&client_secret=valid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "TokenRequest_createWithAuthorizationHeader__llm_12",
+        "operation_id": "TokenRequest_createWithAuthorizationHeader",
+        "test_type": "negative_invalid_credentials",
+        "method": "post",
+        "path": "/auth/oauth/v2/token",
+        "expected_statuses": [
+          401,
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "grant_type": "client_credentials",
+          "client_id": "invalid-client-id",
+          "client_secret": "invalid-client-secret"
+        },
+        "headers": {
+          "Authorization": "Basic aW52YWxpZC1jbGllbnQtaWQ6aW52YWxpZC1jbGllbnQtc2VjcmV0"
+        },
+        "json_body": null,
+        "notes": "Tests error handling for invalid Authorization header and credentials.",
+        "expected_response_summary": "Returns error for invalid client credentials.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/auth/oauth/v2/token",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.78,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=invalid-client-id&client_secret=invalid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Payroll_listPayrollOutputs__llm_1",
+        "operation_id": "Payroll_listPayrollOutputs",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/payroll/v1/payroll-output",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "$filter": "payrollScheduleReference/payrollYear eq 2023 and payrollScheduleReference/payrollWeekNumber eq 15 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT",
+          "$count": "true",
+          "use-cache": "false",
+          "level": "details",
+          "$select": "earnings,reportableEarningsAndBenefits"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Validates correct filtering and selection of payroll output data.",
+        "expected_response_summary": "Returns a list of payroll outputs for the specified region, company code, year, and week with selected fields.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payroll/v1/payroll-output",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.8,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+2023+and+payrollScheduleReference%2FpayrollWeekNumber+eq+15+and+payrollGroupCode%2FcodeValue+eq+%2526Y%2526+and+payrollRegionCode%2FcodeValue+eq+BALT&%24count=true&use-cache=false&level=details&%24select=earnings%2CreportableEarningsAndBenefits (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "Payroll_listPayrollOutputs__llm_2",
+        "operation_id": "Payroll_listPayrollOutputs",
+        "test_type": "boundary_invalid_filter",
+        "method": "get",
+        "path": "/payroll/v1/payroll-output",
+        "expected_statuses": [
+          200,
+          400,
+          404
+        ],
+        "path_params": {},
+        "query_params": {
+          "$filter": "payrollScheduleReference/payrollYear eq 9999 and payrollScheduleReference/payrollWeekNumber eq 99 and payrollGroupCode/codeValue eq INVALID and payrollRegionCode/codeValue eq UNKNOWN",
+          "$count": "true",
+          "use-cache": "false",
+          "level": "details",
+          "$select": "earnings"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests API behavior with out-of-range and invalid filter parameters.",
+        "expected_response_summary": "Returns empty result set or error for invalid filter values.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/payroll/v1/payroll-output",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.8,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+9999+and+payrollScheduleReference%2FpayrollWeekNumber+eq+99+and+payrollGroupCode%2FcodeValue+eq+INVALID+and+payrollRegionCode%2FcodeValue+eq+UNKNOWN&%24count=true&use-cache=false&level=details&%24select=earnings (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {
+      "unknown_failure": 12
+    },
+    "failures": [
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_checkAsyncRequestStatus__llm_5",
+            "operation_id": "Hr_checkAsyncRequestStatus",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/core/v1/operations/workerInformationManagement/hr.v2.workers/{key}",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {
+              "key": "valid-async-key-123"
+            },
+            "query_params": {
+              "$select": "processingStatus"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Validates correct status retrieval for a valid async key.",
+            "expected_response_summary": "Returns processing status for the async request identified by key.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/core/v1/operations/workerInformationManagement/hr.v2.workers/valid-async-key-123",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 1058.66,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/valid-async-key-123?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/valid-async-key-123?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint (api.developer.adp.com). This is indicated by the NameResolutionError and getaddrinfo failure.",
+          "qa_bug_summary": "Test failed due to network-level DNS resolution error, not an API logic or response issue. The endpoint could not be reached, so no response was received.",
+          "suggested_follow_up_tests": [
+            "Re-run the test after verifying network connectivity and DNS resolution for api.developer.adp.com.",
+            "Run a basic connectivity test (e.g., ping or nslookup) to api.developer.adp.com from the test environment to confirm DNS and network are functioning."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_checkAsyncRequestStatus__llm_6",
+            "operation_id": "Hr_checkAsyncRequestStatus",
+            "test_type": "negative_invalid_key",
+            "method": "get",
+            "path": "/core/v1/operations/workerInformationManagement/hr.v2.workers/{key}",
+            "expected_statuses": [
+              404,
+              400
+            ],
+            "path_params": {
+              "key": "invalid-key-xyz"
+            },
+            "query_params": {
+              "$select": "processingStatus"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests handling of invalid or non-existent async keys.",
+            "expected_response_summary": "Returns error or not found for invalid async request key.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/core/v1/operations/workerInformationManagement/hr.v2.workers/invalid-key-xyz",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 64.34,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/invalid-key-xyz?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /core/v1/operations/workerInformationManagement/hr.v2.workers/invalid-key-xyz?%24select=processingStatus (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a network-level error: the hostname 'api.developer.adp.com' could not be resolved, resulting in a NameResolutionError before any API response was received.",
+          "qa_bug_summary": "Test did not reach the API endpoint due to DNS resolution failure. No response was returned, so negative test validation for invalid keys could not be performed.",
+          "suggested_follow_up_tests": [
+            "Repeat the test after verifying network connectivity and DNS resolution for 'api.developer.adp.com' to ensure the endpoint is reachable.",
+            "Run a basic connectivity test (e.g., GET /health or similar) to confirm the API host is accessible before executing negative key tests."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_getWorkerByAoid__llm_7",
+            "operation_id": "Hr_getWorkerByAoid",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/hr/v2/workers/{anthony-albright-aoid}",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {
+              "anthony-albright-aoid": "A123456789"
+            },
+            "query_params": {
+              "preventCache": "20240610T120000Z"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Validates retrieval of worker by AOID.",
+            "expected_response_summary": "Returns worker details for the specified AOID.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/workers/A123456789",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 3.07,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint. The hostname 'api.developer.adp.com' could not be resolved.",
+          "qa_bug_summary": "Test failed due to network-level DNS resolution error, not an application or API logic issue. The API endpoint was unreachable, so no response was received.",
+          "suggested_follow_up_tests": [
+            "Verify network connectivity and DNS resolution to 'api.developer.adp.com' from the test environment.",
+            "Re-run the same test after confirming network and DNS issues are resolved to ensure the API endpoint is reachable."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_getWorkerByAoid__llm_8",
+            "operation_id": "Hr_getWorkerByAoid",
+            "test_type": "negative_invalid_aoid",
+            "method": "get",
+            "path": "/hr/v2/workers/{anthony-albright-aoid}",
+            "expected_statuses": [
+              404,
+              400
+            ],
+            "path_params": {
+              "anthony-albright-aoid": "INVALID_AOID"
+            },
+            "query_params": {
+              "preventCache": "20240610T120000Z"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests error handling for invalid AOID.",
+            "expected_response_summary": "Returns error or not found for invalid AOID.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/workers/INVALID_AOID",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 2.14,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a DNS resolution error, preventing connection to the API endpoint. This is not an API logic failure but an infrastructure or network issue.",
+          "qa_bug_summary": "Test could not reach the API due to a name resolution error (DNS failure). No response was received from the API, so error handling for invalid AOID was not tested.",
+          "suggested_follow_up_tests": [
+            "Re-run the test after verifying network connectivity and DNS resolution for api.developer.adp.com.",
+            "Run a basic connectivity test (e.g., GET /health or /status endpoint) to confirm the API host is reachable before executing further negative tests."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_getWorkerDemographicsByAoid__llm_10",
+            "operation_id": "Hr_getWorkerDemographicsByAoid",
+            "test_type": "negative_invalid_aoid",
+            "method": "get",
+            "path": "/hr/v2/worker-demographics/{anthony-albright-aoid}",
+            "expected_statuses": [
+              404,
+              400
+            ],
+            "path_params": {
+              "anthony-albright-aoid": "INVALID_AOID"
+            },
+            "query_params": {
+              "preventCache": "20240610T120000Z"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests error handling for invalid AOID in demographics endpoint.",
+            "expected_response_summary": "Returns error or not found for invalid AOID.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/worker-demographics/INVALID_AOID",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.95,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/INVALID_AOID?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a network or DNS resolution issue, specifically a NameResolutionError when attempting to resolve 'api.developer.adp.com', rather than an API logic or validation error.",
+          "qa_bug_summary": "Test could not complete because the API host 'api.developer.adp.com' could not be resolved, resulting in no response from the endpoint. This is an infrastructure or environment issue, not an application bug.",
+          "suggested_follow_up_tests": [
+            "Re-run the test after verifying network connectivity and DNS resolution for 'api.developer.adp.com'.",
+            "Execute a basic connectivity test (e.g., GET /health or /status endpoint) to confirm the API host is reachable before running further negative tests."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_getWorkerDemographicsByAoid__llm_9",
+            "operation_id": "Hr_getWorkerDemographicsByAoid",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/hr/v2/worker-demographics/{anthony-albright-aoid}",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {
+              "anthony-albright-aoid": "A123456789"
+            },
+            "query_params": {
+              "preventCache": "20240610T120000Z"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Validates retrieval of worker demographic data by AOID.",
+            "expected_response_summary": "Returns demographic data for the specified worker AOID.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/worker-demographics/A123456789",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.95,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/worker-demographics/A123456789?preventCache=20240610T120000Z (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint. The hostname 'api.developer.adp.com' could not be resolved.",
+          "qa_bug_summary": "Test failed due to a network-level DNS resolution error, not an application or API logic issue. No response was received from the API.",
+          "suggested_follow_up_tests": [
+            "Retry the test after verifying network connectivity and DNS resolution for 'api.developer.adp.com'.",
+            "Run a basic connectivity test (e.g., ping or nslookup) to confirm the test environment can resolve and reach the API host."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_listTop5PreventCache__llm_3",
+            "operation_id": "Hr_listTop5PreventCache",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/hr/v2/workers",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "$top": "5",
+              "preventCache": "20240610T120000Z",
+              "$filter": "workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Validates correct retrieval and cache prevention.",
+            "expected_response_summary": "Returns top 5 workers matching the filter, cache prevented by timestamp.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/workers",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.97,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=5&preventCache=20240610T120000Z&%24filter=workers%2FworkAssignments%2FhomeOrganizationalUnits%2FtypeCode%2FcodeValue+eq+%27Department%27+and+workers%2FworkAssignments%2FhomeOrganizationalUnits%2FnameCode%2FcodeValue+eq+%27001000%27 (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=5&preventCache=20240610T120000Z&%24filter=workers%2FworkAssignments%2FhomeOrganizationalUnits%2FtypeCode%2FcodeValue+eq+%27Department%27+and+workers%2FworkAssignments%2FhomeOrganizationalUnits%2FnameCode%2FcodeValue+eq+%27001000%27 (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint. The host 'api.developer.adp.com' could not be resolved, resulting in a NameResolutionError.",
+          "qa_bug_summary": "Test failed due to network-level DNS resolution error, not an application or API logic issue. The API endpoint was unreachable, so no response was received.",
+          "suggested_follow_up_tests": [
+            "Retry the test after verifying network connectivity and DNS resolution for 'api.developer.adp.com'.",
+            "Run a basic connectivity test (e.g., ping or nslookup) to confirm the host is reachable from the test environment."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Hr_listTop5PreventCache__llm_4",
+            "operation_id": "Hr_listTop5PreventCache",
+            "test_type": "negative_invalid_top",
+            "method": "get",
+            "path": "/hr/v2/workers",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "$top": "-1",
+              "preventCache": "20240610T120000Z",
+              "$filter": ""
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation for negative $top parameter.",
+            "expected_response_summary": "Returns error for invalid $top value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/hr/v2/workers",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.75,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=-1&preventCache=20240610T120000Z&%24filter= (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /hr/v2/workers?%24top=-1&preventCache=20240610T120000Z&%24filter= (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "Network error: DNS resolution failure prevented the test from reaching the API endpoint.",
+          "qa_bug_summary": "The test did not execute as intended due to a NameResolutionError (DNS failure) when attempting to connect to api.developer.adp.com. No API response was received, so the negative test for invalid $top parameter could not be validated.",
+          "suggested_follow_up_tests": [
+            "Re-run the test after verifying network connectivity and DNS resolution for api.developer.adp.com.",
+            "Once network issues are resolved, repeat the negative test with an invalid $top parameter to confirm the API returns the expected 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "TokenRequest_createWithAuthorizationHeader__llm_11",
+            "operation_id": "TokenRequest_createWithAuthorizationHeader",
+            "test_type": "happy_path",
+            "method": "post",
+            "path": "/auth/oauth/v2/token",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "grant_type": "client_credentials",
+              "client_id": "valid-client-id",
+              "client_secret": "valid-client-secret"
+            },
+            "headers": {
+              "Authorization": "Basic dmFsaWQtY2xpZW50LWlkOnZhbGlkLWNsaWVudC1zZWNyZXQ="
+            },
+            "json_body": null,
+            "notes": "Validates token issuance with correct Authorization header and credentials.",
+            "expected_response_summary": "Returns OAuth bearer token for valid credentials.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/auth/oauth/v2/token",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.81,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=valid-client-id&client_secret=valid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=valid-client-id&client_secret=valid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure for 'api.developer.adp.com', preventing connection to the API endpoint.",
+          "qa_bug_summary": "The test failed due to a NameResolutionError, indicating that the hostname 'api.developer.adp.com' could not be resolved. This prevented the API call from being executed and no response was received.",
+          "suggested_follow_up_tests": [
+            "Verify network connectivity and DNS resolution for 'api.developer.adp.com' from the test environment.",
+            "Retry the API test after confirming that the hostname is resolvable and reachable."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "TokenRequest_createWithAuthorizationHeader__llm_12",
+            "operation_id": "TokenRequest_createWithAuthorizationHeader",
+            "test_type": "negative_invalid_credentials",
+            "method": "post",
+            "path": "/auth/oauth/v2/token",
+            "expected_statuses": [
+              401,
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "grant_type": "client_credentials",
+              "client_id": "invalid-client-id",
+              "client_secret": "invalid-client-secret"
+            },
+            "headers": {
+              "Authorization": "Basic aW52YWxpZC1jbGllbnQtaWQ6aW52YWxpZC1jbGllbnQtc2VjcmV0"
+            },
+            "json_body": null,
+            "notes": "Tests error handling for invalid Authorization header and credentials.",
+            "expected_response_summary": "Returns error for invalid client credentials.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/auth/oauth/v2/token",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.78,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=invalid-client-id&client_secret=invalid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /auth/oauth/v2/token?grant_type=client_credentials&client_id=invalid-client-id&client_secret=invalid-client-secret (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint. The host 'api.developer.adp.com' could not be resolved, resulting in no response from the server.",
+          "qa_bug_summary": "Test did not execute as intended due to a network-level DNS resolution error. No API response was received, so the test could not validate handling of invalid credentials.",
+          "suggested_follow_up_tests": [
+            "Re-run the test after verifying network connectivity and DNS resolution for 'api.developer.adp.com'.",
+            "Once connectivity is restored, repeat the negative credentials test to confirm the API returns the expected 401 or 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Payroll_listPayrollOutputs__llm_1",
+            "operation_id": "Payroll_listPayrollOutputs",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/payroll/v1/payroll-output",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "$filter": "payrollScheduleReference/payrollYear eq 2023 and payrollScheduleReference/payrollWeekNumber eq 15 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT",
+              "$count": "true",
+              "use-cache": "false",
+              "level": "details",
+              "$select": "earnings,reportableEarningsAndBenefits"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Validates correct filtering and selection of payroll output data.",
+            "expected_response_summary": "Returns a list of payroll outputs for the specified region, company code, year, and week with selected fields.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payroll/v1/payroll-output",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.8,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+2023+and+payrollScheduleReference%2FpayrollWeekNumber+eq+15+and+payrollGroupCode%2FcodeValue+eq+%2526Y%2526+and+payrollRegionCode%2FcodeValue+eq+BALT&%24count=true&use-cache=false&level=details&%24select=earnings%2CreportableEarningsAndBenefits (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+2023+and+payrollScheduleReference%2FpayrollWeekNumber+eq+15+and+payrollGroupCode%2FcodeValue+eq+%2526Y%2526+and+payrollRegionCode%2FcodeValue+eq+BALT&%24count=true&use-cache=false&level=details&%24select=earnings%2CreportableEarningsAndBenefits (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented the test from reaching the API endpoint (api.developer.adp.com). This is indicated by the NameResolutionError and getaddrinfo failure.",
+          "qa_bug_summary": "The test did not execute against the API due to a network-level DNS resolution error. No response was received from the API, so the test could not validate filtering or data selection functionality.",
+          "suggested_follow_up_tests": [
+            "Retry the test after verifying network connectivity and DNS resolution for api.developer.adp.com.",
+            "Run a basic connectivity test (e.g., ping or nslookup) to confirm that the API host is reachable from the test environment."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "Payroll_listPayrollOutputs__llm_2",
+            "operation_id": "Payroll_listPayrollOutputs",
+            "test_type": "boundary_invalid_filter",
+            "method": "get",
+            "path": "/payroll/v1/payroll-output",
+            "expected_statuses": [
+              200,
+              400,
+              404
+            ],
+            "path_params": {},
+            "query_params": {
+              "$filter": "payrollScheduleReference/payrollYear eq 9999 and payrollScheduleReference/payrollWeekNumber eq 99 and payrollGroupCode/codeValue eq INVALID and payrollRegionCode/codeValue eq UNKNOWN",
+              "$count": "true",
+              "use-cache": "false",
+              "level": "details",
+              "$select": "earnings"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests API behavior with out-of-range and invalid filter parameters.",
+            "expected_response_summary": "Returns empty result set or error for invalid filter values.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/payroll/v1/payroll-output",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.8,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+9999+and+payrollScheduleReference%2FpayrollWeekNumber+eq+99+and+payrollGroupCode%2FcodeValue+eq+INVALID+and+payrollRegionCode%2FcodeValue+eq+UNKNOWN&%24count=true&use-cache=false&level=details&%24select=earnings (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='api.developer.adp.com', port=443): Max retries exceeded with url: /payroll/v1/payroll-output?%24filter=payrollScheduleReference%2FpayrollYear+eq+9999+and+payrollScheduleReference%2FpayrollWeekNumber+eq+99+and+payrollGroupCode%2FcodeValue+eq+INVALID+and+payrollRegionCode%2FcodeValue+eq+UNKNOWN&%24count=true&use-cache=false&level=details&%24select=earnings (Caused by NameResolutionError(\"HTTPSConnection(host='api.developer.adp.com', port=443): Failed to resolve 'api.developer.adp.com' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "DNS resolution failure prevented connection to the API endpoint, resulting in no response from the server.",
+          "qa_bug_summary": "The test did not reach the API due to a NameResolutionError (DNS failure). This is not an API logic bug, but an environmental/network issue that blocked the boundary_invalid_filter test from executing.",
+          "suggested_follow_up_tests": [
+            "Repeat the boundary_invalid_filter test after confirming network connectivity and DNS resolution for api.developer.adp.com.",
+            "Run a simple connectivity test (e.g., GET /payroll/v1/payroll-output with no filters) to verify the API endpoint is reachable from the test environment."
+          ]
+        }
+      }
+    ]
+  }
+}

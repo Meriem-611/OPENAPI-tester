@@ -1,0 +1,1 @@
+All test cases reference allowed operations, use valid status arrays, and do not include real credentials. Paths and methods match the spec. Approved.

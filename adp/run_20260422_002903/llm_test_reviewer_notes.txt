@@ -1,0 +1,1 @@
+All test cases conform to the allowed operations, parameter names, and expected status code rules. No real credentials are used. Paths and HTTP methods match the spec. Test cases are valid.

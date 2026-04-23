@@ -1,0 +1,7 @@
+{
+  "ranked_operation_ids": [
+    "getRandom",
+    "getAdviceById",
+    "get_advice_search_{query}"
+  ]
+}

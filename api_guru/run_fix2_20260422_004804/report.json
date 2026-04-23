@@ -1,0 +1,1917 @@
+{
+  "summary": {
+    "spec_name": "TokenMetrics.json",
+    "total_operations_parsed": 22,
+    "total_operations_selected": 12,
+    "total_tests_generated": 26,
+    "tests_executed": 26,
+    "passed": 0,
+    "failed": 26,
+    "execution_errors": 0
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "addon"
+    ],
+    "resource_groups_covered": [
+      "addon"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:read_only",
+      "input:no_body",
+      "method:get"
+    ],
+    "selected_operations": [
+      "get_addon_1047_v2_trading-signals",
+      "get_addon_1047_v2_top-market-cap-tokens",
+      "get_addon_1047_v2_tokens",
+      "get_addon_1047_v2_tm-grade-history",
+      "get_addon_1047_v2_tm-grade",
+      "get_addon_1047_v2_technology-grade",
+      "get_addon_1047_v2_sentiments",
+      "get_addon_1047_v2_scenario-analysis",
+      "get_addon_1047_v2_resistance-support",
+      "get_addon_1047_v2_quantmetrics",
+      "get_addon_1047_v2_price",
+      "get_addon_1047_v2_moonshot-tokens"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_price__llm_6",
+        "operation_id": "get_addon_1047_v2_price",
+        "test_type": "no_token_id",
+        "method": "get",
+        "path": "/addon/1047/v2/price",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests behavior when token_id is omitted.",
+        "expected_response_summary": "Returns price data for all tokens or default set.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/price",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 432.1,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_resistance-support__llm_15",
+        "operation_id": "get_addon_1047_v2_resistance-support",
+        "test_type": "no_params",
+        "method": "get",
+        "path": "/addon/1047/v2/resistance-support",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests default behavior.",
+        "expected_response_summary": "Returns first page of resistance/support data with default limit.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/resistance-support",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 308.33,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_sentiments__llm_18",
+        "operation_id": "get_addon_1047_v2_sentiments",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/sentiments",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "No parameters required.",
+        "expected_response_summary": "Returns hourly sentiment scores for Twitter, Reddit, and News.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/sentiments",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 295.13,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade__llm_22",
+        "operation_id": "get_addon_1047_v2_tm-grade",
+        "test_type": "missing_token_id",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests required parameter enforcement if token_id is required.",
+        "expected_response_summary": "Returns error for missing token_id.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 286.02,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tokens__llm_3",
+        "operation_id": "get_addon_1047_v2_tokens",
+        "test_type": "no_params",
+        "method": "get",
+        "path": "/addon/1047/v2/tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests default behavior when no parameters are provided.",
+        "expected_response_summary": "Returns first page of supported tokens with default pagination.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 322.61,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_9",
+        "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+        "test_type": "no_params",
+        "method": "get",
+        "path": "/addon/1047/v2/top-market-cap-tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests default behavior when no parameters are provided.",
+        "expected_response_summary": "Returns default set of top market cap tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 289.6,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_trading-signals__llm_26",
+        "operation_id": "get_addon_1047_v2_trading-signals",
+        "test_type": "no_params",
+        "method": "get",
+        "path": "/addon/1047/v2/trading-signals",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests default behavior.",
+        "expected_response_summary": "Returns trading signals for all tokens with default pagination.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/trading-signals",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 300.62,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_price__llm_4",
+        "operation_id": "get_addon_1047_v2_price",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/price",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard price lookup for a valid token.",
+        "expected_response_summary": "Returns price data for the specified token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/price",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 439.16,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_price__llm_5",
+        "operation_id": "get_addon_1047_v2_price",
+        "test_type": "invalid_token_id",
+        "method": "get",
+        "path": "/addon/1047/v2/price",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "invalid"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation for non-numeric token_id.",
+        "expected_response_summary": "Returns error for invalid token_id.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/price",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 303.95,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade__llm_21",
+        "operation_id": "get_addon_1047_v2_tm-grade",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval for a valid token.",
+        "expected_response_summary": "Returns latest TM Grade and Fundamental Grade insights for the token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 291.5,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade-history__llm_24",
+        "operation_id": "get_addon_1047_v2_tm-grade-history",
+        "test_type": "invalid_token_id",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade-history",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "notanumber"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation for token_id.",
+        "expected_response_summary": "Returns error for invalid token_id.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade-history",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 321.0,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_quantmetrics__llm_12",
+        "operation_id": "get_addon_1047_v2_quantmetrics",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/quantmetrics",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "50",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with typical pagination.",
+        "expected_response_summary": "Returns quantitative metrics for tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/quantmetrics",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 288.59,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_quantmetrics__llm_13",
+        "operation_id": "get_addon_1047_v2_quantmetrics",
+        "test_type": "boundary_limit_negative",
+        "method": "get",
+        "path": "/addon/1047/v2/quantmetrics",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "-1",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Checks validation for negative limit.",
+        "expected_response_summary": "Returns error for negative limit value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/quantmetrics",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 315.56,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_resistance-support__llm_14",
+        "operation_id": "get_addon_1047_v2_resistance-support",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/resistance-support",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "25",
+          "page": "2"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests pagination with non-default values.",
+        "expected_response_summary": "Returns resistance and support levels for tokens, page 2.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/resistance-support",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 318.58,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_scenario-analysis__llm_16",
+        "operation_id": "get_addon_1047_v2_scenario-analysis",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/scenario-analysis",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval.",
+        "expected_response_summary": "Returns price predictions for different market scenarios.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/scenario-analysis",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 306.6,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_scenario-analysis__llm_17",
+        "operation_id": "get_addon_1047_v2_scenario-analysis",
+        "test_type": "boundary_page_zero",
+        "method": "get",
+        "path": "/addon/1047/v2/scenario-analysis",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "10",
+          "page": "0"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Checks lower boundary for page.",
+        "expected_response_summary": "Returns error for invalid page value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/scenario-analysis",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 287.04,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tokens__llm_1",
+        "operation_id": "get_addon_1047_v2_tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "50",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with typical pagination values.",
+        "expected_response_summary": "Returns a paginated list of supported tokens and their TOKEN_IDs.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 299.03,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tokens__llm_2",
+        "operation_id": "get_addon_1047_v2_tokens",
+        "test_type": "boundary_limit_zero",
+        "method": "get",
+        "path": "/addon/1047/v2/tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "0",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Checks lower boundary for limit.",
+        "expected_response_summary": "Returns error for invalid limit value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 294.41,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_7",
+        "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/top-market-cap-tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "top_k": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with valid parameters.",
+        "expected_response_summary": "Returns the top 10 market cap tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 305.26,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_8",
+        "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+        "test_type": "boundary_top_k_zero",
+        "method": "get",
+        "path": "/addon/1047/v2/top-market-cap-tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "top_k": "0",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Checks lower boundary for top_k.",
+        "expected_response_summary": "Returns error for invalid top_k value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 290.7,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_moonshot-tokens__llm_10",
+        "operation_id": "get_addon_1047_v2_moonshot-tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/moonshot-tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "type": "active",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval for active moonshots.",
+        "expected_response_summary": "Returns a list of active moonshot token picks.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/moonshot-tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 296.45,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_moonshot-tokens__llm_11",
+        "operation_id": "get_addon_1047_v2_moonshot-tokens",
+        "test_type": "invalid_type",
+        "method": "get",
+        "path": "/addon/1047/v2/moonshot-tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "type": "unknown",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation for unknown type.",
+        "expected_response_summary": "Returns error for invalid type value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/moonshot-tokens",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 308.57,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_technology-grade__llm_20",
+        "operation_id": "get_addon_1047_v2_technology-grade",
+        "test_type": "invalid_date_range",
+        "method": "get",
+        "path": "/addon/1047/v2/technology-grade",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-05",
+          "endDate": "2025-07-01"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation for date range.",
+        "expected_response_summary": "Returns error for startDate after endDate.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/technology-grade",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 314.28,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_trading-signals__llm_25",
+        "operation_id": "get_addon_1047_v2_trading-signals",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/trading-signals",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "35987",
+          "limit": "20",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval for a valid token.",
+        "expected_response_summary": "Returns AI-generated trading signals for the specified token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/trading-signals",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 303.9,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_technology-grade__llm_19",
+        "operation_id": "get_addon_1047_v2_technology-grade",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/technology-grade",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-01",
+          "endDate": "2025-07-05",
+          "limit": "5",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval for a token and date range.",
+        "expected_response_summary": "Returns technology grade data for the token in the given date range.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/technology-grade",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 325.16,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade-history__llm_23",
+        "operation_id": "get_addon_1047_v2_tm-grade-history",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade-history",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-01",
+          "endDate": "2025-07-05",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard historical data retrieval.",
+        "expected_response_summary": "Returns historical TM Grade and Fundamental Grade data for the token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade-history",
+      "observed_status": 404,
+      "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+      "latency_ms": 312.66,
+      "passed": false,
+      "error": null,
+      "observed_json": null
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {
+      "resource_not_found": 26
+    },
+    "failures": [
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_price__llm_6",
+            "operation_id": "get_addon_1047_v2_price",
+            "test_type": "no_token_id",
+            "method": "get",
+            "path": "/addon/1047/v2/price",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests behavior when token_id is omitted.",
+            "expected_response_summary": "Returns price data for all tokens or default set.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/price",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 432.1,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error when the token_id was omitted, indicating that the resource /addon/1047/v2/price may not exist or the endpoint requires a token_id for access.",
+          "qa_bug_summary": "GET /addon/1047/v2/price without a token_id returned 404 Not Found instead of the expected 200. This suggests the endpoint may not support unauthenticated access or the resource does not exist.",
+          "suggested_follow_up_tests": [
+            "Repeat the request with a valid token_id to verify if the resource is accessible when authenticated.",
+            "Test the same endpoint with other valid and invalid addon IDs to determine if the 404 is specific to addon 1047 or a broader issue."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_resistance-support__llm_15",
+            "operation_id": "get_addon_1047_v2_resistance-support",
+            "test_type": "no_params",
+            "method": "get",
+            "path": "/addon/1047/v2/resistance-support",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests default behavior.",
+            "expected_response_summary": "Returns first page of resistance/support data with default limit.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/resistance-support",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 308.33,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API endpoint '/addon/1047/v2/resistance-support' returned a 404 Not Found, indicating that the resource with identifier '1047' or the path itself does not exist or is not accessible.",
+          "qa_bug_summary": "The GET request to '/addon/1047/v2/resistance-support' failed with a 404 status instead of the expected 200, suggesting the resource is missing, the identifier is invalid, or the endpoint is incorrectly configured.",
+          "suggested_follow_up_tests": [
+            "Verify if the resource with ID '1047' exists and is accessible via the API by querying a known valid resource.",
+            "Test the endpoint with different valid and invalid identifiers to confirm if the 404 is consistent and to check for proper error handling."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_sentiments__llm_18",
+            "operation_id": "get_addon_1047_v2_sentiments",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/sentiments",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "No parameters required.",
+            "expected_response_summary": "Returns hourly sentiment scores for Twitter, Reddit, and News.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/sentiments",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 295.13,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/sentiments returned a 404 Not Found, indicating that the resource does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "The happy path test for GET /addon/1047/v2/sentiments failed with a 404 Not Found response. This suggests either the resource for addon 1047 is not present, the endpoint is misconfigured, or the identifier is incorrect.",
+          "suggested_follow_up_tests": [
+            "Verify if addon 1047 exists by querying the list of addons or checking the backend directly.",
+            "Attempt the same request with a different, known-valid addon identifier to determine if the issue is specific to addon 1047 or affects the endpoint generally."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade__llm_22",
+            "operation_id": "get_addon_1047_v2_tm-grade",
+            "test_type": "missing_token_id",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests required parameter enforcement if token_id is required.",
+            "expected_response_summary": "Returns error for missing token_id.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 286.02,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request, indicating that the endpoint does not handle missing required parameters (such as token_id) correctly and instead treats the request as a missing resource.",
+          "qa_bug_summary": "When the required token_id parameter is omitted, the /addon/1047/v2/tm-grade endpoint responds with 404 Not Found rather than 400 Bad Request. This suggests improper parameter validation or error handling for missing parameters.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with other missing required parameters to verify if the same 404 response occurs.",
+            "Test the endpoint with an invalid token_id value to check if the error handling distinguishes between missing and invalid parameters."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tokens__llm_3",
+            "operation_id": "get_addon_1047_v2_tokens",
+            "test_type": "no_params",
+            "method": "get",
+            "path": "/addon/1047/v2/tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests default behavior when no parameters are provided.",
+            "expected_response_summary": "Returns first page of supported tokens with default pagination.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 322.61,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/tokens returned a 404 Not Found error, indicating that the resource does not exist or the path/identifier is invalid.",
+          "qa_bug_summary": "API returned 404 Not Found for GET /addon/1047/v2/tokens with no parameters, but a 200 response was expected. This suggests the resource may be missing, the path is incorrect, or the addon with ID 1047 does not exist.",
+          "suggested_follow_up_tests": [
+            "Verify if the addon with ID 1047 exists and is accessible via other endpoints.",
+            "Test the same endpoint with a known valid addon ID to determine if the issue is specific to ID 1047 or the endpoint in general."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_9",
+            "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+            "test_type": "no_params",
+            "method": "get",
+            "path": "/addon/1047/v2/top-market-cap-tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests default behavior when no parameters are provided.",
+            "expected_response_summary": "Returns default set of top market cap tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 289.6,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/top-market-cap-tokens returned a 404 Not Found, indicating that the resource does not exist or the identifier '1047' is invalid or unrecognized by the API.",
+          "qa_bug_summary": "API returned 404 Not Found for a GET request to /addon/1047/v2/top-market-cap-tokens with no parameters. Expected status was 200. This suggests the endpoint or resource is missing, or the addon identifier is incorrect.",
+          "suggested_follow_up_tests": [
+            "Test the same endpoint with a valid and confirmed addon identifier to verify if the resource exists.",
+            "Check the API documentation for required parameters or path variations and retest with those included."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_trading-signals__llm_26",
+            "operation_id": "get_addon_1047_v2_trading-signals",
+            "test_type": "no_params",
+            "method": "get",
+            "path": "/addon/1047/v2/trading-signals",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests default behavior.",
+            "expected_response_summary": "Returns trading signals for all tokens with default pagination.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/trading-signals",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 300.62,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/trading-signals returned a 404 Not Found, indicating that the resource does not exist or the identifier '1047' is invalid.",
+          "qa_bug_summary": "API returned 404 Not Found for a GET request to /addon/1047/v2/trading-signals with no parameters. Expected 200 OK. This suggests the resource is missing or the path/identifier is incorrect.",
+          "suggested_follow_up_tests": [
+            "Verify if the addon with ID 1047 exists and is accessible via other endpoints.",
+            "Test the same endpoint with a valid addon ID known to exist to confirm correct behavior."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_price__llm_4",
+            "operation_id": "get_addon_1047_v2_price",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/price",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard price lookup for a valid token.",
+            "expected_response_summary": "Returns price data for the specified token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/price",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 439.16,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status, indicating that the resource at /addon/1047/v2/price does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "The happy path test for price lookup failed with a 404 Not Found error. This suggests either the addon with ID 1047 is not present, the endpoint is misconfigured, or there is an issue with routing or resource availability.",
+          "suggested_follow_up_tests": [
+            "Verify that addon 1047 exists in the backend and is accessible via other endpoints (e.g., /addon/1047/v2/details).",
+            "Test the /addon/{id}/v2/price endpoint with a known valid addon ID to confirm if the issue is specific to 1047 or affects all addons."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_price__llm_5",
+            "operation_id": "get_addon_1047_v2_price",
+            "test_type": "invalid_token_id",
+            "method": "get",
+            "path": "/addon/1047/v2/price",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "invalid"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation for non-numeric token_id.",
+            "expected_response_summary": "Returns error for invalid token_id.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/price",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 303.95,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request when an invalid (non-numeric) token_id was used. This suggests the endpoint is treating invalid token_id values as missing resources rather than input validation errors.",
+          "qa_bug_summary": "API does not properly validate invalid token_id input; returns 404 Not Found instead of 400 Bad Request for non-numeric token_id.",
+          "suggested_follow_up_tests": [
+            "Test with other invalid token_id formats (e.g., special characters, empty string) to confirm consistent error handling.",
+            "Test with a valid but non-existent numeric token_id to verify that 404 is correctly returned only for missing resources."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade__llm_21",
+            "operation_id": "get_addon_1047_v2_tm-grade",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval for a valid token.",
+            "expected_response_summary": "Returns latest TM Grade and Fundamental Grade insights for the token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 291.5,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, which suggests that the resource at /addon/1047/v2/tm-grade does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "GET /addon/1047/v2/tm-grade returned 404 Not Found during a happy path test, indicating the expected resource was not available. This may be due to an incorrect or non-existent addon ID, or a misconfiguration in the test or backend routing.",
+          "suggested_follow_up_tests": [
+            "Verify that addon ID 1047 exists and is accessible via the API by querying the list of addons or creating addon 1047 before this test.",
+            "Test the endpoint with a known valid addon ID and with an intentionally invalid ID to confirm correct 200 and 404 behaviors, respectively."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade-history__llm_24",
+            "operation_id": "get_addon_1047_v2_tm-grade-history",
+            "test_type": "invalid_token_id",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade-history",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "notanumber"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation for token_id.",
+            "expected_response_summary": "Returns error for invalid token_id.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade-history",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 321.0,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request when an invalid token_id was provided. This suggests the endpoint does not properly validate token_id format and instead treats invalid values as missing resources.",
+          "qa_bug_summary": "API does not return 400 Bad Request for invalid token_id input; instead, it returns 404 Not Found, indicating improper input validation and error handling for token_id.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with various malformed token_id values to confirm if all invalid formats result in 404 instead of 400.",
+            "Test the endpoint with a valid token_id that does not exist to verify if the response is consistently 404 for missing resources."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_quantmetrics__llm_12",
+            "operation_id": "get_addon_1047_v2_quantmetrics",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/quantmetrics",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "50",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with typical pagination.",
+            "expected_response_summary": "Returns quantitative metrics for tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/quantmetrics",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 288.59,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, indicating that the resource at /addon/1047/v2/quantmetrics does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "The happy path test for GET /addon/1047/v2/quantmetrics failed with a 404 Not Found response instead of the expected 200, suggesting the resource is missing or the endpoint is misconfigured.",
+          "suggested_follow_up_tests": [
+            "Test GET /addon/{id}/v2/quantmetrics with other valid and invalid addon IDs to determine if the issue is specific to '1047' or affects all IDs.",
+            "Verify the existence of addon 1047 in the backend data store and check if the endpoint is correctly registered and accessible."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_quantmetrics__llm_13",
+            "operation_id": "get_addon_1047_v2_quantmetrics",
+            "test_type": "boundary_limit_negative",
+            "method": "get",
+            "path": "/addon/1047/v2/quantmetrics",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "-1",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Checks validation for negative limit.",
+            "expected_response_summary": "Returns error for negative limit value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/quantmetrics",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 315.56,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request when a boundary limit negative value was tested. This suggests the endpoint may not be handling invalid input validation correctly and is instead treating the request as if the resource does not exist.",
+          "qa_bug_summary": "API returns 404 Not Found for invalid negative limit input instead of expected 400 Bad Request, indicating improper input validation or error handling for boundary cases.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with other invalid input values (e.g., zero, excessively large numbers, non-integer values) to verify if 404 is consistently returned instead of 400.",
+            "Test the endpoint with a valid limit value to confirm that the resource exists and the endpoint responds with a 200 status as expected."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_resistance-support__llm_14",
+            "operation_id": "get_addon_1047_v2_resistance-support",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/resistance-support",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "25",
+              "page": "2"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests pagination with non-default values.",
+            "expected_response_summary": "Returns resistance and support levels for tokens, page 2.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/resistance-support",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 318.58,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, indicating that the resource at /addon/1047/v2/resistance-support does not exist or the identifier '1047' is invalid.",
+          "qa_bug_summary": "Happy path test for GET /addon/1047/v2/resistance-support failed with a 404 Not Found response instead of the expected 200. This suggests the resource may be missing, the path or identifier is incorrect, or test data setup is incomplete.",
+          "suggested_follow_up_tests": [
+            "Verify that the resource with identifier '1047' exists before running the test, or create it if necessary.",
+            "Test the endpoint with a known valid identifier and check if it returns 200 to rule out path or deployment issues."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_scenario-analysis__llm_16",
+            "operation_id": "get_addon_1047_v2_scenario-analysis",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/scenario-analysis",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval.",
+            "expected_response_summary": "Returns price predictions for different market scenarios.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/scenario-analysis",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 306.6,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, indicating that the /addon/1047/v2/scenario-analysis endpoint or the resource with ID 1047 does not exist or is not accessible.",
+          "qa_bug_summary": "GET /addon/1047/v2/scenario-analysis returned 404 Not Found during a happy path test. The resource or endpoint may be missing, misconfigured, or the identifier is invalid.",
+          "suggested_follow_up_tests": [
+            "Verify the existence and accessibility of resource 1047 by listing available addons or querying with a known valid ID.",
+            "Test the endpoint with different, known-good resource IDs to determine if the issue is specific to 1047 or affects all resources."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_scenario-analysis__llm_17",
+            "operation_id": "get_addon_1047_v2_scenario-analysis",
+            "test_type": "boundary_page_zero",
+            "method": "get",
+            "path": "/addon/1047/v2/scenario-analysis",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "10",
+              "page": "0"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Checks lower boundary for page.",
+            "expected_response_summary": "Returns error for invalid page value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/scenario-analysis",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 287.04,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request, indicating that the resource or endpoint '/addon/1047/v2/scenario-analysis' does not exist or the identifier '1047' is invalid for this operation.",
+          "qa_bug_summary": "Boundary test for page zero expected a 400 error but received a 404 Not Found, suggesting the endpoint may not handle invalid page parameters correctly or the resource is missing.",
+          "suggested_follow_up_tests": [
+            "Test the same endpoint with valid page parameters to confirm if the resource exists and is accessible.",
+            "Test other boundary values (e.g., negative page numbers, excessively high page numbers) to verify if the API consistently returns appropriate error codes."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tokens__llm_1",
+            "operation_id": "get_addon_1047_v2_tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "50",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with typical pagination values.",
+            "expected_response_summary": "Returns a paginated list of supported tokens and their TOKEN_IDs.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 299.03,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, indicating that the resource at /addon/1047/v2/tokens does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "GET /addon/1047/v2/tokens returned 404 Not Found during a happy path test, suggesting the resource is missing or the endpoint is misconfigured.",
+          "suggested_follow_up_tests": [
+            "Verify that the addon with ID 1047 exists and is accessible via other endpoints.",
+            "Test the same endpoint with a known valid addon ID to determine if the issue is specific to '1047' or affects all IDs."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tokens__llm_2",
+            "operation_id": "get_addon_1047_v2_tokens",
+            "test_type": "boundary_limit_zero",
+            "method": "get",
+            "path": "/addon/1047/v2/tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "0",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Checks lower boundary for limit.",
+            "expected_response_summary": "Returns error for invalid limit value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 294.41,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found instead of the expected 400 Bad Request when a boundary value (limit=0) was tested. This suggests the endpoint or resource (/addon/1047/v2/tokens) may not exist, is misconfigured, or the path/identifier is invalid.",
+          "qa_bug_summary": "API returned 404 Not Found for a boundary test (limit=0) where 400 Bad Request was expected. This indicates the endpoint may be missing, incorrectly routed, or the test is using an invalid resource identifier.",
+          "suggested_follow_up_tests": [
+            "Verify the existence and accessibility of /addon/1047/v2/tokens with a valid limit value (e.g., limit=1) to confirm the endpoint is available.",
+            "Test the same endpoint with other invalid or edge-case parameters to determine if 404 persists or if proper 400 errors are returned for bad input."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_7",
+            "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/top-market-cap-tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "top_k": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with valid parameters.",
+            "expected_response_summary": "Returns the top 10 market cap tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 305.26,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/top-market-cap-tokens returned a 404 Not Found error, indicating that the resource does not exist or the path/identifier is incorrect.",
+          "qa_bug_summary": "The happy path test for retrieving top market cap tokens failed due to a 404 Not Found response. This suggests either the endpoint is misconfigured, the resource is missing, or the identifier '1047' is invalid.",
+          "suggested_follow_up_tests": [
+            "Verify if the /addon/1047/v2/top-market-cap-tokens endpoint exists and is accessible with the current configuration.",
+            "Test the same endpoint with alternative valid identifiers to determine if the issue is specific to '1047' or affects all similar requests."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_8",
+            "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+            "test_type": "boundary_top_k_zero",
+            "method": "get",
+            "path": "/addon/1047/v2/top-market-cap-tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "top_k": "0",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Checks lower boundary for top_k.",
+            "expected_response_summary": "Returns error for invalid top_k value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 290.7,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request when the top_k parameter was set to zero. This suggests the endpoint may not be handling the boundary case for top_k=0 correctly, possibly treating it as an invalid or missing resource rather than a bad request.",
+          "qa_bug_summary": "When testing the lower boundary (top_k=0), the endpoint /addon/1047/v2/top-market-cap-tokens returned a 404 Not Found instead of the expected 400 Bad Request. This indicates the API does not properly validate or handle the top_k=0 case.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with top_k set to other invalid values (e.g., negative numbers, non-integer) and verify the status code.",
+            "Test the endpoint with top_k set to the minimum valid value (e.g., top_k=1) to confirm correct behavior and status code."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_moonshot-tokens__llm_10",
+            "operation_id": "get_addon_1047_v2_moonshot-tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/moonshot-tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "type": "active",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval for active moonshots.",
+            "expected_response_summary": "Returns a list of active moonshot token picks.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/moonshot-tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 296.45,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, indicating that the resource at /addon/1047/v2/moonshot-tokens does not exist or the identifier '1047' is invalid.",
+          "qa_bug_summary": "The happy path test for retrieving moonshot tokens failed with a 404 Not Found response. This suggests the endpoint is either misconfigured, the resource does not exist, or the test is using an invalid or outdated identifier.",
+          "suggested_follow_up_tests": [
+            "Verify the existence and accessibility of the /addon/1047/v2/moonshot-tokens endpoint with a known valid identifier.",
+            "Test the same endpoint with different or newly created identifiers to determine if the issue is specific to '1047'."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_moonshot-tokens__llm_11",
+            "operation_id": "get_addon_1047_v2_moonshot-tokens",
+            "test_type": "invalid_type",
+            "method": "get",
+            "path": "/addon/1047/v2/moonshot-tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "type": "unknown",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation for unknown type.",
+            "expected_response_summary": "Returns error for invalid type value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/moonshot-tokens",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 308.57,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request, indicating that the endpoint or resource does not exist or is not correctly configured to handle invalid type validation.",
+          "qa_bug_summary": "API returns 404 Not Found for invalid type input instead of expected 400 Bad Request, suggesting improper error handling or missing endpoint/resource.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with a valid type to confirm it returns a 200 OK and is reachable.",
+            "Test other endpoints with invalid types to determine if the 404 response is consistent or isolated to this endpoint."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_technology-grade__llm_20",
+            "operation_id": "get_addon_1047_v2_technology-grade",
+            "test_type": "invalid_date_range",
+            "method": "get",
+            "path": "/addon/1047/v2/technology-grade",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-05",
+              "endDate": "2025-07-01"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation for date range.",
+            "expected_response_summary": "Returns error for startDate after endDate.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/technology-grade",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 314.28,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found status instead of the expected 400 Bad Request for an invalid date range. This suggests the endpoint may not be handling invalid date range validation correctly and is instead treating the request as if the resource does not exist.",
+          "qa_bug_summary": "API returns 404 Not Found for invalid date range input instead of the expected 400 Bad Request, indicating improper error handling for input validation.",
+          "suggested_follow_up_tests": [
+            "Test the endpoint with a valid date range to confirm it returns a 200 OK and the expected data.",
+            "Test the endpoint with other types of invalid input (e.g., malformed dates, missing required parameters) to verify if the error handling is consistent and returns appropriate status codes."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_trading-signals__llm_25",
+            "operation_id": "get_addon_1047_v2_trading-signals",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/trading-signals",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "35987",
+              "limit": "20",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval for a valid token.",
+            "expected_response_summary": "Returns AI-generated trading signals for the specified token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/trading-signals",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 303.9,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint /addon/1047/v2/trading-signals returned a 404 Not Found, indicating that the resource is missing or the identifier '1047' is invalid or not present in the system.",
+          "qa_bug_summary": "The happy path test for retrieving trading signals via /addon/1047/v2/trading-signals failed with a 404 Not Found. This suggests either the addon with ID 1047 does not exist, the endpoint is misconfigured, or the resource was not properly set up before the test.",
+          "suggested_follow_up_tests": [
+            "Verify that addon ID 1047 exists and is accessible by querying /addon/1047 or a related endpoint.",
+            "Attempt to retrieve trading signals for a known valid addon ID to confirm endpoint functionality and resource availability."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_technology-grade__llm_19",
+            "operation_id": "get_addon_1047_v2_technology-grade",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/technology-grade",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-01",
+              "endDate": "2025-07-05",
+              "limit": "5",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval for a token and date range.",
+            "expected_response_summary": "Returns technology grade data for the token in the given date range.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/technology-grade",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 325.16,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The API returned a 404 Not Found error, which strongly suggests that the resource at /addon/1047/v2/technology-grade does not exist or the identifier '1047' is invalid or missing in the backend.",
+          "qa_bug_summary": "GET /addon/1047/v2/technology-grade returned 404 Not Found during a happy path test. The endpoint is expected to exist and return 200, indicating a possible misconfiguration, missing resource, or incorrect test data.",
+          "suggested_follow_up_tests": [
+            "Verify the existence of addon with ID 1047 in the backend before running the test.",
+            "Test the same endpoint with a known valid addon ID to confirm if the issue is specific to ID 1047 or affects all IDs."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade-history__llm_23",
+            "operation_id": "get_addon_1047_v2_tm-grade-history",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade-history",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-01",
+              "endDate": "2025-07-05",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard historical data retrieval.",
+            "expected_response_summary": "Returns historical TM Grade and Fundamental Grade data for the token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade-history",
+          "observed_status": 404,
+          "response_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://www.cloudflare.com/favicon.ico\" />\n    <title>Not Found</title>\n    <style>\n      body {\n        font-family: system-ui;\n        font-weight: 300;\n        font-size: 1.25rem;\n        color: #36393a;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n      main {\n        max-...",
+          "latency_ms": 312.66,
+          "passed": false,
+          "error": null,
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "resource_not_found",
+          "confidence": 0.92,
+          "reason": "Observed 404 indicates missing resource or invalid identifier/path."
+        },
+        "llm": {
+          "likely_cause": "The endpoint '/addon/1047/v2/tm-grade-history' returned a 404 Not Found, indicating that the resource either does not exist, the identifier '1047' is invalid, or the endpoint is not correctly configured or deployed.",
+          "qa_bug_summary": "The happy path test for retrieving historical data from '/addon/1047/v2/tm-grade-history' failed with a 404 Not Found response. This suggests the resource is missing or the endpoint is misconfigured, contrary to expectations for a successful data retrieval.",
+          "suggested_follow_up_tests": [
+            "Verify that the resource with identifier '1047' exists and is accessible via the API.",
+            "Test the endpoint with other valid and invalid identifiers to determine if the issue is specific to '1047' or affects the endpoint generally."
+          ]
+        }
+      }
+    ]
+  }
+}

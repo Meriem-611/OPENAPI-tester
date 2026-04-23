@@ -1,0 +1,107 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "getRandom",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a random advice slip with a valid 'slip' object.",
+      "notes": "Basic happy path test to ensure random advice is returned successfully."
+    },
+    {
+      "operation_id": "getAdviceById",
+      "test_type": "happy_path",
+      "path_params": {
+        "slip_id": 1
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns the advice slip with slip_id=1.",
+      "notes": "Tests retrieval of a known slip by valid ID."
+    },
+    {
+      "operation_id": "getAdviceById",
+      "test_type": "not_found_negative",
+      "path_params": {
+        "slip_id": 999999
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns an error object indicating the slip was not found.",
+      "notes": "Tests behavior when slip_id does not exist."
+    },
+    {
+      "operation_id": "getAdviceById",
+      "test_type": "validation_negative",
+      "path_params": {
+        "slip_id": -1
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns an error object for invalid slip_id (negative number).",
+      "notes": "Tests input validation for negative slip_id."
+    },
+    {
+      "operation_id": "get_advice_search_{query}",
+      "test_type": "happy_path",
+      "path_params": {
+        "query": "life"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of advice slips matching the search query 'life'.",
+      "notes": "Basic search test for a common term."
+    },
+    {
+      "operation_id": "get_advice_search_{query}",
+      "test_type": "not_found_negative",
+      "path_params": {
+        "query": "asldkfjalskdjflaskjdf"
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns an error object indicating no advice slips were found for the query.",
+      "notes": "Tests search with a query that is unlikely to match any advice."
+    },
+    {
+      "operation_id": "get_advice_search_{query}",
+      "test_type": "boundary_empty_query",
+      "path_params": {
+        "query": ""
+      },
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404
+      ],
+      "expected_response_summary": "Returns an error object for empty search query.",
+      "notes": "Tests API behavior when the search query is empty."
+    }
+  ]
+}

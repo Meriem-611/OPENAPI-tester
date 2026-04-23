@@ -1,0 +1,16 @@
+{
+  "ranked_operation_ids": [
+    "Initialization_requestCreation",
+    "PaymentOption_createPaymentOption",
+    "PaymentOptionDetails_postOptionDetails",
+    "PaymentToken_generateToken",
+    "PaymentInstruction_submitInstruction",
+    "Payment_createPayment",
+    "PaymentSimulate_executePaymentSimulation",
+    "RedirectFrontEnd_postPaymentRedirect",
+    "RedirectBackEnd_postPaymentRedirect",
+    "PaymentNotification_processNotification",
+    "TransactionStatus_updateTransactionStatus",
+    "UserPreference_saveUserPreference"
+  ]
+}

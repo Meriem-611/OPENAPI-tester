@@ -1,0 +1,101 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "q": "Python programming",
+        "format": "json"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns instant answer data for the query 'Python programming' in JSON format.",
+      "notes": "Basic happy path with required and optional parameters. Verifies standard response structure."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "validation_negative_missing_required",
+      "path_params": {},
+      "query_params": {
+        "format": "json"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns a 400 error due to missing required 'q' parameter.",
+      "notes": "Negative test to ensure API enforces required query parameter."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "boundary_enum_invalid_value",
+      "path_params": {},
+      "query_params": {
+        "q": "test",
+        "format": "yaml"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns a 400 error due to invalid 'format' value not in allowed enum.",
+      "notes": "Checks that invalid enum value for 'format' is rejected."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "boundary_toggle_flags",
+      "path_params": {},
+      "query_params": {
+        "q": "Mars",
+        "no_html": 1,
+        "no_redirect": 1,
+        "skip_disambig": 1
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns instant answer data for 'Mars' with HTML removed, no redirects, and disambiguation skipped.",
+      "notes": "Tests all toggle flags set to 1 to verify their combined effect."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "validation_negative_invalid_flag_value",
+      "path_params": {},
+      "query_params": {
+        "q": "Venus",
+        "no_html": 2
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns a 400 error due to invalid 'no_html' value outside allowed enum.",
+      "notes": "Checks that out-of-range integer for toggle flag is rejected."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "jsonp_callback",
+      "path_params": {},
+      "query_params": {
+        "q": "JavaScript",
+        "callback": "myCallback"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns instant answer data for 'JavaScript' wrapped in the specified JSONP callback.",
+      "notes": "Tests JSONP callback parameter."
+    }
+  ]
+}

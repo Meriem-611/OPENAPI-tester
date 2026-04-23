@@ -1,0 +1,13 @@
+[
+  {
+    "operation_id": "get_advice_search_{query}",
+    "path": "/advice/search/{query}",
+    "status": 200,
+    "ids_found": 0
+  },
+  {
+    "operation_id": "getAdviceById",
+    "path": "/advice/{slip_id}",
+    "status": 500
+  }
+]

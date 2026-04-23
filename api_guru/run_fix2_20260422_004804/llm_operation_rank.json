@@ -1,0 +1,16 @@
+{
+  "ranked_operation_ids": [
+    "get_addon_1047_v2_tokens",
+    "get_addon_1047_v2_price",
+    "get_addon_1047_v2_top-market-cap-tokens",
+    "get_addon_1047_v2_moonshot-tokens",
+    "get_addon_1047_v2_quantmetrics",
+    "get_addon_1047_v2_resistance-support",
+    "get_addon_1047_v2_scenario-analysis",
+    "get_addon_1047_v2_sentiments",
+    "get_addon_1047_v2_technology-grade",
+    "get_addon_1047_v2_tm-grade",
+    "get_addon_1047_v2_tm-grade-history",
+    "get_addon_1047_v2_trading-signals"
+  ]
+}

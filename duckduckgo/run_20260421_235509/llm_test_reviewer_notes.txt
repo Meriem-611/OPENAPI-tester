@@ -1,0 +1,1 @@
+All test cases conform to the allowed operations and rules. expected_statuses are valid, and parameters match the API spec.

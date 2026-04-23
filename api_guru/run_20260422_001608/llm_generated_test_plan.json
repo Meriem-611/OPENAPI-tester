@@ -1,0 +1,366 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "get_addon_1047_v2_tokens",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "limit": "50",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of coins and their associated TOKEN_IDs.",
+      "notes": "Standard retrieval of first page of tokens with default limit."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_tokens",
+      "test_type": "boundary_limit_zero",
+      "path_params": {},
+      "query_params": {
+        "limit": "0"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to invalid limit value.",
+      "notes": "Tests lower boundary for limit parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_price",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns token price for the specified token_id.",
+      "notes": "Valid token_id provided."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_price",
+      "test_type": "negative_invalid_token_id",
+      "path_params": {},
+      "query_params": {
+        "token_id": "invalid_token"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to invalid token_id.",
+      "notes": "Tests API response to an invalid token_id."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "top_k": "10",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns list of top 10 market cap tokens.",
+      "notes": "Standard retrieval of top market cap tokens."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+      "test_type": "negative_top_k_non_numeric",
+      "path_params": {},
+      "query_params": {
+        "top_k": "abc"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to non-numeric top_k.",
+      "notes": "Tests validation of top_k parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_moonshot-tokens",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "type": "active",
+        "limit": "20",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of active moonshot tokens.",
+      "notes": "Valid type and pagination parameters."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_moonshot-tokens",
+      "test_type": "negative_type_invalid",
+      "path_params": {},
+      "query_params": {
+        "type": "unknown"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to invalid type value.",
+      "notes": "Tests validation of type parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_quantmetrics",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "limit": "50",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns latest quantitative metrics for tokens.",
+      "notes": "Standard retrieval with default limit and page."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_quantmetrics",
+      "test_type": "boundary_page_negative",
+      "path_params": {},
+      "query_params": {
+        "page": "-1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to negative page value.",
+      "notes": "Tests lower boundary for page parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_resistance-support",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "limit": "10",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns historical resistance and support levels.",
+      "notes": "Standard retrieval with small limit."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_resistance-support",
+      "test_type": "negative_limit_too_large",
+      "path_params": {},
+      "query_params": {
+        "limit": "10000"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to excessively large limit.",
+      "notes": "Tests upper boundary for limit parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_scenario-analysis",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "limit": "5",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns price predictions for different market scenarios.",
+      "notes": "Standard retrieval with small limit."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_scenario-analysis",
+      "test_type": "negative_page_non_numeric",
+      "path_params": {},
+      "query_params": {
+        "page": "abc"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to non-numeric page value.",
+      "notes": "Tests validation of page parameter."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_sentiments",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns hourly sentiment scores for Twitter, Reddit, and News.",
+      "notes": "No parameters required."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_technology-grade",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375",
+        "startDate": "2025-07-01",
+        "endDate": "2025-07-05",
+        "limit": "10",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns technology grade for the specified token and date range.",
+      "notes": "All query parameters provided with valid values."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_technology-grade",
+      "test_type": "negative_date_range_invalid",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375",
+        "startDate": "2025-07-10",
+        "endDate": "2025-07-05"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to startDate after endDate.",
+      "notes": "Tests validation of date range."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_tm-grade",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns latest TM Grade and Fundamental Grade insights for the token.",
+      "notes": "Valid token_id provided."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_tm-grade",
+      "test_type": "negative_token_id_missing",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns TM Grade and Fundamental Grade insights for all tokens or an empty result.",
+      "notes": "Tests API behavior when token_id is omitted."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_tm-grade-history",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375",
+        "startDate": "2025-07-01",
+        "endDate": "2025-07-05",
+        "limit": "10",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns historical TM Grade and Fundamental Grade data for the token.",
+      "notes": "Valid date range and pagination."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_tm-grade-history",
+      "test_type": "negative_invalid_date_format",
+      "path_params": {},
+      "query_params": {
+        "token_id": "3375",
+        "startDate": "07-01-2025",
+        "endDate": "2025-07-05"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to invalid startDate format.",
+      "notes": "Tests validation of date format."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_trading-signals",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "token_id": "35987",
+        "limit": "10",
+        "page": "1"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns trading signals for the specified token.",
+      "notes": "Valid token_id and pagination."
+    },
+    {
+      "operation_id": "get_addon_1047_v2_trading-signals",
+      "test_type": "negative_limit_non_numeric",
+      "path_params": {},
+      "query_params": {
+        "limit": "ten"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Bad request due to non-numeric limit.",
+      "notes": "Tests validation of limit parameter."
+    }
+  ]
+}

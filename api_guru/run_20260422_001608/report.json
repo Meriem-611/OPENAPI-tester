@@ -1,0 +1,1716 @@
+{
+  "summary": {
+    "spec_name": "TokenMetrics.json",
+    "total_operations_parsed": 22,
+    "total_operations_selected": 12,
+    "total_tests_generated": 23,
+    "tests_executed": 23,
+    "passed": 0,
+    "failed": 23,
+    "execution_errors": 23
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "addon"
+    ],
+    "resource_groups_covered": [
+      "addon"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:read_only",
+      "input:no_body",
+      "method:get"
+    ],
+    "selected_operations": [
+      "get_addon_1047_v2_trading-signals",
+      "get_addon_1047_v2_top-market-cap-tokens",
+      "get_addon_1047_v2_tokens",
+      "get_addon_1047_v2_tm-grade-history",
+      "get_addon_1047_v2_tm-grade",
+      "get_addon_1047_v2_technology-grade",
+      "get_addon_1047_v2_sentiments",
+      "get_addon_1047_v2_scenario-analysis",
+      "get_addon_1047_v2_resistance-support",
+      "get_addon_1047_v2_quantmetrics",
+      "get_addon_1047_v2_price",
+      "get_addon_1047_v2_moonshot-tokens"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_sentiments__llm_15",
+        "operation_id": "get_addon_1047_v2_sentiments",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/sentiments",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "No parameters required.",
+        "expected_response_summary": "Returns hourly sentiment scores for Twitter, Reddit, and News.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/sentiments",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 1.0,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/sentiments (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade__llm_19",
+        "operation_id": "get_addon_1047_v2_tm-grade",
+        "test_type": "negative_token_id_missing",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests API behavior when token_id is omitted.",
+        "expected_response_summary": "Returns TM Grade and Fundamental Grade insights for all tokens or an empty result.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.57,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_moonshot-tokens__llm_8",
+        "operation_id": "get_addon_1047_v2_moonshot-tokens",
+        "test_type": "negative_type_invalid",
+        "method": "get",
+        "path": "/addon/1047/v2/moonshot-tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "type": "unknown"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of type parameter.",
+        "expected_response_summary": "Bad request due to invalid type value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/moonshot-tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.55,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=unknown (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_price__llm_3",
+        "operation_id": "get_addon_1047_v2_price",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/price",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid token_id provided.",
+        "expected_response_summary": "Returns token price for the specified token_id.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/price",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.66,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_price__llm_4",
+        "operation_id": "get_addon_1047_v2_price",
+        "test_type": "negative_invalid_token_id",
+        "method": "get",
+        "path": "/addon/1047/v2/price",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "invalid_token"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests API response to an invalid token_id.",
+        "expected_response_summary": "Bad request due to invalid token_id.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/price",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.54,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=invalid_token (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_quantmetrics__llm_10",
+        "operation_id": "get_addon_1047_v2_quantmetrics",
+        "test_type": "boundary_page_negative",
+        "method": "get",
+        "path": "/addon/1047/v2/quantmetrics",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "page": "-1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests lower boundary for page parameter.",
+        "expected_response_summary": "Bad request due to negative page value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/quantmetrics",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.56,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?page=-1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_resistance-support__llm_12",
+        "operation_id": "get_addon_1047_v2_resistance-support",
+        "test_type": "negative_limit_too_large",
+        "method": "get",
+        "path": "/addon/1047/v2/resistance-support",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "10000"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests upper boundary for limit parameter.",
+        "expected_response_summary": "Bad request due to excessively large limit.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/resistance-support",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.55,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10000 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_scenario-analysis__llm_14",
+        "operation_id": "get_addon_1047_v2_scenario-analysis",
+        "test_type": "negative_page_non_numeric",
+        "method": "get",
+        "path": "/addon/1047/v2/scenario-analysis",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "page": "abc"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of page parameter.",
+        "expected_response_summary": "Bad request due to non-numeric page value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/scenario-analysis",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.53,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?page=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade__llm_18",
+        "operation_id": "get_addon_1047_v2_tm-grade",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid token_id provided.",
+        "expected_response_summary": "Returns latest TM Grade and Fundamental Grade insights for the token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.54,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tokens__llm_2",
+        "operation_id": "get_addon_1047_v2_tokens",
+        "test_type": "boundary_limit_zero",
+        "method": "get",
+        "path": "/addon/1047/v2/tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "0"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests lower boundary for limit parameter.",
+        "expected_response_summary": "Bad request due to invalid limit value.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.95,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=0 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_6",
+        "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+        "test_type": "negative_top_k_non_numeric",
+        "method": "get",
+        "path": "/addon/1047/v2/top-market-cap-tokens",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "top_k": "abc"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of top_k parameter.",
+        "expected_response_summary": "Bad request due to non-numeric top_k.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.62,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_trading-signals__llm_23",
+        "operation_id": "get_addon_1047_v2_trading-signals",
+        "test_type": "negative_limit_non_numeric",
+        "method": "get",
+        "path": "/addon/1047/v2/trading-signals",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "ten"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of limit parameter.",
+        "expected_response_summary": "Bad request due to non-numeric limit.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/trading-signals",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.64,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?limit=ten (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_quantmetrics__llm_9",
+        "operation_id": "get_addon_1047_v2_quantmetrics",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/quantmetrics",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "50",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with default limit and page.",
+        "expected_response_summary": "Returns latest quantitative metrics for tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/quantmetrics",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.69,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_resistance-support__llm_11",
+        "operation_id": "get_addon_1047_v2_resistance-support",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/resistance-support",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with small limit.",
+        "expected_response_summary": "Returns historical resistance and support levels.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/resistance-support",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.58,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_scenario-analysis__llm_13",
+        "operation_id": "get_addon_1047_v2_scenario-analysis",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/scenario-analysis",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "5",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval with small limit.",
+        "expected_response_summary": "Returns price predictions for different market scenarios.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/scenario-analysis",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.74,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?limit=5&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tokens__llm_1",
+        "operation_id": "get_addon_1047_v2_tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "limit": "50",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval of first page of tokens with default limit.",
+        "expected_response_summary": "Returns a list of coins and their associated TOKEN_IDs.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.59,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_5",
+        "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/top-market-cap-tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "top_k": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Standard retrieval of top market cap tokens.",
+        "expected_response_summary": "Returns list of top 10 market cap tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.6,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_moonshot-tokens__llm_7",
+        "operation_id": "get_addon_1047_v2_moonshot-tokens",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/moonshot-tokens",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "type": "active",
+          "limit": "20",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid type and pagination parameters.",
+        "expected_response_summary": "Returns a list of active moonshot tokens.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/moonshot-tokens",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.58,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=active&limit=20&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_technology-grade__llm_17",
+        "operation_id": "get_addon_1047_v2_technology-grade",
+        "test_type": "negative_date_range_invalid",
+        "method": "get",
+        "path": "/addon/1047/v2/technology-grade",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-10",
+          "endDate": "2025-07-05"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of date range.",
+        "expected_response_summary": "Bad request due to startDate after endDate.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/technology-grade",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.56,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-10&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade-history__llm_21",
+        "operation_id": "get_addon_1047_v2_tm-grade-history",
+        "test_type": "negative_invalid_date_format",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade-history",
+        "expected_statuses": [
+          400
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "07-01-2025",
+          "endDate": "2025-07-05"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests validation of date format.",
+        "expected_response_summary": "Bad request due to invalid startDate format.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade-history",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.71,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=07-01-2025&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_trading-signals__llm_22",
+        "operation_id": "get_addon_1047_v2_trading-signals",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/trading-signals",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "35987",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid token_id and pagination.",
+        "expected_response_summary": "Returns trading signals for the specified token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/trading-signals",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.71,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?token_id=35987&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_technology-grade__llm_16",
+        "operation_id": "get_addon_1047_v2_technology-grade",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/technology-grade",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-01",
+          "endDate": "2025-07-05",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "All query parameters provided with valid values.",
+        "expected_response_summary": "Returns technology grade for the specified token and date range.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/technology-grade",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 0.72,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    },
+    {
+      "test_case": {
+        "test_id": "get_addon_1047_v2_tm-grade-history__llm_20",
+        "operation_id": "get_addon_1047_v2_tm-grade-history",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/addon/1047/v2/tm-grade-history",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {
+          "token_id": "3375",
+          "startDate": "2025-07-01",
+          "endDate": "2025-07-05",
+          "limit": "10",
+          "page": "1"
+        },
+        "headers": {},
+        "json_body": null,
+        "notes": "Valid date range and pagination.",
+        "expected_response_summary": "Returns historical TM Grade and Fundamental Grade data for the token.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/addon/1047/v2/tm-grade-history",
+      "observed_status": null,
+      "response_excerpt": "",
+      "latency_ms": 1.06,
+      "passed": false,
+      "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+      "observed_json": null
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {
+      "unknown_failure": 23
+    },
+    "failures": [
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_sentiments__llm_15",
+            "operation_id": "get_addon_1047_v2_sentiments",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/sentiments",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "No parameters required.",
+            "expected_response_summary": "Returns hourly sentiment scores for Twitter, Reddit, and News.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/sentiments",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 1.0,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/sentiments (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/sentiments (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The endpoint host '%7bquicknode_endpoint%7d' was not resolved due to a misconfiguration or missing variable substitution, resulting in a NameResolutionError.",
+          "qa_bug_summary": "API test failed because the hostname '%7bquicknode_endpoint%7d' was not properly resolved, likely due to an uninitialized or incorrectly substituted environment variable. No response was received, and the test did not reach the API.",
+          "suggested_follow_up_tests": [
+            "Verify environment variable substitution for the endpoint host and rerun the test with a valid hostname.",
+            "Run a connectivity test to the intended API endpoint to confirm DNS resolution and network access."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade__llm_19",
+            "operation_id": "get_addon_1047_v2_tm-grade",
+            "test_type": "negative_token_id_missing",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {},
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests API behavior when token_id is omitted.",
+            "expected_response_summary": "Returns TM Grade and Fundamental Grade insights for all tokens or an empty result.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.57,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The endpoint host '%7bquicknode_endpoint%7d' was not resolved, indicating a misconfiguration in the API host variable or environment setup.",
+          "qa_bug_summary": "API test failed due to unresolved host variable '%7bquicknode_endpoint%7d', preventing the request from reaching the intended endpoint. No response was received, so API behavior for missing token_id could not be validated.",
+          "suggested_follow_up_tests": [
+            "Verify environment and endpoint configuration to ensure host variables are correctly substituted before running API tests.",
+            "Re-run the negative_token_id_missing test after fixing the host configuration to confirm API behavior when token_id is omitted."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_moonshot-tokens__llm_8",
+            "operation_id": "get_addon_1047_v2_moonshot-tokens",
+            "test_type": "negative_type_invalid",
+            "method": "get",
+            "path": "/addon/1047/v2/moonshot-tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "type": "unknown"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of type parameter.",
+            "expected_response_summary": "Bad request due to invalid type value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/moonshot-tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.55,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=unknown (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=unknown (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The endpoint host '%7bquicknode_endpoint%7d' was not resolved due to a misconfiguration or missing environment variable, resulting in a NameResolutionError before the API could be reached.",
+          "qa_bug_summary": "The test failed due to an execution error caused by an unresolved endpoint host variable ('%7bquicknode_endpoint%7d'), preventing the API from returning the expected 400 status for an invalid 'type' parameter.",
+          "suggested_follow_up_tests": [
+            "Verify environment and test configuration to ensure the endpoint host variable is correctly set and resolved.",
+            "Re-run the negative test for invalid 'type' parameter after fixing the endpoint resolution to confirm the API returns the expected 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_price__llm_3",
+            "operation_id": "get_addon_1047_v2_price",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/price",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid token_id provided.",
+            "expected_response_summary": "Returns token price for the specified token_id.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/price",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.66,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to a DNS resolution error: the host '%7bquicknode_endpoint%7d' could not be resolved. This suggests that the endpoint URL was not properly substituted and the placeholder was sent as-is.",
+          "qa_bug_summary": "API test failed before reaching the endpoint due to unresolved hostname '%7bquicknode_endpoint%7d'. The endpoint variable was not replaced with a valid hostname, causing a NameResolutionError.",
+          "suggested_follow_up_tests": [
+            "Verify that endpoint variables are correctly substituted with actual values before making the API call.",
+            "Test with a valid, hardcoded endpoint URL to confirm that the API responds as expected when DNS resolution succeeds."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_price__llm_4",
+            "operation_id": "get_addon_1047_v2_price",
+            "test_type": "negative_invalid_token_id",
+            "method": "get",
+            "path": "/addon/1047/v2/price",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "invalid_token"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests API response to an invalid token_id.",
+            "expected_response_summary": "Bad request due to invalid token_id.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/price",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.54,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=invalid_token (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/price?token_id=invalid_token (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error: the host '%7bquicknode_endpoint%7d' could not be resolved. This indicates that the endpoint URL was not properly substituted with a valid hostname before the test was executed.",
+          "qa_bug_summary": "Test did not reach the API due to unresolved endpoint variable ('%7bquicknode_endpoint%7d'), resulting in a connection error instead of the expected 400 response for an invalid token_id.",
+          "suggested_follow_up_tests": [
+            "Verify that endpoint variables are correctly substituted with actual values before test execution.",
+            "Re-run the negative_invalid_token_id test after fixing endpoint substitution to confirm the API returns the expected 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_quantmetrics__llm_10",
+            "operation_id": "get_addon_1047_v2_quantmetrics",
+            "test_type": "boundary_page_negative",
+            "method": "get",
+            "path": "/addon/1047/v2/quantmetrics",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "page": "-1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests lower boundary for page parameter.",
+            "expected_response_summary": "Bad request due to negative page value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/quantmetrics",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.56,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?page=-1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?page=-1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error: the host '%7bquicknode_endpoint%7d' could not be resolved, indicating a misconfiguration in the test environment or missing endpoint substitution.",
+          "qa_bug_summary": "API test did not reach the service due to unresolved host '%7bquicknode_endpoint%7d'. This prevented validation of the API's response to a negative page parameter.",
+          "suggested_follow_up_tests": [
+            "Verify and correct endpoint configuration or variable substitution for 'quicknode_endpoint' before rerunning the test.",
+            "After fixing the endpoint, rerun the boundary test with page=-1 to confirm the API returns the expected 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_resistance-support__llm_12",
+            "operation_id": "get_addon_1047_v2_resistance-support",
+            "test_type": "negative_limit_too_large",
+            "method": "get",
+            "path": "/addon/1047/v2/resistance-support",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "10000"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests upper boundary for limit parameter.",
+            "expected_response_summary": "Bad request due to excessively large limit.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/resistance-support",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.55,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10000 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10000 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a misconfigured or unresolved endpoint host ('%7bquicknode_endpoint%7d'), resulting in a name resolution error before the API could be reached.",
+          "qa_bug_summary": "The API test did not reach the intended endpoint because the host variable was not properly substituted, causing a DNS resolution failure. This prevented validation of the API's response to an excessively large 'limit' parameter.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint host variable is correctly configured and substituted in the test environment, then rerun the negative limit boundary test.",
+            "After confirming endpoint resolution, retest with both valid and excessively large 'limit' values to ensure proper 400 error handling."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_scenario-analysis__llm_14",
+            "operation_id": "get_addon_1047_v2_scenario-analysis",
+            "test_type": "negative_page_non_numeric",
+            "method": "get",
+            "path": "/addon/1047/v2/scenario-analysis",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "page": "abc"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of page parameter.",
+            "expected_response_summary": "Bad request due to non-numeric page value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/scenario-analysis",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.53,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?page=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?page=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a misconfigured or unresolved endpoint host ('%7bquicknode_endpoint%7d'), resulting in a DNS resolution error before the API could be reached.",
+          "qa_bug_summary": "Test did not reach the API due to an unresolved or incorrectly substituted endpoint variable, causing a NameResolutionError instead of validating the 'page' parameter.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint host variable is correctly substituted with a valid hostname before running the test.",
+            "Re-run the negative 'page' parameter test after fixing the endpoint configuration to confirm the API returns the expected 400 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade__llm_18",
+            "operation_id": "get_addon_1047_v2_tm-grade",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid token_id provided.",
+            "expected_response_summary": "Returns latest TM Grade and Fundamental Grade insights for the token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.54,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade?token_id=3375 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to an unresolved hostname '%7bquicknode_endpoint%7d', indicating that a placeholder variable was not replaced with an actual endpoint URL before execution.",
+          "qa_bug_summary": "The test failed because the API client attempted to connect to a literal placeholder ('%7bquicknode_endpoint%7d') instead of a valid hostname, resulting in a name resolution error and no response from the endpoint.",
+          "suggested_follow_up_tests": [
+            "Verify that environment variables or configuration files correctly substitute the 'quicknode_endpoint' placeholder with a valid URL before running the test.",
+            "Run the test again after ensuring the endpoint variable is properly set, and check for successful connection and expected 200 response."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tokens__llm_2",
+            "operation_id": "get_addon_1047_v2_tokens",
+            "test_type": "boundary_limit_zero",
+            "method": "get",
+            "path": "/addon/1047/v2/tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "0"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests lower boundary for limit parameter.",
+            "expected_response_summary": "Bad request due to invalid limit value.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.95,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=0 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=0 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The endpoint host '%7bquicknode_endpoint%7d' was not resolved due to a misconfiguration or missing environment variable, resulting in a NameResolutionError before the API could be reached.",
+          "qa_bug_summary": "Test failed due to an execution error caused by unresolved endpoint host. The API was not called, so no response or status code was received. This is not a functional API bug but an environment/configuration issue.",
+          "suggested_follow_up_tests": [
+            "Verify environment variables and endpoint configuration, then rerun the boundary_limit_zero test to ensure the API is reachable.",
+            "Run a basic connectivity test (e.g., GET /addon/1047/v2/tokens with default parameters) to confirm endpoint resolution before further boundary tests."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_6",
+            "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+            "test_type": "negative_top_k_non_numeric",
+            "method": "get",
+            "path": "/addon/1047/v2/top-market-cap-tokens",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "top_k": "abc"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of top_k parameter.",
+            "expected_response_summary": "Bad request due to non-numeric top_k.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.62,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=abc (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error: the hostname '%7bquicknode_endpoint%7d' could not be resolved. This indicates a misconfiguration in the test environment or test setup, where the endpoint placeholder was not replaced with a valid hostname.",
+          "qa_bug_summary": "Test did not reach the API due to unresolved endpoint placeholder ('%7bquicknode_endpoint%7d'), resulting in a connection error instead of validating the API's response to a non-numeric 'top_k' parameter.",
+          "suggested_follow_up_tests": [
+            "Correct the endpoint configuration to use a valid hostname and rerun the negative test with a non-numeric 'top_k' parameter to verify proper 400 error handling.",
+            "Add a test to verify that all environment variables and endpoint placeholders are correctly resolved before API tests are executed."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_trading-signals__llm_23",
+            "operation_id": "get_addon_1047_v2_trading-signals",
+            "test_type": "negative_limit_non_numeric",
+            "method": "get",
+            "path": "/addon/1047/v2/trading-signals",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "ten"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of limit parameter.",
+            "expected_response_summary": "Bad request due to non-numeric limit.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/trading-signals",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.64,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?limit=ten (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?limit=ten (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error; the host '%7bquicknode_endpoint%7d' could not be resolved, indicating a misconfiguration or missing endpoint substitution in the test setup.",
+          "qa_bug_summary": "API test did not reach the endpoint due to unresolved hostname '%7bquicknode_endpoint%7d'. The failure is unrelated to the intended negative test of the 'limit' parameter and instead points to a test environment or setup issue.",
+          "suggested_follow_up_tests": [
+            "Verify endpoint substitution and rerun the negative test with a non-numeric 'limit' parameter to confirm proper 400 error handling.",
+            "Run a basic connectivity test to the intended endpoint with valid parameters to ensure the environment is correctly configured."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_quantmetrics__llm_9",
+            "operation_id": "get_addon_1047_v2_quantmetrics",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/quantmetrics",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "50",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with default limit and page.",
+            "expected_response_summary": "Returns latest quantitative metrics for tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/quantmetrics",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.69,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/quantmetrics?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to an unresolved hostname: the host value '%7bquicknode_endpoint%7d' was not replaced with a valid endpoint, resulting in a NameResolutionError.",
+          "qa_bug_summary": "The test failed because the endpoint URL contained an unreplaced variable ('{quicknode_endpoint}'), leading to a DNS resolution error and no response from the server.",
+          "suggested_follow_up_tests": [
+            "Verify that environment variables or configuration values for endpoint substitution are correctly set before running the test.",
+            "Run the test again after ensuring the endpoint variable is properly replaced with a valid hostname."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_resistance-support__llm_11",
+            "operation_id": "get_addon_1047_v2_resistance-support",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/resistance-support",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with small limit.",
+            "expected_response_summary": "Returns historical resistance and support levels.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/resistance-support",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.58,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/resistance-support?limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The hostname '%7bquicknode_endpoint%7d' was not resolved, indicating that a placeholder variable was not replaced with a valid endpoint URL before the API call.",
+          "qa_bug_summary": "API test failed due to unresolved hostname '%7bquicknode_endpoint%7d', suggesting a misconfiguration or missing variable substitution in the test setup.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint variable substitution is correctly implemented and the actual hostname is used in the API call.",
+            "Run the test again with a valid endpoint to confirm that the API responds with the expected status and data."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_scenario-analysis__llm_13",
+            "operation_id": "get_addon_1047_v2_scenario-analysis",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/scenario-analysis",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "5",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval with small limit.",
+            "expected_response_summary": "Returns price predictions for different market scenarios.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/scenario-analysis",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.74,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?limit=5&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/scenario-analysis?limit=5&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to a DNS resolution error: the hostname '%7bquicknode_endpoint%7d' was not resolved. This suggests that a placeholder value was not replaced with a valid endpoint URL before the request was made.",
+          "qa_bug_summary": "The test attempted to call the API using an unresolved placeholder ('%7bquicknode_endpoint%7d') as the host, resulting in a NameResolutionError and no response from the endpoint.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint URL is correctly populated with a valid hostname before executing the test.",
+            "Run the test again after correcting the endpoint configuration to ensure the API returns the expected 200 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tokens__llm_1",
+            "operation_id": "get_addon_1047_v2_tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "limit": "50",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval of first page of tokens with default limit.",
+            "expected_response_summary": "Returns a list of coins and their associated TOKEN_IDs.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.59,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tokens?limit=50&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API test failed due to a DNS name resolution error. The host '%7bquicknode_endpoint%7d' was not resolved, indicating that a placeholder variable was not replaced with a valid endpoint before the test was executed.",
+          "qa_bug_summary": "The test attempted to connect to a URL containing the unresolved placeholder '%7bquicknode_endpoint%7d', resulting in a NameResolutionError and no response from the API.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint configuration correctly substitutes the 'quicknode_endpoint' variable with a valid hostname before executing the test.",
+            "Re-run the test after ensuring all environment variables and endpoint substitutions are properly set to confirm the API is reachable and returns the expected status code."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_top-market-cap-tokens__llm_5",
+            "operation_id": "get_addon_1047_v2_top-market-cap-tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/top-market-cap-tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "top_k": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Standard retrieval of top market cap tokens.",
+            "expected_response_summary": "Returns list of top 10 market cap tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/top-market-cap-tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.6,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/top-market-cap-tokens?top_k=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to an unresolved hostname '%7bquicknode_endpoint%7d', indicating that the endpoint URL was not properly substituted and URL encoding was not handled.",
+          "qa_bug_summary": "The test failed before reaching the API due to a misconfigured or missing endpoint variable, resulting in a name resolution error. The placeholder '{quicknode_endpoint}' was not replaced with a valid hostname.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint variable '{quicknode_endpoint}' is correctly set and substituted before making the API call.",
+            "Run the test again after correcting the endpoint configuration to confirm that the API is reachable and returns the expected 200 status."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_moonshot-tokens__llm_7",
+            "operation_id": "get_addon_1047_v2_moonshot-tokens",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/moonshot-tokens",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "type": "active",
+              "limit": "20",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid type and pagination parameters.",
+            "expected_response_summary": "Returns a list of active moonshot tokens.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/moonshot-tokens",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.58,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=active&limit=20&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/moonshot-tokens?type=active&limit=20&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API test failed due to a DNS name resolution error. The host '%7bquicknode_endpoint%7d' was not resolved, indicating that a placeholder variable was not replaced with an actual endpoint URL before the request was made.",
+          "qa_bug_summary": "The test did not substitute the '{quicknode_endpoint}' placeholder with a valid hostname, resulting in a failed connection and no response from the API.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint URL is correctly constructed and that all placeholder variables are properly replaced with real values before executing the test.",
+            "Re-run the test with a valid and reachable endpoint to confirm that the API responds as expected when the connection is successful."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_technology-grade__llm_17",
+            "operation_id": "get_addon_1047_v2_technology-grade",
+            "test_type": "negative_date_range_invalid",
+            "method": "get",
+            "path": "/addon/1047/v2/technology-grade",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-10",
+              "endDate": "2025-07-05"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of date range.",
+            "expected_response_summary": "Bad request due to startDate after endDate.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/technology-grade",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.56,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-10&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-10&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error: the host '%7bquicknode_endpoint%7d' could not be resolved, indicating a misconfigured or missing endpoint variable.",
+          "qa_bug_summary": "Test did not reach the API due to an unresolved endpoint placeholder ('%7bquicknode_endpoint%7d'), preventing validation of negative date range handling.",
+          "suggested_follow_up_tests": [
+            "Correct the endpoint configuration to ensure the actual host is used, then rerun the negative date range test to verify proper 400 response.",
+            "Add a test to verify that all environment variables or endpoint placeholders are correctly resolved before API tests are executed."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade-history__llm_21",
+            "operation_id": "get_addon_1047_v2_tm-grade-history",
+            "test_type": "negative_invalid_date_format",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade-history",
+            "expected_statuses": [
+              400
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "07-01-2025",
+              "endDate": "2025-07-05"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Tests validation of date format.",
+            "expected_response_summary": "Bad request due to invalid startDate format.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade-history",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.71,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=07-01-2025&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=07-01-2025&endDate=2025-07-05 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The test failed due to a name resolution error for the host '%7bquicknode_endpoint%7d', indicating a misconfiguration or missing endpoint variable rather than an API response to invalid date format.",
+          "qa_bug_summary": "Test did not reach the API due to unresolved endpoint variable '%7bquicknode_endpoint%7d'. The failure is unrelated to date format validation and is caused by infrastructure or test setup issues.",
+          "suggested_follow_up_tests": [
+            "Verify endpoint configuration and rerun the test with a valid host to confirm API behavior for invalid date formats.",
+            "Add a test for valid date format to ensure endpoint connectivity and baseline API response."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_trading-signals__llm_22",
+            "operation_id": "get_addon_1047_v2_trading-signals",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/trading-signals",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "35987",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid token_id and pagination.",
+            "expected_response_summary": "Returns trading signals for the specified token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/trading-signals",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.71,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?token_id=35987&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/trading-signals?token_id=35987&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to an unresolved hostname '%7bquicknode_endpoint%7d', indicating that a placeholder variable was not replaced with an actual endpoint URL before the test was executed.",
+          "qa_bug_summary": "The test attempted to connect to a non-existent host '%7bquicknode_endpoint%7d', resulting in a NameResolutionError. This suggests a configuration or environment variable substitution issue in the test setup.",
+          "suggested_follow_up_tests": [
+            "Verify that the endpoint URL is correctly populated with the actual QuickNode endpoint before executing the test.",
+            "Run the test with a valid, resolved endpoint to confirm that the API responds as expected when configuration is correct."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_technology-grade__llm_16",
+            "operation_id": "get_addon_1047_v2_technology-grade",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/technology-grade",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-01",
+              "endDate": "2025-07-05",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "All query parameters provided with valid values.",
+            "expected_response_summary": "Returns technology grade for the specified token and date range.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/technology-grade",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 0.72,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/technology-grade?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API call failed due to a DNS resolution error: the host '%7bquicknode_endpoint%7d' could not be resolved. This indicates that the endpoint URL was not properly substituted and the placeholder was sent as-is.",
+          "qa_bug_summary": "The test failed before reaching the API due to an unresolved endpoint placeholder ('{quicknode_endpoint}'), resulting in a NameResolutionError. The endpoint host was not correctly configured or replaced in the test setup.",
+          "suggested_follow_up_tests": [
+            "Verify that endpoint placeholders are correctly substituted with actual values before test execution.",
+            "Run the test with a valid and resolvable endpoint to confirm API behavior and response."
+          ]
+        }
+      },
+      {
+        "execution": {
+          "test_case": {
+            "test_id": "get_addon_1047_v2_tm-grade-history__llm_20",
+            "operation_id": "get_addon_1047_v2_tm-grade-history",
+            "test_type": "happy_path",
+            "method": "get",
+            "path": "/addon/1047/v2/tm-grade-history",
+            "expected_statuses": [
+              200
+            ],
+            "path_params": {},
+            "query_params": {
+              "token_id": "3375",
+              "startDate": "2025-07-01",
+              "endDate": "2025-07-05",
+              "limit": "10",
+              "page": "1"
+            },
+            "headers": {},
+            "json_body": null,
+            "notes": "Valid date range and pagination.",
+            "expected_response_summary": "Returns historical TM Grade and Fundamental Grade data for the token.",
+            "generated_by": "llm"
+          },
+          "endpoint": "/addon/1047/v2/tm-grade-history",
+          "observed_status": null,
+          "response_excerpt": "",
+          "latency_ms": 1.06,
+          "passed": false,
+          "error": "HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))",
+          "observed_json": null
+        },
+        "heuristic": {
+          "category": "unknown_failure",
+          "confidence": 0.65,
+          "reason": "Execution error occurred before response: HTTPSConnectionPool(host='%7bquicknode_endpoint%7d', port=443): Max retries exceeded with url: /addon/1047/v2/tm-grade-history?token_id=3375&startDate=2025-07-01&endDate=2025-07-05&limit=10&page=1 (Caused by NameResolutionError(\"HTTPSConnection(host='%7bquicknode_endpoint%7d', port=443): Failed to resolve '%7bquicknode_endpoint%7d' ([Errno 11001] getaddrinfo failed)\"))"
+        },
+        "llm": {
+          "likely_cause": "The API endpoint is configured with a placeholder value ('{quicknode_endpoint}') instead of a valid hostname, causing a DNS resolution failure.",
+          "qa_bug_summary": "API test failed due to unresolved hostname '{quicknode_endpoint}', indicating misconfiguration of the endpoint URL.",
+          "suggested_follow_up_tests": [
+            "Verify the API configuration uses a valid, resolvable hostname instead of a placeholder and rerun the test.",
+            "Test other endpoints to confirm if the hostname misconfiguration is isolated to this endpoint or affects multiple endpoints."
+          ]
+        }
+      }
+    ]
+  }
+}

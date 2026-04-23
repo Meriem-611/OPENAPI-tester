@@ -1,0 +1,49 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "q": "Python programming",
+        "format": "json"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns instant answer data for the query 'Python programming' in JSON format. Response includes fields like Abstract, Heading, and possibly RelatedTopics.",
+      "notes": "Basic happy path test with required and common optional parameter."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "validation_negative_missing_required",
+      "path_params": {},
+      "query_params": {},
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns 400 Bad Request due to missing required 'q' parameter.",
+      "notes": "Tests enforcement of required query parameter."
+    },
+    {
+      "operation_id": "getInstantAnswer",
+      "test_type": "boundary_and_enum_validation",
+      "path_params": {},
+      "query_params": {
+        "q": "test",
+        "format": "invalid_format"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        400
+      ],
+      "expected_response_summary": "Returns 400 Bad Request due to invalid 'format' parameter value.",
+      "notes": "Tests enum validation for the 'format' parameter."
+    }
+  ]
+}

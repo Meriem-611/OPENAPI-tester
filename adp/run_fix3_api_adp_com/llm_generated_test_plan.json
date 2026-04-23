@@ -1,0 +1,231 @@
+{
+  "test_cases": [
+    {
+      "operation_id": "Payroll_listPayrollOutputs",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "$filter": "payrollScheduleReference/payrollYear eq 2023 and payrollScheduleReference/payrollWeekNumber eq 12 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT",
+        "$count": "true",
+        "use-cache": "false",
+        "level": "details",
+        "$select": "earnings,reportableEarningsAndBenefits"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns a list of payroll outputs for the specified region, company code, year, and week with selected fields.",
+      "notes": "Valid filter and select parameters; expects normal data payload."
+    },
+    {
+      "operation_id": "Payroll_listPayrollOutputs",
+      "test_type": "negative_validation",
+      "path_params": {},
+      "query_params": {
+        "$filter": "payrollScheduleReference/payrollYear eq 9999 and payrollScheduleReference/payrollWeekNumber eq 99 and payrollGroupCode/codeValue eq INVALID and payrollRegionCode/codeValue eq NONE",
+        "$count": "true",
+        "use-cache": "false",
+        "level": "details",
+        "$select": "earnings"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200,
+        400,
+        404
+      ],
+      "expected_response_summary": "Returns empty result set or error for invalid filter values.",
+      "notes": "Boundary test for filter values that likely do not exist."
+    },
+    {
+      "operation_id": "Hr_listTop5PreventCache",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "$top": "5",
+        "preventCache": "20240601T120000Z",
+        "$filter": "workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns top 5 workers matching filter, cache-busting applied.",
+      "notes": "Standard use with cache prevention and filter."
+    },
+    {
+      "operation_id": "Hr_listTop5PreventCache",
+      "test_type": "boundary",
+      "path_params": {},
+      "query_params": {
+        "$top": "0",
+        "preventCache": "20240601T120000Z",
+        "$filter": ""
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200,
+        400
+      ],
+      "expected_response_summary": "Returns empty list or error for $top=0.",
+      "notes": "Boundary test for minimum $top value."
+    },
+    {
+      "operation_id": "Hr_checkAsyncRequestStatus",
+      "test_type": "happy_path",
+      "path_params": {
+        "key": "valid-async-key-123"
+      },
+      "query_params": {
+        "$select": "processingStatus"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns async request status for valid key.",
+      "notes": "Checks processing status for a known async key."
+    },
+    {
+      "operation_id": "Hr_checkAsyncRequestStatus",
+      "test_type": "negative_invalid_key",
+      "path_params": {
+        "key": "invalid-key-xyz"
+      },
+      "query_params": {
+        "$select": "processingStatus"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404,
+        400
+      ],
+      "expected_response_summary": "Returns error or not found for invalid async key.",
+      "notes": "Tests error handling for unknown async key."
+    },
+    {
+      "operation_id": "Hr_getWorkerByAoid",
+      "test_type": "happy_path",
+      "path_params": {
+        "anthony-albright-aoid": "A123456789"
+      },
+      "query_params": {
+        "preventCache": "20240601T120000Z"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns worker data for valid AOID.",
+      "notes": "Standard retrieval for a known worker AOID."
+    },
+    {
+      "operation_id": "Hr_getWorkerByAoid",
+      "test_type": "negative_invalid_aoid",
+      "path_params": {
+        "anthony-albright-aoid": "INVALID_AOID"
+      },
+      "query_params": {
+        "preventCache": "20240601T120000Z"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404,
+        400
+      ],
+      "expected_response_summary": "Returns error or not found for invalid AOID.",
+      "notes": "Tests error handling for unknown AOID."
+    },
+    {
+      "operation_id": "Hr_getWorkerDemographicsByAoid",
+      "test_type": "happy_path",
+      "path_params": {
+        "anthony-albright-aoid": "A123456789"
+      },
+      "query_params": {
+        "preventCache": "20240601T120000Z"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns demographic data for valid AOID.",
+      "notes": "Standard retrieval for a known worker AOID."
+    },
+    {
+      "operation_id": "Hr_getWorkerDemographicsByAoid",
+      "test_type": "negative_invalid_aoid",
+      "path_params": {
+        "anthony-albright-aoid": "INVALID_AOID"
+      },
+      "query_params": {
+        "preventCache": "20240601T120000Z"
+      },
+      "headers": {},
+      "json_body": null,
+      "expected_statuses": [
+        404,
+        400
+      ],
+      "expected_response_summary": "Returns error or not found for invalid AOID.",
+      "notes": "Tests error handling for unknown AOID."
+    },
+    {
+      "operation_id": "TokenRequest_createWithAuthorizationHeader",
+      "test_type": "happy_path",
+      "path_params": {},
+      "query_params": {
+        "grant_type": "client_credentials",
+        "client_id": "valid-client-id",
+        "client_secret": "valid-client-secret"
+      },
+      "headers": {
+        "Authorization": "Basic dmFsaWQtY2xpZW50LWlkOnZhbGlkLWNsaWVudC1zZWNyZXQ="
+      },
+      "json_body": {
+        "grant_type": "client_credentials",
+        "client_id": "valid-client-id",
+        "client_secret": "valid-client-secret"
+      },
+      "expected_statuses": [
+        200
+      ],
+      "expected_response_summary": "Returns OAuth bearer token for valid credentials.",
+      "notes": "Valid client credentials and authorization header."
+    },
+    {
+      "operation_id": "TokenRequest_createWithAuthorizationHeader",
+      "test_type": "negative_invalid_credentials",
+      "path_params": {},
+      "query_params": {
+        "grant_type": "client_credentials",
+        "client_id": "invalid-client-id",
+        "client_secret": "invalid-client-secret"
+      },
+      "headers": {
+        "Authorization": "Basic aW52YWxpZC1jbGllbnQtaWQ6aW52YWxpZC1jbGllbnQtc2VjcmV0"
+      },
+      "json_body": {
+        "grant_type": "client_credentials",
+        "client_id": "invalid-client-id",
+        "client_secret": "invalid-client-secret"
+      },
+      "expected_statuses": [
+        401,
+        400
+      ],
+      "expected_response_summary": "Returns error for invalid client credentials.",
+      "notes": "Tests authentication failure with invalid credentials."
+    }
+  ]
+}

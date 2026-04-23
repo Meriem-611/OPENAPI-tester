@@ -1,0 +1,316 @@
+{
+  "summary": {
+    "spec_name": "advice.yaml",
+    "total_operations_parsed": 3,
+    "total_operations_selected": 3,
+    "total_tests_generated": 7,
+    "tests_executed": 7,
+    "passed": 7,
+    "failed": 0,
+    "execution_errors": 0
+  },
+  "coverage_summary": {
+    "resource_groups_found": [
+      "advice"
+    ],
+    "resource_groups_covered": [
+      "advice"
+    ],
+    "behavioral_partitions_covered": [
+      "auth:public",
+      "behavior:read_only",
+      "input:no_body",
+      "method:get"
+    ],
+    "selected_operations": [
+      "get_advice_search_{query}",
+      "getRandom",
+      "getAdviceById"
+    ]
+  },
+  "execution_results": [
+    {
+      "test_case": {
+        "test_id": "getRandom__llm_1",
+        "operation_id": "getRandom",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/advice",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {},
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic happy path test to ensure random advice is returned successfully.",
+        "expected_response_summary": "Returns a random advice slip with a valid 'slip' object.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice",
+      "observed_status": 200,
+      "response_excerpt": "{\"slip\": {\"id\": 63, \"advice\": \"If you're squashed close to strangers on public transport, try not to be rude to them. No one likes those situations.\"}}",
+      "latency_ms": 480.91,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "slip": {
+          "id": 63,
+          "advice": "If you're squashed close to strangers on public transport, try not to be rude to them. No one likes those situations."
+        }
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "getAdviceById__llm_2",
+        "operation_id": "getAdviceById",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/advice/{slip_id}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "slip_id": 1
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests retrieval of a known slip by valid ID.",
+        "expected_response_summary": "Returns the advice slip with slip_id=1.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/1",
+      "observed_status": 200,
+      "response_excerpt": "{\"slip\": {\"id\": 1, \"advice\": \"Remember that spiders are more afraid of you, than you are of them.\"}}",
+      "latency_ms": 474.05,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "slip": {
+          "id": 1,
+          "advice": "Remember that spiders are more afraid of you, than you are of them."
+        }
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "getAdviceById__llm_3",
+        "operation_id": "getAdviceById",
+        "test_type": "not_found_negative",
+        "method": "get",
+        "path": "/advice/{slip_id}",
+        "expected_statuses": [
+          404
+        ],
+        "path_params": {
+          "slip_id": 999999
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests behavior when slip_id does not exist.",
+        "expected_response_summary": "Returns an error object indicating the slip was not found.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/999999",
+      "observed_status": 200,
+      "response_excerpt": "{\"message\": {\"type\": \"error\", \"text\": \"Advice slip not found.\"}}",
+      "latency_ms": 518.34,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "message": {
+          "type": "error",
+          "text": "Advice slip not found."
+        }
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "getAdviceById__llm_4",
+        "operation_id": "getAdviceById",
+        "test_type": "validation_negative",
+        "method": "get",
+        "path": "/advice/{slip_id}",
+        "expected_statuses": [
+          404
+        ],
+        "path_params": {
+          "slip_id": -1
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests input validation for negative slip_id.",
+        "expected_response_summary": "Returns an error object for invalid slip_id (negative number).",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/-1",
+      "observed_status": 200,
+      "response_excerpt": "{\"message\": {\"type\": \"error\", \"text\": \"Advice slip not found.\"}}",
+      "latency_ms": 506.18,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "message": {
+          "type": "error",
+          "text": "Advice slip not found."
+        }
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "get_advice_search_{query}__llm_5",
+        "operation_id": "get_advice_search_{query}",
+        "test_type": "happy_path",
+        "method": "get",
+        "path": "/advice/search/{query}",
+        "expected_statuses": [
+          200
+        ],
+        "path_params": {
+          "query": "life"
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Basic search test for a common term.",
+        "expected_response_summary": "Returns a list of advice slips matching the search query 'life'.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/search/life",
+      "observed_status": 200,
+      "response_excerpt": "{\"total_results\": \"11\", \"query\": \"life\", \"slips\": [{\"id\": 14, \"advice\": \"Life is better when you sing about bananas.\", \"date\": \"2015-12-13\"}, {\"id\": 117, \"advice\": \"A common regret in life is wishing one hadn't worked so hard.\", \"date\": \"2017-02-07\"}, {\"id\": 118, \"advice\": \"A common regret in life is wishing one had the courage to be ones true self.\", \"date\": \"2015-11-19\"}, {\"id\": 122, \"advice\": \"You spend half your life asleep or in bed. It's worth spending money on a good mattress, decent pill...",
+      "latency_ms": 498.32,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "total_results": "11",
+        "query": "life",
+        "slips": [
+          {
+            "id": 14,
+            "advice": "Life is better when you sing about bananas.",
+            "date": "2015-12-13"
+          },
+          {
+            "id": 117,
+            "advice": "A common regret in life is wishing one hadn't worked so hard.",
+            "date": "2017-02-07"
+          },
+          {
+            "id": 118,
+            "advice": "A common regret in life is wishing one had the courage to be ones true self.",
+            "date": "2015-11-19"
+          },
+          {
+            "id": 122,
+            "advice": "You spend half your life asleep or in bed. It's worth spending money on a good mattress, decent pillows and a comfy duvet.",
+            "date": "2016-05-25"
+          },
+          {
+            "id": 130,
+            "advice": "If you have grandparents or parents - Talk to them more. Ask them about their life experiences.",
+            "date": "2016-10-06"
+          },
+          {
+            "id": 147,
+            "advice": "Don't take life too seriously.",
+            "date": "2015-08-20"
+          },
+          {
+            "id": 156,
+            "advice": "Life is short enough, don't race to the finish.",
+            "date": "2016-07-30"
+          },
+          {
+            "id": 157,
+            "advice": "When something goes wrong in life, just shout \"plot twist!\" and carry on.",
+            "date": "2016-09-14"
+          },
+          {
+            "id": 158,
+            "advice": "Life can be a lot more interesting inside your head.",
+            "date": "2016-11-11"
+          },
+          {
+            "id": 164,
+            "advice": "Some of life's best lessons are learnt at the worst times.",
+            "date": "2016-05-11"
+          },
+          {
+            "id": 193,
+            "advice": "Value the people in your life.",
+            "date": "2013-01-01"
+          }
+        ]
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "get_advice_search_{query}__llm_6",
+        "operation_id": "get_advice_search_{query}",
+        "test_type": "not_found_negative",
+        "method": "get",
+        "path": "/advice/search/{query}",
+        "expected_statuses": [
+          404
+        ],
+        "path_params": {
+          "query": "asldkfjalskdjflaskjdf"
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests search with a query that is unlikely to match any advice.",
+        "expected_response_summary": "Returns an error object indicating no advice slips were found for the query.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/search/asldkfjalskdjflaskjdf",
+      "observed_status": 200,
+      "response_excerpt": "{\"message\": {\"type\": \"notice\", \"text\": \"No advice slips found matching that search term.\"}}",
+      "latency_ms": 494.54,
+      "passed": true,
+      "error": null,
+      "observed_json": {
+        "message": {
+          "type": "notice",
+          "text": "No advice slips found matching that search term."
+        }
+      }
+    },
+    {
+      "test_case": {
+        "test_id": "get_advice_search_{query}__llm_7",
+        "operation_id": "get_advice_search_{query}",
+        "test_type": "boundary_empty_query",
+        "method": "get",
+        "path": "/advice/search/{query}",
+        "expected_statuses": [
+          404
+        ],
+        "path_params": {
+          "query": ""
+        },
+        "query_params": {},
+        "headers": {},
+        "json_body": null,
+        "notes": "Tests API behavior when the search query is empty.",
+        "expected_response_summary": "Returns an error object for empty search query.",
+        "generated_by": "llm"
+      },
+      "endpoint": "/advice/search/",
+      "observed_status": 404,
+      "response_excerpt": "<!doctype html><html lang=\"en\">    <head>        <meta charset=\"utf-8\">        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">        <title>404 Not Found</title>        <style>            body{margin:0;padding:30px;font:12px/1.5 Helvetica,Arial,Verdana,sans-serif}            h1{margin:0;font-size:48px;font-weight:normal;line-height:48px}            strong{display:inline-block;width:65px}        </style>    </head>    <body>        <h1>404 Not Found</h1>        <div><p>The a...",
+      "latency_ms": 474.07,
+      "passed": true,
+      "error": null,
+      "observed_json": null
+    }
+  ],
+  "failure_analysis_summary": {
+    "counts_per_failure_category": {},
+    "failures": []
+  }
+}

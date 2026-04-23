@@ -1,0 +1,10 @@
+{
+  "ranked_operation_ids": [
+    "Payroll_listPayrollOutputs",
+    "Hr_listTop5PreventCache",
+    "Hr_checkAsyncRequestStatus",
+    "Hr_getWorkerByAoid",
+    "Hr_getWorkerDemographicsByAoid",
+    "TokenRequest_createWithAuthorizationHeader"
+  ]
+}

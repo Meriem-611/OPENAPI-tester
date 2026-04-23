@@ -1,0 +1,24 @@
+[
+  {
+    "operation_id": "getProviders",
+    "path": "/providers.json",
+    "status": 200,
+    "ids_found": 0
+  },
+  {
+    "operation_id": "listAPIs",
+    "path": "/list.json",
+    "status": 200,
+    "ids_found": 0
+  },
+  {
+    "operation_id": "getProvider",
+    "path": "/{provider}.json",
+    "status": 404
+  },
+  {
+    "operation_id": "getServices",
+    "path": "/{provider}/services.json",
+    "status": 404
+  }
+]
