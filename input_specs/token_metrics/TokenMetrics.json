@@ -1,0 +1,1246 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Token Metrics API API",
+    "description": "AI-powered crypto data API: live prices, OHLCV, Trader & Investor Grades, trading signals, indices & sentiment metrics.",
+    "version": "1.0.0",
+    "contact": {
+      "email": "support@tokenmetrics.com",
+      "url": "https://www.tokenmetrics.com/contact-us"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{quicknode_endpoint}",
+      "description": "Your QuickNode endpoint",
+      "variables": {
+        "quicknode_endpoint": {
+          "default": "your-endpoint.quiknode.pro",
+          "description": "Your QuickNode endpoint URL"
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "REST API",
+      "description": "endpoints for the add-on"
+    }
+  ],
+  "paths": {
+    "/addon/1047/v2/trading-signals": {
+      "get": {
+        "summary": "Get the AI generated trading signals for long and short positions for all tokens.",
+        "description": "Get the AI generated trading signals for long and short positions for all tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/trading-signals"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "35987"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/ai-reports": {
+      "get": {
+        "summary": "Retrieve AI-generated reports providing comprehensive analyses of cryptocurrency tokens, including deep dives, investment analyses, and code reviews.",
+        "description": "Retrieve AI-generated reports providing comprehensive analyses of cryptocurrency tokens, including deep dives, investment analyses, and code reviews.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/ai-reports"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/resistance-support": {
+      "get": {
+        "summary": "Get the historical levels of resistance and support for each token.",
+        "description": "Get the historical levels of resistance and support for each token.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/resistance-support"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/sentiments": {
+      "get": {
+        "summary": "Get the hourly sentiment score for Twitter, Reddit, and all the News, including quick summary of what happened.",
+        "description": "Get the hourly sentiment score for Twitter, Reddit, and all the News, including quick summary of what happened.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/sentiments"
+        },
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/crypto-investors": {
+      "get": {
+        "summary": "Get the latest list of crypto investors and their scores.",
+        "description": "Get the latest list of crypto investors and their scores.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/crypto-investors"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/top-market-cap-tokens": {
+      "get": {
+        "summary": "Get the list of coins for top market cap.",
+        "description": "Get the list of coins for top market cap.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/top-market-cap-tokens"
+        },
+        "parameters": [
+          {
+            "name": "top_k",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "10"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/indices-holdings": {
+      "get": {
+        "summary": "This endpoint returns the current holdings of the given Index, along with their respective weight in %.",
+        "description": "This endpoint returns the current holdings of the given Index, along with their respective weight in %.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/indices-holdings"
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/price": {
+      "get": {
+        "summary": "Get token prices based on the provided token IDs.",
+        "description": "Get token prices based on the provided token IDs.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/price"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3375"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/correlation": {
+      "get": {
+        "summary": "Get the Top 10 and Bottom 10 correlation of tokens with the top 100 market cap tokens.",
+        "description": "Get the Top 10 and Bottom 10 correlation of tokens with the top 100 market cap tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/correlation"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/indices": {
+      "get": {
+        "summary": "Get active and passive crypto indices with performance and market data.",
+        "description": "Get active and passive crypto indices with performance and market data.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/indices"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/tm-grade": {
+      "get": {
+        "summary": "Get the latest TM Grade and Fundamental Grade insights for a token, including signals, momentum, and 24‑hour percentage changes.",
+        "description": "Get the latest TM Grade and Fundamental Grade insights for a token, including signals, momentum, and 24‑hour percentage changes.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/tm-grades"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3375"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/quantmetrics": {
+      "get": {
+        "summary": "Get the latest quantitative metrics for tokens. Note that Token Metrics pricing data starts on 2019-01-01 for most tokens. More historical data will be available soon.",
+        "description": "Get the latest quantitative metrics for tokens. Note that Token Metrics pricing data starts on 2019-01-01 for most tokens. More historical data will be available soon.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/quantmetrics"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/scenario-analysis": {
+      "get": {
+        "summary": "Get the price prediction based on different Crypto Market scenario.",
+        "description": "Get the price prediction based on different Crypto Market scenario.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/scenario-analysis"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/tm-grade-history": {
+      "get": {
+        "summary": "Retrieve historical TM Grade and Fundamental Grade data for a token over a specified date range, including signals and momentum trends.",
+        "description": "Retrieve historical TM Grade and Fundamental Grade data for a token over a specified date range, including signals and momentum trends.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/tm-grades-historical"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3375"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2025-07-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2025-07-05"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/indices-performance": {
+      "get": {
+        "summary": "The Indices Performance endpoint provides historical performance data for a given index, including cumulative return on investment (ROI) over time. This data is useful for analyzing index trends and evaluating investment performance.",
+        "description": "The Indices Performance endpoint provides historical performance data for a given index, including cumulative return on investment (ROI) over time. This data is useful for analyzing index trends and evaluating investment performance.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/indices-performance"
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/hourly-trading-signals": {
+      "get": {
+        "summary": "Retrieves the hourly AI-generated trading signals for long and short positions for all tokens.",
+        "description": "Retrieves the hourly AI-generated trading signals for long and short positions for all tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/hourly-trading-signals"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3375"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/technology-grade": {
+      "get": {
+        "summary": "Get the latest Technology Grade for a token, reflecting its tech strength and innovation ranking compared to other tokens.",
+        "description": "Get the latest Technology Grade for a token, reflecting its tech strength and innovation ranking compared to other tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/technology-grades"
+        },
+        "parameters": [
+          {
+            "name": "token_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3375"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2025-07-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2025-07-05"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/moonshot-tokens": {
+      "get": {
+        "summary": "Get the AI-curated token picks (Moonshots) with high breakout potential based on grades, sentiment, volume, and on-chain data to help users trade smarter and faster.",
+        "description": "Get the AI-curated token picks (Moonshots) with high breakout potential based on grades, sentiment, volume, and on-chain data to help users trade smarter and faster.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/moonshot-tokens"
+        },
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "active"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/tokens": {
+      "get": {
+        "summary": "Get the list of coins and their associated TOKEN_ID supported by Token Metrics. If ID or symbol alone isn’t enough to identify a token, use this reference to clarify → https://api.tokenmetrics.com/api-docs/#/Tokens/get_v2_tokens",
+        "description": "Get the list of coins and their associated TOKEN_ID supported by Token Metrics. If ID or symbol alone isn’t enough to identify a token, use this reference to clarify → https://api.tokenmetrics.com/api-docs/#/Tokens/get_v2_tokens",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/tokens"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/hourly-ohlcv": {
+      "get": {
+        "summary": "Get hourly OHLCV (Open, High, Low, Close, Volume) data for tokens.",
+        "description": "Get hourly OHLCV (Open, High, Low, Close, Volume) data for tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/hourly-ohlcv"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/daily-ohlcv": {
+      "get": {
+        "summary": "Get daily OHLCV (Open, High, Low, Close, Volume) data for tokens.",
+        "description": "Get daily OHLCV (Open, High, Low, Close, Volume) data for tokens.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/daily-ohlcv"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    },
+    "/addon/1047/v2/market-metrics": {
+      "get": {
+        "summary": "Get the Market Analytics from Token Metrics. They provide insight into the full Crypto Market, including the Bullish/Bearish Market indicator.",
+        "description": "Get the Market Analytics from Token Metrics. They provide insight into the full Crypto Market, including the Bullish/Bearish Market indicator.",
+        "externalDocs": {
+          "url": "https://developers.tokenmetrics.com/reference/market-metrics"
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "REST API"
+        ]
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Support Documentation",
+    "url": "https://www.tokenmetrics.com/contact-us"
+  }
+}
